@@ -30,7 +30,8 @@
     "require": {
         "php": "^7.3 || ^8.0",
         "pestphp/pest": "^1.0",
-        "pestphp/pest-plugin": "^1.0"
+        "pestphp/pest-plugin": "^1.0",
+        "pestphp/pest-plugin-laravel": "^1.1"
     },
     "autoload": {
         "psr-4": {
@@ -40,7 +41,13 @@
             "src/Autoload.php"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "require-dev": {
+        "orchestra/testbench": "^6.21",
         "pestphp/pest-dev-tools": "dev-master"
     },
     "extra": {
