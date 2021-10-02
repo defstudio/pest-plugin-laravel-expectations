@@ -1,6 +1,6 @@
 {
-    "name": "pestphp/pest-plugin-template",
-    "description": "My awesome plugin",
+    "name": "defstudio/pest-plugin-laravel-expectations",
+    "description": "A plugin to add laravel tailored expectations to Pest",
     "keywords": [
         "php",
         "framework",
@@ -8,9 +8,25 @@
         "unit",
         "test",
         "testing",
-        "plugin"
+        "plugin",
+        "laravel",
+        "expectations"
     ],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabio Ivona",
+            "email": "fabio.ivona@defstudio.it",
+            "homepage": "https://defstudio.it",
+            "role": "Developer"
+        },
+        {
+            "name": "Daniele Romeo",
+            "email": "danieleromeo@defstudio.it",
+            "homepage": "https://defstudio.it",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^7.3 || ^8.0",
         "pestphp/pest": "^1.0",
@@ -18,7 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Pest\\PluginName\\": "src/"
+            "DefStudio\\PestLaravelExpectations\\": "src/"
         },
         "files": [
             "src/Autoload.php"
