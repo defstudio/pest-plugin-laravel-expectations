@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace DefStudio\PestLaravelExpectations;
 
 /*
- * Asserts the given model exists in the database.
+ * Assert the given model exists in the database.
  */
 
 use Pest\Expectation;
@@ -22,7 +22,7 @@ expect()->extend('toExist', function (): Expectation {
 });
 
 /*
- * Asserts that the given where condition exists in the database
+ * Assert that the given "where condition" exists in the database
  *
  * @param \Illuminate\Database\Eloquent\Model|string $table
  * @param string|null $connection
