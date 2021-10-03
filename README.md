@@ -30,20 +30,36 @@ The expectations added by this plugin are authomatically loaded into Pest's expe
 
 ## Expectations
 
-### `toExist()`
+### `toBeCollection()`
 
-Assert the given model exists in the database.
+Asserts that the value is an instance of \Illuminate\Support\Collection
 
 ```php
-expect($model)->toExist();
+expect(collect[1,2,3])->toBeCollection();
+ ```
+
+### `toBeEloquentCollection()`
+
+Asserts that the value is an instance of \Illuminate\Database\Eloquent\Collection
+
+```php
+expect(User::all())->toBeCollection();
  ```
 
 ### `toBeInDatabase()`
 
-Assert that the given _where condition_ exists in the database
+Asserts that the given _where condition_ exists in the database
 
 ```php
 expect(['name' => 'Fabio'])->toBeInDatabase(table: 'users');
+ ```
+
+### `toExist()`
+
+Asserts the given model exists in the database.
+
+```php
+expect($model)->toExist();
  ```
 
 ## Tests
