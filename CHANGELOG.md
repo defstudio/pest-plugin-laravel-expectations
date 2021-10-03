@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [v0.0.4](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v0.0.3...v0.0.4) - 2021-10-03
 ### Added
 - `toBeDeleted()` expectation
+- `toBeSoftDeleted()` expectation
 
 ## [v0.0.3](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v0.0.2...v0.0.3) - 2021-10-03
 ### Added

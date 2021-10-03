@@ -8,6 +8,8 @@ use Illuminate\Support\Collection;
 use Pest\Expectation;
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertDatabaseMissing;
+use function Pest\Laravel\assertDeleted;
+use function Pest\Laravel\assertSoftDeleted;
 
 /*
  * Asserts the given model exists in the database.
@@ -26,10 +28,19 @@ expect()->extend('toExist', function (): Expectation {
  * Asserts the given model to be deleted.
  */
 expect()->extend('toBeDeleted', function (): Expectation {
-    assertDatabaseMissing(
-        $this->value->getTable(),
-        [$this->value->getKeyName() => $this->value->getKey()],
-        $this->value->getConnectionName()
+    assertDeleted($this->value);
+    return $this;
+});
+
+/*
+ * Asserts the given model to be soft deleted.
+ */
+expect()->extend('toBeSoftDeleted', function (string $deletedAtColumn = 'deleted_at'): Expectation {
+    assertSoftDeleted(
+        $this->value,
+        [],
+        null,
+        $deletedAtColumn
     );
 
     return $this;

@@ -46,6 +46,14 @@ Asserts the given model to be deleted.
 expect($model)->toBeDeleted();
  ```
 
+### `toBeSoftDeleted()`
+
+Asserts the given model to be soft deleted.
+
+```php
+expect($model)->toBeSoftDeleted();
+ ```
+
 ### `toBeEloquentCollection()`
 
 Asserts that the value is an instance of \Illuminate\Database\Eloquent\Collection
