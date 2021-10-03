@@ -38,6 +38,14 @@ Asserts that the value is an instance of \Illuminate\Support\Collection
 expect(collect[1,2,3])->toBeCollection();
  ```
 
+### `toBeDeleted()`
+
+Asserts the given model to be deleted.
+
+```php
+expect($model)->toBeDeleted();
+ ```
+
 ### `toBeEloquentCollection()`
 
 Asserts that the value is an instance of \Illuminate\Database\Eloquent\Collection

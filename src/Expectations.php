@@ -7,12 +7,26 @@ namespace DefStudio\PestLaravelExpectations;
 use Illuminate\Support\Collection;
 use Pest\Expectation;
 use function Pest\Laravel\assertDatabaseHas;
+use function Pest\Laravel\assertDatabaseMissing;
 
 /*
  * Asserts the given model exists in the database.
  */
 expect()->extend('toExist', function (): Expectation {
     assertDatabaseHas(
+        $this->value->getTable(),
+        [$this->value->getKeyName() => $this->value->getKey()],
+        $this->value->getConnectionName()
+    );
+
+    return $this;
+});
+
+/*
+ * Asserts the given model to be deleted.
+ */
+expect()->extend('toBeDeleted', function (): Expectation {
+    assertDatabaseMissing(
         $this->value->getTable(),
         [$this->value->getKeyName() => $this->value->getKey()],
         $this->value->getConnectionName()
