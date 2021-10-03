@@ -2,7 +2,6 @@
 
 use PHPUnit\Framework\ExpectationFailedException;
 use Tests\Models\SoftDeletableUser;
-use Tests\Models\User;
 
 test('pass', function () {
     $user = SoftDeletableUser::create([

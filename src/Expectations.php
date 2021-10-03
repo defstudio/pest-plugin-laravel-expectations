@@ -7,7 +7,6 @@ namespace DefStudio\PestLaravelExpectations;
 use Illuminate\Support\Collection;
 use Pest\Expectation;
 use function Pest\Laravel\assertDatabaseHas;
-use function Pest\Laravel\assertDatabaseMissing;
 use function Pest\Laravel\assertDeleted;
 use function Pest\Laravel\assertSoftDeleted;
 
@@ -29,6 +28,7 @@ expect()->extend('toExist', function (): Expectation {
  */
 expect()->extend('toBeDeleted', function (): Expectation {
     assertDeleted($this->value);
+
     return $this;
 });
 
