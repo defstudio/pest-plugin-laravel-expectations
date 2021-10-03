@@ -46,10 +46,21 @@ Assert that the given _where condition_ exists in the database
 expect(['name' => 'Fabio'])->toBeInDatabase(table: 'users');
  ```
 
-## Testing
+## Tests
 
+Run all tests:
 ```bash
 composer test
+```
+
+Check types:
+```bash
+composer test:types
+```
+
+Unit tests:
+```bash
+composer test:unit
 ```
 
 ## Changelog
