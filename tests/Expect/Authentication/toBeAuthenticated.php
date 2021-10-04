@@ -1,4 +1,4 @@
-<?php /** @noinspection PhpUndefinedMethodInspection */
+<?php
 
 use PHPUnit\Framework\ExpectationFailedException;
 use Tests\Models\User;

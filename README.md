@@ -32,17 +32,33 @@ The expectations added by this plugin are authomatically loaded into Pest's expe
 
 ### `toBeAuthenticated()`
 
-sserts that the given User is authenticated
+Assert that the given User is authenticated
 
 ```php
 expect($user)->toBeAuthenticated();
+ ```
+
+### `toBeValidCredentials()`
+
+Assert that the given credentials are valid.
+
+```php
+expect(['email' => 'test@email.it', 'password' => 'foo'])->toBeValidCredentials();
+ ```
+
+### `toBeInvalidCredentials()`
+
+Assert that the given credentials are invalid.
+
+```php
+expect(['email' => 'test@email.it', 'password' => 'wrongpassword'])->toBeInvalidCredentials();
  ```
 
 ## Database Expectations
 
 ### `toBeCollection()`
 
-Asserts that the value is an instance of \Illuminate\Support\Collection
+Assert that the value is an instance of \Illuminate\Support\Collection
 
 ```php
 expect(collect[1,2,3])->toBeCollection();
@@ -50,7 +66,7 @@ expect(collect[1,2,3])->toBeCollection();
 
 ### `toBeDeleted()`
 
-Asserts the given model to be deleted.
+Assert the given model to be deleted.
 
 ```php
 expect($model)->toBeDeleted();
@@ -58,7 +74,7 @@ expect($model)->toBeDeleted();
 
 ### `toBeSoftDeleted()`
 
-Asserts the given model to be soft deleted.
+Assert the given model to be soft deleted.
 
 ```php
 expect($model)->toBeSoftDeleted();
@@ -66,7 +82,7 @@ expect($model)->toBeSoftDeleted();
 
 ### `toBeEloquentCollection()`
 
-Asserts that the value is an instance of \Illuminate\Database\Eloquent\Collection
+Assert that the value is an instance of \Illuminate\Database\Eloquent\Collection
 
 ```php
 expect(User::all())->toBeCollection();
@@ -74,7 +90,7 @@ expect(User::all())->toBeCollection();
 
 ### `toBeInDatabase()`
 
-Asserts that the given _where condition_ exists in the database
+Assert that the given _where condition_ exists in the database
 
 ```php
 expect(['name' => 'Fabio'])->toBeInDatabase(table: 'users');
@@ -82,7 +98,7 @@ expect(['name' => 'Fabio'])->toBeInDatabase(table: 'users');
 
 ### `toExist()`
 
-Asserts the given model exists in the database.
+Assert the given model exists in the database.
 
 ```php
 expect($model)->toExist();

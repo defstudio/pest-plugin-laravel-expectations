@@ -11,7 +11,7 @@ use function Pest\Laravel\assertDeleted;
 use function Pest\Laravel\assertSoftDeleted;
 
 /*
- * Asserts the given model exists in the database.
+ * Assert the given model exists in the database.
  */
 expect()->extend('toExist', function (): Expectation {
     assertDatabaseHas(
@@ -24,7 +24,7 @@ expect()->extend('toExist', function (): Expectation {
 });
 
 /*
- * Asserts the given model to be deleted.
+ * Assert the given model to be deleted.
  */
 expect()->extend('toBeDeleted', function (): Expectation {
     assertDeleted($this->value);
@@ -47,7 +47,7 @@ expect()->extend('toBeSoftDeleted', function (string $deletedAtColumn = 'deleted
 });
 
 /*
- * Asserts that the given "where condition" exists in the database
+ * Assert that the given "where condition" exists in the database
  *
  * @param \Illuminate\Database\Eloquent\Model|string $table
  * @param string|null $connection
@@ -59,7 +59,7 @@ expect()->extend('toBeInDatabase', function ($table, $connection = null): Expect
 });
 
 /*
- * Asserts that the value is an instance of \Illuminate\Support\Collection
+ * Assert that the value is an instance of \Illuminate\Support\Collection
  */
 expect()->extend('toBeCollection', function (): Expectation {
     // @phpstan-ignore-next-line
@@ -67,7 +67,7 @@ expect()->extend('toBeCollection', function (): Expectation {
 });
 
 /*
- * Asserts that the value is an instance of \Illuminate\Database\Eloquent\Collection
+ * Assert that the value is an instance of \Illuminate\Database\Eloquent\Collection
  */
 expect()->extend('toBeEloquentCollection', function (): Expectation {
     // @phpstan-ignore-next-line
