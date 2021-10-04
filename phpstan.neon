@@ -14,3 +14,4 @@ parameters:
 
     ignoreErrors:
         - "#Undefined variable: \\$this#"
+        - "#Call to static method user\\(\\) on an unknown class Auth#"

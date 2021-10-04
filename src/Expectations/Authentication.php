@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Contracts\Auth\Authenticatable;
+declare(strict_types=1);
+
 use Pest\Expectation;
 use function Pest\Laravel\assertAuthenticated;
 use function Pest\Laravel\assertCredentials;
-use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertInvalidCredentials;
 use function PHPUnit\Framework\assertEquals;
 
