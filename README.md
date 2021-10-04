@@ -88,14 +88,6 @@ Assert that the value is an instance of \Illuminate\Database\Eloquent\Collection
 expect(User::all())->toBeCollection();
  ```
 
-### `toBeInDatabase()`
-
-Assert that the given _where condition_ exists in the database
-
-```php
-expect(['name' => 'Fabio'])->toBeInDatabase(table: 'users');
- ```
-
 ### `toExist()`
 
 Assert the given model exists in the database.

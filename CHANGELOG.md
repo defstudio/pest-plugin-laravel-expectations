@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [v1.0.1](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.0.0...v1.0.1) - 2021-10-04
+### Removed
+- `toBeInDatabase()` expectation (it collides with pest-plugin-laravel)
+
 ## [v1.0.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v0.0.5...v1.0.0) - 2021-10-04
 ### Added
 - `toBeAuthenticated()` expectation
