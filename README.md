@@ -28,7 +28,17 @@ composer require --dev defstudio/pest-plugin-laravel-expectations
 
 The expectations added by this plugin are authomatically loaded into Pest's expectation system. They can be used along other expectations.
 
-## Expectations
+## Authentication Expectations
+
+### `toBeAuthenticated()`
+
+sserts that the given User is authenticated
+
+```php
+expect($user)->toBeAuthenticated();
+ ```
+
+## Database Expectations
 
 ### `toBeCollection()`
 
