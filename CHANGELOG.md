@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [v0.0.6](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v0.0.5...v0.0.6) - 2021-10-04
+## [v1.0.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v0.0.5...v1.0.0) - 2021-10-04
 ### Added
 - `toBeAuthenticated()` expectation
 - `toBeValidCredentials()` expectation
