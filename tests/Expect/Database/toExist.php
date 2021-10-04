@@ -1,32 +1,20 @@
 <?php
 
 use PHPUnit\Framework\ExpectationFailedException;
-use Tests\Models\SoftDeletableUser;
+use Tests\Models\User;
 
 test('pass', function () {
-    $user = SoftDeletableUser::create([
+    $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
         'password' => 'password',
     ]);
 
-    $user->delete();
-
-    expect($user)->toBeSoftDeleted();
+    expect($user)->toExist();
 });
 
-test('failures', function () {
-    $user = SoftDeletableUser::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
-        'password' => 'password',
-    ]);
-
-    expect($user)->toBeSoftDeleted();
-})->throws(ExpectationFailedException::class);
-
-test('not failures', function () {
-    $user = SoftDeletableUser::create([
+test('failure', function () {
+    $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
         'password' => 'password',
@@ -34,5 +22,27 @@ test('not failures', function () {
 
     $user->delete();
 
-    expect($user)->not->toBeSoftDeleted();
+    expect($user)->toExist();
+})->throws(ExpectationFailedException::class);
+
+test('negated pass', function () {
+    $user = User::create([
+        'name'     => 'test user',
+        'email'    => 'email@test.xx',
+        'password' => 'password',
+    ]);
+
+    $user->delete();
+
+    expect($user)->not->toExist();
+});
+
+test('negated failure', function () {
+    $user = User::create([
+        'name'     => 'test user',
+        'email'    => 'email@test.xx',
+        'password' => 'password',
+    ]);
+
+    expect($user)->not->toExist();
 })->throws(ExpectationFailedException::class);

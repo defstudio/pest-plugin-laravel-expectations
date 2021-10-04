@@ -10,10 +10,32 @@ test('pass', function () {
         'password' => 'password',
     ]);
 
-    expect($user)->toExist();
+    $user->delete();
+
+    expect($user)->toBeDeleted();
 });
 
-test('failures', function () {
+test('failure', function () {
+    $user = User::create([
+        'name'     => 'test user',
+        'email'    => 'email@test.xx',
+        'password' => 'password',
+    ]);
+
+    expect($user)->toBeDeleted();
+})->throws(ExpectationFailedException::class);
+
+test('negated pas', function () {
+    $user = User::create([
+        'name'     => 'test user',
+        'email'    => 'email@test.xx',
+        'password' => 'password',
+    ]);
+
+    expect($user)->not->toBeDeleted();
+});
+
+test('negated failure', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
@@ -22,15 +44,5 @@ test('failures', function () {
 
     $user->delete();
 
-    expect($user)->toExist();
-})->throws(ExpectationFailedException::class);
-
-test('not failures', function () {
-    $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
-        'password' => 'password',
-    ]);
-
-    expect($user)->not->toExist();
+    expect($user)->not->toBeDeleted();
 })->throws(ExpectationFailedException::class);

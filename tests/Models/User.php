@@ -2,11 +2,10 @@
 
 namespace Tests\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class User extends Model
+class User extends \Illuminate\Foundation\Auth\User
 {
     protected $fillable = [
+        'id',
         'name',
         'email',
         'password',
