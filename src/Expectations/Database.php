@@ -48,11 +48,8 @@ expect()->extend('toBeSoftDeleted', function (string $deletedAtColumn = 'deleted
 
 /*
  * Assert that the given "where condition" exists in the database
- *
- * @param \Illuminate\Database\Eloquent\Model|string $table
- * @param string|null $connection
  */
-expect()->extend('toBeInDatabase', function ($table, $connection = null): Expectation {
+expect()->extend('toBeInDatabase', function (string $table, string $connection = null): Expectation {
     assertDatabaseHas($table, $this->value, $connection);
 
     return $this;
