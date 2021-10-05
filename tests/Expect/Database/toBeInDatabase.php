@@ -12,7 +12,7 @@ test('pass', function () {
 
     expect(['id' => $user->id])->toBeInDatabase('users');
     expect(['name' => 'test user'])->toBeInDatabase('users');
-    expect(['email'    => 'email@test.xx'])->toBeInDatabase('users');
+    expect(['email' => 'email@test.xx'])->toBeInDatabase('users');
 });
 
 test('failure', function () {
@@ -24,7 +24,7 @@ test('negated pass', function () {
 });
 
 test('negated failure', function () {
-    $user = User::create([
+    User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
         'password' => Hash::make('password'),
