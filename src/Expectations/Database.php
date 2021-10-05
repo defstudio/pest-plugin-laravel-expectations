@@ -47,17 +47,16 @@ expect()->extend('toBeSoftDeleted', function (string $deletedAtColumn = 'deleted
 });
 
 /*
- * TODO: dropped cause it collides with pest-plugin-laravel
  * Assert that the given "where condition" exists in the database
  *
  * @param \Illuminate\Database\Eloquent\Model|string $table
  * @param string|null $connection
  */
-// expect()->extend('toBeInDatabase', function ($table, $connection = null): Expectation {
-//     assertDatabaseHas($table, $this->value, $connection);
-//
-//     return $this;
-// });
+expect()->extend('toBeInDatabase', function ($table, $connection = null): Expectation {
+    assertDatabaseHas($table, $this->value, $connection);
+
+    return $this;
+});
 
 /*
  * Assert that the value is an instance of \Illuminate\Support\Collection
