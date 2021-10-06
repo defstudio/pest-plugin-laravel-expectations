@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * @method static create(string[] $array)
- * @method static make(string[] $array)
+ * @method static Post create(array $array)
+ * @method static Post make(array $array)
  */
 class Post extends Model
 {
@@ -21,7 +21,7 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function comments(): HasMany
+    public function posted_comments(): HasMany
     {
         return $this->hasMany(Comment::class, 'post_id');
     }

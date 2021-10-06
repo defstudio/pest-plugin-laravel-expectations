@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Database\Eloquent\RelationNotFoundException;
 use PHPUnit\Framework\ExpectationFailedException;
 use Tests\Models\Comment;
 use Tests\Models\Post;
@@ -32,7 +31,7 @@ test('pass with custom relationship', function () {
         'body'   => 'bar',
     ]);
 
-    $post->comments()->save($comment);
+    $post->posted_comments()->save($comment);
 
     expect($comment)->toBelongTo($post, 'related_post');
 });
@@ -47,10 +46,10 @@ test('failure without needed custom relationship', function () {
         'body'   => 'bar',
     ]);
 
-    $post->comments()->save($comment);
+    $post->posted_comments()->save($comment);
 
     expect($comment)->toBelongTo($post);
-})->throws(RelationNotFoundException::class);
+})->throws(ExpectationFailedException::class, "Failed to assert that [Tests\Models\Comment] has relationship [post]");
 
 test('failure without association', function () {
     $user = User::create([
@@ -64,7 +63,7 @@ test('failure without association', function () {
     ]);
 
     expect($post)->toBelongTo($user);
-})->throws(ExpectationFailedException::class, "Failed asserting that the model Tests\Models\Post#1 belongs to the model Tests\Models\User#1");
+})->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\Post#1] belongs to [Tests\Models\User#1]");
 
 test('failure when passing wrong model ', function () {
     $user = User::create([
@@ -73,16 +72,18 @@ test('failure when passing wrong model ', function () {
         'password' => 'password',
     ]);
 
-    Post::create([
+    $firstPost = Post::create([
         'title' => 'foo',
     ]);
 
-    $post = Post::create([
+    $secondPost = $post = Post::create([
         'title' => 'foo',
     ]);
 
-    expect($post)->toBelongTo($user);
-})->throws(ExpectationFailedException::class, "Failed asserting that the model Tests\Models\Post#2 belongs to the model Tests\Models\User#1");
+    $user->posts()->save($secondPost);
+
+    expect($firstPost)->toBelongTo($user);
+})->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\Post#1] belongs to [Tests\Models\User#1]");
 
 test('failure when passing wrong model class', function () {
     $user = User::create([
@@ -100,7 +101,7 @@ test('failure when passing wrong model class', function () {
         'body'   => 'bar',
     ]);
 
-    $post->comments()->save($comment);
+    $post->posted_comments()->save($comment);
 
     expect($comment)->toBelongTo($user, 'related_post');
-})->throws(ExpectationFailedException::class, "Failed asserting that the model Tests\Models\Comment#1 belongs to the model Tests\Models\User#1 through its relationship related_post");
+})->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\Comment#1] belongs to [Tests\Models\User#1] through its relationship 'related_post'");
