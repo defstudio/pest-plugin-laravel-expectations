@@ -19,7 +19,7 @@ test('[HasMany] pass', function () {
 
     $user->posts()->save($post);
 
-    expect($user)->toHave($post);
+    expect($user)->toOwn($post);
 });
 
 test('[HasMany] pass with custom relationship', function () {
@@ -34,7 +34,7 @@ test('[HasMany] pass with custom relationship', function () {
 
     $post->posted_comments()->save($comment);
 
-    expect($post)->toHave($comment, 'posted_comments');
+    expect($post)->toOwn($comment, 'posted_comments');
 });
 
 test('[HasMany] failure without needed custom relationship', function () {
@@ -49,7 +49,7 @@ test('[HasMany] failure without needed custom relationship', function () {
 
     $post->posted_comments()->save($comment);
 
-    expect($post)->toHave($comment);
+    expect($post)->toOwn($comment);
 })->throws(ExpectationFailedException::class, 'Failed to assert that [Tests\Models\Post] has relationship [comment / comments]');
 
 test('[HasMany] failure without association', function () {
@@ -63,7 +63,7 @@ test('[HasMany] failure without association', function () {
         'title' => 'foo',
     ]);
 
-    expect($user)->toHave($post);
+    expect($user)->toOwn($post);
 })->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\User#1] has a relationship with [Tests\Models\Post#1]");
 
 test('[HasMany] failure when passing wrong model ', function () {
@@ -83,7 +83,7 @@ test('[HasMany] failure when passing wrong model ', function () {
 
     $user->posts()->save($post_1);
 
-    expect($user)->toHave($post_2);
+    expect($user)->toOwn($post_2);
 })->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\User#1] has a relationship with [Tests\Models\Post#2]");
 
 test('[HasMany] failure when passing wrong model class', function () {
@@ -104,7 +104,7 @@ test('[HasMany] failure when passing wrong model class', function () {
 
     $post->posted_comments()->save($comment);
 
-    expect($user)->toHave($comment, 'posts');
+    expect($user)->toOwn($comment, 'posts');
 })->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\User#1] has a relationship 'posts' with [Tests\Models\Comment#1]");
 
 test('[HasOne] pass', function () {
@@ -120,7 +120,7 @@ test('[HasOne] pass', function () {
 
     $user->address()->save($address);
 
-    expect($user)->toHave($address);
+    expect($user)->toOwn($address);
 });
 
 test('[HasOne] failure without association', function () {
@@ -134,7 +134,7 @@ test('[HasOne] failure without association', function () {
         'address' => 'foo',
     ]);
 
-    expect($user)->toHave($address);
+    expect($user)->toOwn($address);
 })->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\User#1] has a relationship with [Tests\Models\Address#1]");
 
 test('[HasOne] failure when passing wrong model ', function () {
@@ -154,7 +154,7 @@ test('[HasOne] failure when passing wrong model ', function () {
 
     $user->address()->save($address_1);
 
-    expect($user)->toHave($address_2);
+    expect($user)->toOwn($address_2);
 })->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\User#1] has a relationship with [Tests\Models\Address#2]");
 
 test('[HasOne] failure when passing wrong model class', function () {
@@ -175,5 +175,5 @@ test('[HasOne] failure when passing wrong model class', function () {
 
     $user->address()->save($address);
 
-    expect($user)->toHave($comment, 'address');
+    expect($user)->toOwn($comment, 'address');
 })->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\User#1] has a relationship 'address' with [Tests\Models\Comment#1]");

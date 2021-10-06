@@ -55,9 +55,9 @@ expect()->extend('toBeSoftDeleted', function (string $deletedAtColumn = 'deleted
 });
 
 /*
- * Asserts that the given model have a child model
+ * Asserts that the given model owns child model
  */
-expect()->extend('toHave', function (Model $related, string $relationshipName = ''): Expectation {
+expect()->extend('toOwn', function (Model $related, string $relationshipName = ''): Expectation {
     /** @var Model $model */
     $model = $this->value;
 
