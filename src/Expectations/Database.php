@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace DefStudio\PestLaravelExpectations;
 
-use Illuminate\Support\Collection;
 use Pest\Expectation;
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertDeleted;
@@ -53,20 +52,4 @@ expect()->extend('toBeInDatabase', function (string $table, string $connection =
     assertDatabaseHas($table, $this->value, $connection);
 
     return $this;
-});
-
-/*
- * Assert that the value is an instance of \Illuminate\Support\Collection
- */
-expect()->extend('toBeCollection', function (): Expectation {
-    // @phpstan-ignore-next-line
-    return $this->toBeInstanceOf(Collection::class);
-});
-
-/*
- * Assert that the value is an instance of \Illuminate\Database\Eloquent\Collection
- */
-expect()->extend('toBeEloquentCollection', function (): Expectation {
-    // @phpstan-ignore-next-line
-    return $this->toBeInstanceOf(\Illuminate\Database\Eloquent\Collection::class);
 });
