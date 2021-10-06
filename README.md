@@ -109,6 +109,15 @@ Assert the given model belongs to another one.
 expect($post)->toBelongTo($user);
  ```
 
+### `toOwn()`
+
+Assert the given model owns child model.
+
+```php
+expect($user)->toOwn($post); //<-- HasMany relationship
+
+expect($user)->toOwn($address); //<-- HasOne relationship
+ ```
 
 ## Database Expectations
 
