@@ -71,7 +71,6 @@ expect()->extend('toHave', function (Model $related, string $relationshipName = 
 
     $relationshipName = $relationshipName ?: $guesser->ofType(HasMany::class)->throwException(true)->guess();
 
-
     $foreignKey = $guesser->getRelationship()->getForeignKeyName();
 
     $modelClass = get_class($model);
