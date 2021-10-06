@@ -2,6 +2,7 @@
 
 /** @noinspection PhpUndefinedFieldInspection */
 /* @noinspection PhpMethodParametersCountMismatchInspection */
+
 declare(strict_types=1);
 
 use Illuminate\Database\Eloquent\Model;
@@ -72,7 +73,7 @@ expect()->extend('toBelongTo', function (Model $related, string $relationshipNam
     }
 
     if (!$relationship instanceof BelongsTo) {
-        throw RelationNotFoundException::make($model, $foundRelationshipName);
+        throw RelationNotFoundException::make($model, $foundRelationshipName, BelongsTo::class);
     }
 
     $foreignKey = $relationship->getForeignKeyName();
