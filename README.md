@@ -54,7 +54,9 @@ Assert that the given credentials are invalid.
 expect(['email' => 'test@email.it', 'password' => 'wrongpassword'])->toBeInvalidCredentials();
  ```
 
-## Database Expectations
+
+## Collections Expectations
+
 
 ### `toBeCollection()`
 
@@ -63,6 +65,17 @@ Assert that the value is an instance of \Illuminate\Support\Collection
 ```php
 expect(collect[1,2,3])->toBeCollection();
  ```
+
+### `toBeEloquentCollection()`
+
+Assert that the value is an instance of \Illuminate\Database\Eloquent\Collection
+
+```php
+expect(User::all())->toBeCollection();
+ ```
+
+
+## Models Expectations
 
 ### `toBeDeleted()`
 
@@ -80,13 +93,24 @@ Assert the given model to be soft deleted.
 expect($model)->toBeSoftDeleted();
  ```
 
-### `toBeEloquentCollection()`
+### `toExist()`
 
-Assert that the value is an instance of \Illuminate\Database\Eloquent\Collection
+Assert the given model exists in the database.
 
 ```php
-expect(User::all())->toBeCollection();
+expect($model)->toExist();
  ```
+
+### `toBelongTo()`
+
+Assert the given model belongs to another one.
+
+```php
+expect($post)->toBelongTo($user);
+ ```
+
+
+## Database Expectations
 
 ### `toBeInDatabase()`
 
@@ -96,13 +120,6 @@ Assert that the given _where condition_ exists in the database
 expect(['name' => 'Fabio'])->toBeInDatabase(table: 'users');
  ```
 
-### `toExist()`
-
-Assert the given model exists in the database.
-
-```php
-expect($model)->toExist();
- ```
 
 ## Tests
 
