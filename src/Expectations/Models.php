@@ -52,7 +52,7 @@ expect()->extend('toBeSoftDeleted', function (string $deletedAtColumn = 'deleted
 /*
  * Asserts the given model to belong to a parent model
  */
-expect()->extend('toBelongTo', function (Model $related, string $relationshipName = null) {
+expect()->extend('toBelongTo', function (Model $related, string $relationshipName = null): Expectation {
     /** @var Model $model */
     $model = $this->value;
 
