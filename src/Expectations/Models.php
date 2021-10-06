@@ -5,6 +5,7 @@
 
 declare(strict_types=1);
 
+use DefStudio\PestLaravelExpectations\Helpers\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\RelationNotFoundException;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -57,23 +58,17 @@ expect()->extend('toBelongTo', function (Model $related, string $relationshipNam
     /** @var Model $model */
     $model = $this->value;
 
-    $foundRelationshipName = $relationshipName;
-    if ($foundRelationshipName === null) {
-        $foundRelationshipName = Str::camel(class_basename($related));
-
-        if (!method_exists($model, $foundRelationshipName)) {
-            $foundRelationshipName = Str::snake(class_basename($related));
-        }
-    }
+    $relationshipName = $relationshipName ?: Models::findRelationshipName($model, $related);
 
     try {
-        $relationship = $model->{$foundRelationshipName}();
+        $relationship = $model->{$relationshipName}();
     } catch (BadMethodCallException $exception) {
-        throw RelationNotFoundException::make($model, $foundRelationshipName);
+        throw RelationNotFoundException::make($model, $relationshipName);
     }
 
     if (!$relationship instanceof BelongsTo) {
-        throw RelationNotFoundException::make($model, $foundRelationshipName, BelongsTo::class);
+        //@phpstan-ignore-next-line
+        throw RelationNotFoundException::make($model, $relationshipName, BelongsTo::class);
     }
 
     $foreignKey = $relationship->getForeignKeyName();
@@ -82,7 +77,7 @@ expect()->extend('toBelongTo', function (Model $related, string $relationshipNam
     $relatedClass = get_class($related);
 
     //@phpstan-ignore-next-line
-    assertEquals($relatedClass, get_class($relationship->getModel()), "Failed asserting that the model $modelClass#$model->id belongs to the model $relatedClass#$related->id through its relationship $foundRelationshipName");
+    assertEquals($relatedClass, get_class($relationship->getModel()), "Failed asserting that the model $modelClass#$model->id belongs to the model $relatedClass#$related->id through its relationship $relationshipName");
 
     assertEquals($model->$foreignKey, $related->id, "Failed asserting that the model $modelClass#$model->id belongs to the model $relatedClass#$related->id");
 
