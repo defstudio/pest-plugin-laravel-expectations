@@ -17,6 +17,7 @@ parameters:
         - "#Call to static method user\\(\\) on an unknown class Auth#"
         - "#Variable method call on Illuminate\\\\Database\\\\Eloquent\\\\Model#"
         - "#Variable property access on Illuminate\\\\Database\\\\Eloquent\\\\Model#"
-        - "#Thrown exceptions in a catch block must bundle the previous exception#"
         - "#Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Model#"
         - "#Short ternary operator is not allowed#"
+        - "#Construct empty\\(\\) is not allowed#"
+        - "#construct empty\\(\\) should not be used#"

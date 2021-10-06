@@ -6,17 +6,16 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommentsTable extends Migration
+class CreateAddressesTable extends Migration
 {
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->string('header');
-            $table->string('body');
+            $table->string('address');
             $table->timestamps();
 
-            $table->foreignId('post_id')->nullable()->constrained();
+            $table->foreignId('user_id')->nullable()->constrained();
         });
     }
 }

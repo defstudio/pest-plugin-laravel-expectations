@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- * @method static make(array $array)
+ * @method static Comment create(array $array)
+ * @method static Comment make(array $array)
  */
 class Comment extends Model
 {
