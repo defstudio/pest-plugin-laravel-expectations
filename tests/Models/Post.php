@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Post extends Model
 {
     protected $fillable = [
+        'id',
+        'user_id',
         'title',
     ];
 
