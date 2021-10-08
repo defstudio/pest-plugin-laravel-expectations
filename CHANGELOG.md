@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [v1.1.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.0.4...v1.1.0) - 2021-10-08
+### Added
+- `toBeAbleTo()` expectation
+
 ## [v1.0.4](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.0.3...v1.0.4) - 2021-10-06
 ### Added
 - `toBelongTo()` expectation

@@ -54,6 +54,14 @@ Assert that the given credentials are invalid.
 expect(['email' => 'test@email.it', 'password' => 'wrongpassword'])->toBeInvalidCredentials();
  ```
 
+### `toBeAbleTo()`
+
+Assert that the given User is authorized to do something
+
+```php
+expect($user)->toBeAbleTo('edit', $post);
+ ```
+
 
 ## Collections Expectations
 
