@@ -11,49 +11,65 @@ use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertTrue;
 use SebastianBergmann\Exporter\Exporter;
 
-/*
- * Assert that the given User is authenticated
- */
-expect()->extend('toBeAuthenticated', function (string $guard = null): Expectation {
-    assertAuthenticated($guard);
 
-    $authenticated = Auth::user();
-    assertEquals($this->value->id, $authenticated->id, "The User ID #{$this->value->id} doesn't match authenticated User ID #$authenticated->id");
+expect()->extend(
+    'toBeAuthenticated',
+    /*
+     * Assert that the given User is authenticated
+     */
+    function (string $guard = null): Expectation {
+        assertAuthenticated($guard);
 
-    return $this;
-});
+        $authenticated = Auth::user();
+        assertEquals($this->value->id, $authenticated->id, "The User ID #{$this->value->id} doesn't match authenticated User ID #$authenticated->id");
 
-/*
- * Assert that the given credentials are valid.
- */
-expect()->extend('toBeValidCredentials', function (string $guard = null): Expectation {
-    assertCredentials($this->value, $guard);
+        return $this;
+    }
+);
 
-    return $this;
-});
 
-/*
- * Assert that the given credentials are invalid.
- */
-expect()->extend('toBeInvalidCredentials', function (string $guard = null): Expectation {
-    assertInvalidCredentials($this->value, $guard);
+expect()->extend(
+    'toBeValidCredentials',
+    /*
+     * Assert that the given credentials are valid.
+     */
+    function (string $guard = null): Expectation {
+        assertCredentials($this->value, $guard);
 
-    return $this;
-});
+        return $this;
+    }
+);
 
-/*
- * Assert that the given User is authorized to do something
- *
- * @param array|mixed $arguments
- */
-expect()->extend('toBeAbleTo', function (string $ability, $arguments = []): Expectation {
-    /** @var Authorizable $user */
-    $user = $this->value;
 
-    $exporter = new Exporter();
+expect()->extend(
+    'toBeInvalidCredentials',
+    /*
+     * Assert that the given credentials are invalid.
+     */
+    function (string $guard = null): Expectation {
+        assertInvalidCredentials($this->value, $guard);
 
-    $arguments_string = $exporter->shortenedExport($arguments);
-    assertTrue($user->can($ability, $arguments), sprintf('Failed asserting that the given user is authorized to "%s" with [%s]', $ability, $arguments_string));
+        return $this;
+    }
+);
 
-    return $this;
-});
+
+expect()->extend(
+    'toBeAbleTo',
+    /*
+     * @param array|mixed $arguments
+     */
+    function (string $ability, $arguments = []): Expectation {
+        /** @var Authorizable $user */
+        $user = $this->value;
+
+        $exporter = new Exporter();
+
+        $arguments_string = $exporter->shortenedExport($arguments);
+        assertTrue($user->can($ability, $arguments), sprintf('Failed asserting that the given user is authorized to "%s" with [%s]', $ability, $arguments_string));
+
+        return $this;
+    }
+);
+
+

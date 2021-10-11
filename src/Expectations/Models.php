@@ -18,95 +18,115 @@ use function Pest\Laravel\assertDeleted;
 use function Pest\Laravel\assertSoftDeleted;
 use function PHPUnit\Framework\assertEquals;
 
-/*
- * Asserts that the given model exists in the database.
- */
-expect()->extend('toExist', function (): Expectation {
-    assertDatabaseHas(
-        $this->value->getTable(),
-        [$this->value->getKeyName() => $this->value->getKey()],
-        $this->value->getConnectionName()
-    );
 
-    return $this;
-});
+expect()->extend(
+    'toExist',
+    /*
+     * Asserts that the given model exists in the database.
+     */
+    function (): Expectation {
+        assertDatabaseHas(
+            $this->value->getTable(),
+            [$this->value->getKeyName() => $this->value->getKey()],
+            $this->value->getConnectionName()
+        );
 
-/*
- * Assert that the given model is deleted.
- */
-expect()->extend('toBeDeleted', function (): Expectation {
-    assertDeleted($this->value);
+        return $this;
+    }
+);
 
-    return $this;
-});
 
-/*
- * Assert that the given model is soft deleted.
- */
-expect()->extend('toBeSoftDeleted', function (string $deletedAtColumn = 'deleted_at'): Expectation {
-    assertSoftDeleted(
-        $this->value,
-        [],
-        null,
-        $deletedAtColumn
-    );
+expect()->extend(
+    'toBeDeleted',
+    /*
+     * Assert that the given model is deleted.
+     */
+    function (): Expectation {
+        assertDeleted($this->value);
 
-    return $this;
-});
+        return $this;
+    }
+);
 
-/*
- * Asserts that the given model owns child model
- */
-expect()->extend('toOwn', function (Model $related, string $relationshipName = ''): Expectation {
-    /** @var Model $model */
-    $model = $this->value;
 
-    $guesser = Models\RelationshipGuesser::from($model)
-        ->to($related)
-        ->ofType(HasOne::class)
-        ->withHint($relationshipName)
-        ->throwException(false);
+expect()->extend(
+    'toBeSoftDeleted',
+    /*
+    * Assert that the given model is soft deleted.
+    */
+    function (string $deletedAtColumn = 'deleted_at'): Expectation {
+        assertSoftDeleted(
+            $this->value,
+            [],
+            null,
+            $deletedAtColumn
+        );
 
-    $relationshipName = $guesser->guess();
+        return $this;
+    }
+);
 
-    $relationshipName = $relationshipName ?: $guesser->ofType(HasMany::class)->throwException(true)->guess();
 
-    $foreignKey = $guesser->getRelationship()->getForeignKeyName();
+expect()->extend(
+    'toOwn',
+    /*
+     * Asserts that the given model owns child model
+     */
+    function (Model $related, string $relationshipName = ''): Expectation {
+        /** @var Model $model */
+        $model = $this->value;
 
-    $modelClass = get_class($model);
-    $relatedClass = get_class($related);
+        $guesser = Models\RelationshipGuesser::from($model)
+            ->to($related)
+            ->ofType(HasOne::class)
+            ->withHint($relationshipName)
+            ->throwException(false);
 
-    //@phpstan-ignore-next-line
-    assertEquals($relatedClass, get_class($guesser->getRelationship()->getModel()), "Failed asserting that [$modelClass#$model->id] has a relationship '$relationshipName' with [$relatedClass#$related->id]");
+        $relationshipName = $guesser->guess();
 
-    assertEquals($related->$foreignKey, $model->id, "Failed asserting that [$modelClass#$model->id] has a relationship with [$relatedClass#$related->id]");
+        $relationshipName = $relationshipName ?: $guesser->ofType(HasMany::class)->throwException(true)->guess();
 
-    return $this;
-});
+        $foreignKey = $guesser->getRelationship()->getForeignKeyName();
 
-/*
- * Asserts that the given model belongs to a parent model
- */
-expect()->extend('toBelongTo', function (Model $related, string $relationshipName = ''): Expectation {
-    /** @var Model $model */
-    $model = $this->value;
+        $modelClass = get_class($model);
+        $relatedClass = get_class($related);
 
-    $guesser = Models\RelationshipGuesser::from($model)
-    ->to($related)
-    ->ofType(BelongsTo::class)
-    ->withHint($relationshipName);
+        //@phpstan-ignore-next-line
+        assertEquals($relatedClass, get_class($guesser->getRelationship()->getModel()), "Failed asserting that [$modelClass#$model->id] has a relationship '$relationshipName' with [$relatedClass#$related->id]");
 
-    $relationshipName = $guesser->guess();
+        assertEquals($related->$foreignKey, $model->id, "Failed asserting that [$modelClass#$model->id] has a relationship with [$relatedClass#$related->id]");
 
-    $foreignKey = $guesser->getRelationship()->getForeignKeyName();
+        return $this;
+    }
+);
 
-    $modelClass = get_class($model);
-    $relatedClass = get_class($related);
 
-    //@phpstan-ignore-next-line
-    assertEquals($relatedClass, get_class($guesser->getRelationship()->getModel()), "Failed asserting that [$modelClass#$model->id] belongs to [$relatedClass#$related->id] through its relationship '$relationshipName'");
+expect()->extend(
+    'toBelongTo',
+    /*
+     * Asserts that the given model belongs to a parent model
+     */
+    function (Model $related, string $relationshipName = ''): Expectation {
+        /** @var Model $model */
+        $model = $this->value;
 
-    assertEquals($model->$foreignKey, $related->id, "Failed asserting that [$modelClass#$model->id] belongs to [$relatedClass#$related->id]");
+        $guesser = Models\RelationshipGuesser::from($model)
+            ->to($related)
+            ->ofType(BelongsTo::class)
+            ->withHint($relationshipName);
 
-    return $this;
-});
+        $relationshipName = $guesser->guess();
+
+        $foreignKey = $guesser->getRelationship()->getForeignKeyName();
+
+        $modelClass = get_class($model);
+        $relatedClass = get_class($related);
+
+        //@phpstan-ignore-next-line
+        assertEquals($relatedClass, get_class($guesser->getRelationship()->getModel()), "Failed asserting that [$modelClass#$model->id] belongs to [$relatedClass#$related->id] through its relationship '$relationshipName'");
+
+        assertEquals($model->$foreignKey, $related->id, "Failed asserting that [$modelClass#$model->id] belongs to [$relatedClass#$related->id]");
+
+        return $this;
+    }
+);
