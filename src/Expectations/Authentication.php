@@ -11,11 +11,10 @@ use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertTrue;
 use SebastianBergmann\Exporter\Exporter;
 
-
 expect()->extend(
     'toBeAuthenticated',
     /**
-     * Assert that the given User is authenticated
+     * Assert that the given User is authenticated.
      */
     function (string $guard = null): Expectation {
         assertAuthenticated($guard);
@@ -26,7 +25,6 @@ expect()->extend(
         return $this;
     }
 );
-
 
 expect()->extend(
     'toBeValidCredentials',
@@ -40,7 +38,6 @@ expect()->extend(
     }
 );
 
-
 expect()->extend(
     'toBeInvalidCredentials',
     /**
@@ -52,7 +49,6 @@ expect()->extend(
         return $this;
     }
 );
-
 
 expect()->extend(
     'toBeAbleTo',
@@ -71,5 +67,3 @@ expect()->extend(
         return $this;
     }
 );
-
-
