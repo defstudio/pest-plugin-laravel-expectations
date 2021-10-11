@@ -137,6 +137,16 @@ Assert that the given _where condition_ exists in the database
 expect(['name' => 'Fabio'])->toBeInDatabase(table: 'users');
  ```
 
+## Storage Expectations
+
+### `toExistInStorage()`
+
+Assert that the given file exist in storage
+
+```php
+expect('test_file.txt')->toExistInStorage();
+ ```
+
 
 ## Tests
 
@@ -154,6 +164,10 @@ Unit tests:
 ```bash
 composer test:unit
 ```
+
+## Autocompletion
+
+For PhpStorm users, a nice Plugin has been developed by [Oliver Nybroe](https://github.com/olivernybroe). It adds full autocompletion to ours Laravel Expectations, it is worth to take a look: [https://github.com/pestphp/pest-intellij](https://github.com/pestphp/pest-intellij)
 
 ## Changelog
 
