@@ -8,3 +8,4 @@ require_once 'Expectations/Authentication.php';
 require_once 'Expectations/Collections.php';
 require_once 'Expectations/Database.php';
 require_once 'Expectations/Models.php';
+require_once 'Expectations/Storage.php';
