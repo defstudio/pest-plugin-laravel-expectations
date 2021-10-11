@@ -18,10 +18,9 @@ use function Pest\Laravel\assertDeleted;
 use function Pest\Laravel\assertSoftDeleted;
 use function PHPUnit\Framework\assertEquals;
 
-
 expect()->extend(
     'toExist',
-    /*
+    /**
      * Asserts that the given model exists in the database.
      */
     function (): Expectation {
@@ -35,10 +34,9 @@ expect()->extend(
     }
 );
 
-
 expect()->extend(
     'toBeDeleted',
-    /*
+    /**
      * Assert that the given model is deleted.
      */
     function (): Expectation {
@@ -48,12 +46,11 @@ expect()->extend(
     }
 );
 
-
 expect()->extend(
     'toBeSoftDeleted',
-    /*
-    * Assert that the given model is soft deleted.
-    */
+    /**
+     * Assert that the given model is soft deleted.
+     */
     function (string $deletedAtColumn = 'deleted_at'): Expectation {
         assertSoftDeleted(
             $this->value,
@@ -66,11 +63,10 @@ expect()->extend(
     }
 );
 
-
 expect()->extend(
     'toOwn',
-    /*
-     * Asserts that the given model owns child model
+    /**
+     * Asserts that the given model owns child model.
      */
     function (Model $related, string $relationshipName = ''): Expectation {
         /** @var Model $model */
@@ -99,7 +95,6 @@ expect()->extend(
         return $this;
     }
 );
-
 
 expect()->extend(
     'toBelongTo',
