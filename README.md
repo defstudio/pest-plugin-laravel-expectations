@@ -137,6 +137,16 @@ Assert that the given _where condition_ exists in the database
 expect(['name' => 'Fabio'])->toBeInDatabase(table: 'users');
  ```
 
+## Storage Expectations
+
+### `toExistInStorage()`
+
+Assert that the given file exist in storage
+
+```php
+expect('test_file.txt')->toExistInStorage();
+ ```
+
 
 ## Tests
 

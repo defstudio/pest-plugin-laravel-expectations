@@ -9,7 +9,7 @@ use function PHPUnit\Framework\assertTrue;
 expect()->extend(
     'toExistInStorage',
     /**
-     * Assert that the given file exist in storage.
+     * Assert that the given file exist in storage
      */
     function (string $disk = null): Expectation {
         $storageName = $disk ?? 'default';
