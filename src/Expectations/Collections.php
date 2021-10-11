@@ -8,7 +8,7 @@ use Pest\Expectation;
 
 expect()->extend(
     'toBeCollection',
-    /*
+    /**
     * Assert that the value is an instance of \Illuminate\Support\Collection
     */
     function (): Expectation {
@@ -20,7 +20,7 @@ expect()->extend(
 
 expect()->extend(
     'toBeEloquentCollection',
-    /*
+    /**
     * Assert that the value is an instance of \Illuminate\Database\Eloquent\Collection
     */
     function (): Expectation {

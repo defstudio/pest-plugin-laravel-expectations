@@ -14,7 +14,7 @@ use SebastianBergmann\Exporter\Exporter;
 
 expect()->extend(
     'toBeAuthenticated',
-    /*
+    /**
      * Assert that the given User is authenticated
      */
     function (string $guard = null): Expectation {
@@ -30,7 +30,7 @@ expect()->extend(
 
 expect()->extend(
     'toBeValidCredentials',
-    /*
+    /**
      * Assert that the given credentials are valid.
      */
     function (string $guard = null): Expectation {
@@ -43,7 +43,7 @@ expect()->extend(
 
 expect()->extend(
     'toBeInvalidCredentials',
-    /*
+    /**
      * Assert that the given credentials are invalid.
      */
     function (string $guard = null): Expectation {
@@ -56,7 +56,7 @@ expect()->extend(
 
 expect()->extend(
     'toBeAbleTo',
-    /*
+    /**
      * @param array|mixed $arguments
      */
     function (string $ability, $arguments = []): Expectation {
