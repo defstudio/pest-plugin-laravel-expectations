@@ -13,6 +13,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
         $this->loadMigrationsFrom(__DIR__ . '/resources/database/migrations');
         $this->artisan('migrate', ['--database' => 'testbench'])->run();
+
+
     }
 
     protected function getEnvironmentSetUp($app): void
