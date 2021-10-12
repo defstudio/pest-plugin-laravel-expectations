@@ -155,6 +155,14 @@ Assert that the given response is a redirection
 expect(get('/secret/location'))->toBeRedirect('/login');
  ```
 
+### `toHaveStatus()`
+
+Assert that the given response has a specific status code.
+
+```php
+expect(post('/comment'))->toHaveStatus(201);
+ ```
+
 ## Storage Expectations
 
 ### `toExistInStorage()`
