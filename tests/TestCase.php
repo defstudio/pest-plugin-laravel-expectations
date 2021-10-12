@@ -31,8 +31,14 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
         $router->get('status/{status}', function ($status) {
             return response()->json([
-               'status' => $status,
-           ], $status);
+                'status' => $status,
+            ], $status);
+        });
+
+        $router->get('download/{filename}', function ($filename) {
+            Storage::put($filename, 'test');
+
+            return Storage::download($filename, $filename);
         });
     }
 
