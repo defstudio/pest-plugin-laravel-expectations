@@ -15,6 +15,21 @@ class TestCase extends \Orchestra\Testbench\TestCase
         $this->artisan('migrate', ['--database' => 'testbench'])->run();
     }
 
+    protected function defineWebRoutes($router)
+    {
+        $router->get('ok', function () {
+            return response()->noContent(200);
+        })->name('ok');
+
+        $router->get('redirect', function () {
+            return redirect()->to('/ok');
+        })->name('redirect');
+
+        $router->get('redirect/out', function () {
+            return redirect()->to('https://www.google.it');
+        })->name('redirect.out');
+    }
+
     protected function getEnvironmentSetUp($app): void
     {
         $app['config']->set('app.key', 'base64:Hupx3yAySikrM2/edkZQNQHslgDWYfiBfCuSThJ5SK8=');
