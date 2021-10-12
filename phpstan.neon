@@ -21,3 +21,4 @@ parameters:
         - "#Short ternary operator is not allowed#"
         - "#Construct empty\\(\\) is not allowed#"
         - "#construct empty\\(\\) should not be used#"
+        - "#Thrown exceptions in a catch block must bundle the previous exception#"
