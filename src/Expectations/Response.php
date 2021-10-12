@@ -44,3 +44,17 @@ expect()->extend(
         return $this;
     }
 );
+
+expect()->extend(
+    'toHaveStatus',
+    /**
+     * Assert that the response has the given status code.
+     */
+    function (int $status): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertStatus($status);
+
+        return $this;
+    }
+);

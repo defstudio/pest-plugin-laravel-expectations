@@ -28,6 +28,12 @@ class TestCase extends \Orchestra\Testbench\TestCase
         $router->get('redirect/out', function () {
             return redirect()->to('https://www.google.it');
         })->name('redirect.out');
+
+        $router->get('status/{status}', function ($status) {
+            return response()->json([
+               'status' => $status,
+           ], $status);
+        });
     }
 
     protected function getEnvironmentSetUp($app): void
