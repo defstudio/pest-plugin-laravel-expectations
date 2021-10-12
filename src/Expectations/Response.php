@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Testing\TestResponse;
 use Pest\Expectation;
+use PHPUnit\Framework\AssertionFailedError;
 use PHPUnit\Framework\ExpectationFailedException;
 
 expect()->extend(
@@ -54,6 +55,25 @@ expect()->extend(
         /** @var TestResponse $response */
         $response = $this->value;
         $response->assertStatus($status);
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeDownload',
+    /**
+     * Assert that the given response offers a file download.
+     */
+    function (string $filename = null): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+
+        try {
+            $response->assertDownload($filename);
+        } catch (AssertionFailedError $exception) {
+            throw new ExpectationFailedException($exception->getMessage());
+        }
 
         return $this;
     }
