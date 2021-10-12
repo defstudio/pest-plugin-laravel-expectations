@@ -139,6 +139,14 @@ expect(['name' => 'Fabio'])->toBeInDatabase(table: 'users');
 
 ## Response Expectations
 
+### `toBeSuccessful()`
+
+Assert that the response has a successful status code
+
+```php
+expect(get('/secret/location'))->toBeRedirect('/login');
+ ```
+
 ### `toBeRedirect()`
 
 Assert that the given response is a redirection
