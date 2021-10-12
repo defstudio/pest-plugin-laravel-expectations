@@ -137,6 +137,40 @@ Assert that the given _where condition_ exists in the database
 expect(['name' => 'Fabio'])->toBeInDatabase(table: 'users');
  ```
 
+## Response Expectations
+
+### `toBeSuccessful()`
+
+Assert that the response has a successful status code
+
+```php
+expect(get('/secret/location'))->toBeRedirect('/login');
+ ```
+
+### `toBeRedirect()`
+
+Assert that the given response is a redirection
+
+```php
+expect(get('/secret/location'))->toBeRedirect('/login');
+ ```
+
+### `toBeDownload()`
+
+Assert that the given response offers a file download
+
+```php
+expect(get('/reports/last.pdf'))->toBeDownload();
+ ```
+
+### `toHaveStatus()`
+
+Assert that the given response has a specific status code.
+
+```php
+expect(post('/comment'))->toHaveStatus(201);
+ ```
+
 ## Storage Expectations
 
 ### `toExistInStorage()`

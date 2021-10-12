@@ -35,7 +35,7 @@ expect()->extend(
 expect()->extend(
     'toBeSuccessful',
     /**
-     * Assert that the response has a successful status code.
+     * Assert that the given response has a successful status code.
      */
     function (): Expectation {
         /** @var TestResponse $response */
@@ -49,7 +49,7 @@ expect()->extend(
 expect()->extend(
     'toHaveStatus',
     /**
-     * Assert that the response has the given status code.
+     * Assert that the given response has a specific status code.
      */
     function (int $status): Expectation {
         /** @var TestResponse $response */
