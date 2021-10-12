@@ -30,3 +30,17 @@ expect()->extend(
         return $this;
     }
 );
+
+expect()->extend(
+    'toBeSuccessful',
+    /**
+     * Assert that the response has a successful status code.
+     */
+    function (): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertSuccessful();
+
+        return $this;
+    }
+);
