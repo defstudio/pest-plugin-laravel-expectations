@@ -155,6 +155,14 @@ Assert that the given response is a redirection
 expect(get('/secret/location'))->toBeRedirect('/login');
  ```
 
+### `toBeDownload()`
+
+Assert that the given response offers a file download
+
+```php
+expect(get('/reports/last.pdf'))->toBeDownload();
+ ```
+
 ### `toHaveStatus()`
 
 Assert that the given response has a specific status code.

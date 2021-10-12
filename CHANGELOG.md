@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - `toBeRedirect()` expectation
 - `toBeSuccessful()` expectation
+- `toBeDownload()` expectation
 - `toHaveStatus()` expectation
 - `toExistInStorage()` expectation
 
