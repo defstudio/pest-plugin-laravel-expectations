@@ -137,6 +137,16 @@ Assert that the given _where condition_ exists in the database
 expect(['name' => 'Fabio'])->toBeInDatabase(table: 'users');
  ```
 
+## Response Expectations
+
+### `toBeRedirect()`
+
+Assert that the given response is a redirection
+
+```php
+expect(get('/secret/location'))->toBeRedirect('/login');
+ ```
+
 ## Storage Expectations
 
 ### `toExistInStorage()`
