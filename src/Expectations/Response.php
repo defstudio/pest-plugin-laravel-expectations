@@ -87,7 +87,7 @@ expect()->extend(
      *
      * @param string|array $string
      */
-    function ($string, bool $escape = true): Expectation {
+    function ($string, bool $escape = false): Expectation {
         /** @var TestResponse $response */
         $response = $this->value;
         $response->assertSee($string, $escape);
@@ -102,7 +102,7 @@ expect()->extend(
     /*
      * Assert that the given response contains an ordered sequence of strings
      */
-    function (array $strings, bool $escape = true): Expectation {
+    function (array $strings, bool $escape = false): Expectation {
         /** @var TestResponse $response */
         $response = $this->value;
         $response->assertSeeInOrder($strings, $escape);
@@ -118,7 +118,7 @@ expect()->extend(
      *
      * @param string|array $text
      */
-    function ($text, bool $escape = true): Expectation {
+    function ($text, bool $escape = false): Expectation {
         /** @var TestResponse $response */
         $response = $this->value;
         $response->assertSeeText($text, $escape);
@@ -132,7 +132,7 @@ expect()->extend(
     /*
      * Assert that the given response contains an ordered sequence of strings in its text.
      */
-    function (array $texts, bool $escape = true): Expectation {
+    function (array $texts, bool $escape = false): Expectation {
         /** @var TestResponse $response */
         $response = $this->value;
         $response->assertSeeTextInOrder($texts, $escape);
@@ -148,7 +148,7 @@ expect()->extend(
      *
      * @param string|array $text
      */
-    function ($text, bool $escape = true): Expectation {
+    function ($text, bool $escape = false): Expectation {
         return $this->toRenderText($text, $escape);
     }
 );
@@ -160,7 +160,7 @@ expect()->extend(
      *
      * @param string|array $text
      */
-    function ($text, bool $escape = true): Expectation {
+    function ($text, bool $escape = false): Expectation {
         return $this->toRenderTextInOrder($text, $escape);
     }
 );

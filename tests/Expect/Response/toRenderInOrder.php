@@ -4,14 +4,10 @@ use function Pest\Laravel\get;
 use PHPUnit\Framework\ExpectationFailedException;
 
 test('pass', function () {
-    expect(get('/page'))->toRenderInOrder(['title', 'section', 'content']);
-});
-
-test('pass without escape', function () {
     expect(get('/page'))->toRenderInOrder([
         '<h1>title</h1>', '<h3>section</h3>',
         "<p>\n    content\n</p>",
-    ], false);
+    ]);
 });
 
 test('fail', function () {
