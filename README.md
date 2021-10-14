@@ -29,7 +29,9 @@ The expectations added by this plugin are automatically loaded into Pest's expec
 
 ## Documentation
 
-A full documentation with a detailed list of **available expectations** is available at [https://def-studio.github.io/pest-plugin-laravel-expectations-docs](https://def-studio.github.io/pest-plugin-laravel-expectations-docs/)
+A full documentation with a detailed list of **available expectations** is available at:
+
+[https://def-studio.github.io/pest-plugin-laravel-expectations-docs](https://def-studio.github.io/pest-plugin-laravel-expectations-docs/)
 
 ## Autocompletion
 
