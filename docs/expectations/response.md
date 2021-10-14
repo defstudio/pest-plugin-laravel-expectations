@@ -24,6 +24,14 @@ Assert that the response has a not found status code.
 expect(get('/unknown'))->toBeNotFound();
  ```
 
+### `toHaveNoContent()`
+
+Assert that the response has the given status code and no content.
+
+```php
+expect(post('/timer/ping'))->toHaveNoContent();
+ ```
+
 ### `toBeRedirect()`
 
 Assert that the given response is a redirection.

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - `toBeOk()` expectation
 - `toBeNotFound()` expectation
+- `toHaveNoContent()` expectation
 - `toRender()` expectation
 - `toRenderInOrder()` expectation
 - `toRenderText()` expectation

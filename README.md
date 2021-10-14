@@ -63,6 +63,7 @@ The expectations added by this plugin are automatically loaded into Pest's expec
 - [`toBeSuccessful()`](docs/expectations/response.md#tobesuccessful)
 - [`toBeOk()`](docs/expectations/response.md#tobeok)
 - [`toBeNotFound()`](docs/expectations/response.md#tobenotfound)
+- [`toHaveNoContent()`](docs/expectations/response.md#tohavenocontent)
 - [`toBeRedirect()`](docs/expectations/response.md#toberedirect)
 - [`toBeDownload()`](docs/expectations/response.md#tobedownload)
 - [`toHaveStatus()`](docs/expectations/response.md#tohavestatus)
