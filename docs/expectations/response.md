@@ -39,3 +39,11 @@ Assert that the given response contains a string or array of strings.
 ```php
 expect(get('/page'))->toRender('<h1>title</h1>', escape: false);
  ```
+
+### `toRenderInOrder()`
+
+Assert that the given response contains an ordered sequence of strings.
+
+```php
+expect(get('/page'))->toRenderInOrder('<h1>title</h1>', escape: false);
+ ```
