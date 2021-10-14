@@ -16,6 +16,14 @@ Assert that the response has a 200 status code.
 expect(get('/page'))->toBeOk();
  ```
 
+### `toBeNotFound()`
+
+Assert that the response has a not found status code.
+
+```php
+expect(get('/unknown'))->toBeNotFound();
+ ```
+
 ### `toBeRedirect()`
 
 Assert that the given response is a redirection.
