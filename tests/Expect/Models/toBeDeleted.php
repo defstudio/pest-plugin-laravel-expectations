@@ -15,7 +15,7 @@ test('pass', function () {
     expect($user)->toBeDeleted();
 });
 
-test('failure', function () {
+test('fail', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
@@ -35,7 +35,7 @@ test('negated pas', function () {
     expect($user)->not->toBeDeleted();
 });
 
-test('negated failure', function () {
+test('negated fail', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',

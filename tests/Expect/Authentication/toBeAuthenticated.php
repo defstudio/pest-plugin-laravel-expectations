@@ -16,7 +16,7 @@ test('pass', function () {
     expect($user)->toBeAuthenticated();
 });
 
-test('failure with guest', function () {
+test('fail with guest', function () {
     $user = User::make([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
@@ -26,7 +26,7 @@ test('failure with guest', function () {
     expect($user)->toBeAuthenticated();
 })->throws(ExpectationFailedException::class, 'The user is not authenticated');
 
-test('failure with wrong user', function () {
+test('fail with wrong user', function () {
     $user1 = User::make([
         'id'       => 1,
         'name'     => 'test user',
@@ -76,7 +76,7 @@ test('negated pass with wrong user', function () {
     expect($user2)->not->toBeAuthenticated();
 });
 
-test('negated failure', function () {
+test('negated fail', function () {
     $user = User::make([
         'name'     => 'test user',
         'email'    => 'email@test.xx',

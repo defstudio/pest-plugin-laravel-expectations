@@ -37,7 +37,7 @@ test('[HasMany] pass with custom relationship', function () {
     expect($post)->toOwn($comment, 'posted_comments');
 });
 
-test('[HasMany] failure without needed custom relationship', function () {
+test('[HasMany] fail without needed custom relationship', function () {
     $post = Post::create([
         'title' => 'foo',
     ]);
@@ -52,7 +52,7 @@ test('[HasMany] failure without needed custom relationship', function () {
     expect($post)->toOwn($comment);
 })->throws(ExpectationFailedException::class, 'Failed to assert that [Tests\Models\Post] has relationship [comment / comments]');
 
-test('[HasMany] failure without association', function () {
+test('[HasMany] fail without association', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
@@ -66,7 +66,7 @@ test('[HasMany] failure without association', function () {
     expect($user)->toOwn($post);
 })->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\User#1] has a relationship with [Tests\Models\Post#1]");
 
-test('[HasMany] failure when passing wrong model ', function () {
+test('[HasMany] fail when passing wrong model ', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
@@ -86,7 +86,7 @@ test('[HasMany] failure when passing wrong model ', function () {
     expect($user)->toOwn($post_2);
 })->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\User#1] has a relationship with [Tests\Models\Post#2]");
 
-test('[HasMany] failure when passing wrong model class', function () {
+test('[HasMany] fail when passing wrong model class', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
@@ -123,7 +123,7 @@ test('[HasOne] pass', function () {
     expect($user)->toOwn($address);
 });
 
-test('[HasOne] failure without association', function () {
+test('[HasOne] fail without association', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
@@ -137,7 +137,7 @@ test('[HasOne] failure without association', function () {
     expect($user)->toOwn($address);
 })->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\User#1] has a relationship with [Tests\Models\Address#1]");
 
-test('[HasOne] failure when passing wrong model ', function () {
+test('[HasOne] fail when passing wrong model ', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
@@ -157,7 +157,7 @@ test('[HasOne] failure when passing wrong model ', function () {
     expect($user)->toOwn($address_2);
 })->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\User#1] has a relationship with [Tests\Models\Address#2]");
 
-test('[HasOne] failure when passing wrong model class', function () {
+test('[HasOne] fail when passing wrong model class', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',

@@ -15,7 +15,7 @@ test('pass', function () {
     expect($user)->toBeSoftDeleted();
 });
 
-test('failure', function () {
+test('fail', function () {
     $user = SoftDeletableUser::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
@@ -35,7 +35,7 @@ test('negated pass', function () {
     expect($user)->not->toBeSoftDeleted();
 });
 
-test('negated failure', function () {
+test('negated fail', function () {
     $user = SoftDeletableUser::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',

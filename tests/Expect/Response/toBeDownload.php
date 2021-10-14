@@ -11,11 +11,11 @@ test('pass with filename', function () {
     expect(get('/download/test.txt'))->toBeDownload('test.txt');
 });
 
-test('failure', function () {
+test('fail', function () {
     expect(get('/ok'))->toBeDownload();
 })->throws(ExpectationFailedException::class, 'Response does not offer a file download');
 
-test('filename failure', function () {
+test('filename fail', function () {
     expect(get('/download/test.txt'))->toBeDownload('foo.bin');
 })->throws(ExpectationFailedException::class, 'Expected file [foo.bin] is not present in Content-Disposition header');
 
@@ -27,6 +27,6 @@ test('filename pass negated', function () {
     expect(get('/download/test.txt'))->not->toBeDownload('foo.bin');
 });
 
-test('negated failure', function () {
+test('negated fail', function () {
     expect(get('/download/test'))->not->toBeDownload();
 })->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (...) not to be download");

@@ -28,7 +28,7 @@ test('pass with multiple arguments', function () {
     expect($user)->toBeAbleTo('merge', [$post_1, $post_2]);
 });
 
-test('failure', function () {
+test('fail', function () {
     $user = User::make(['id' => 1]);
     $post = Post::make(['user_id' => 2]);
 
@@ -50,7 +50,7 @@ test('negated pass', function () {
     expect($user)->not->toBeAbleTo('edit', $post);
 });
 
-test('negated failure', function () {
+test('negated fail', function () {
     $user = User::make(['id' => 1]);
     $post = Post::make(['user_id' => 1]);
 

@@ -15,11 +15,11 @@ test('pass with non default storage', function () {
     expect('testfile.txt')->toExistInStorage('secondary');
 });
 
-test('failure', function () {
+test('fail', function () {
     expect('testfile.txt')->toExistInStorage();
 })->throws(ExpectationFailedException::class, "Failed asserting that testfile.txt exist in 'default' storage");
 
-test('failure with non default storage', function () {
+test('fail with non default storage', function () {
     Storage::put('testfile.txt', 'foo');
     expect('testfile.txt')->toExistInStorage('secondary');
 })->throws(ExpectationFailedException::class, "Failed asserting that testfile.txt exist in 'secondary' storage");

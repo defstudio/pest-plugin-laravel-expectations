@@ -15,7 +15,7 @@ test('pass', function () {
     expect(['email' => 'email@test.xx'])->toBeInDatabase('users');
 });
 
-test('failure', function () {
+test('fail', function () {
     expect(['id' => 1])->toBeInDatabase('users');
 })->throws(ExpectationFailedException::class);
 
@@ -23,7 +23,7 @@ test('negated pass', function () {
     expect(['id' => 1])->not->toBeInDatabase('users');
 });
 
-test('negated failure', function () {
+test('negated fail', function () {
     User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
