@@ -1,4 +1,4 @@
-# A Pest plugin to add Laravel specific expectations
+![Pest Laravel Expectations](https://banners.beyondco.de/Pest%20Laravel%20Expectations.png?theme=light&packageManager=composer+require&packageName=--dev+defstudio%2Fpest-plugin-laravel-expectations&pattern=circuitBoard&style=style_2&description=Laravel+tailored+%40pestphp+expectations&md=1&showWatermark=0&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/defstudio/pest-plugin-laravel-expectations.svg?style=flat-square)](https://packagist.org/packages/defstudio/pest-plugin-laravel-expectations)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/def-studio/pest-plugin-laravel-expectations/Run%20Tests?label=tests)](https://github.com/def-studio/pest-plugin-laravel-expectations/actions?query=workflow%3A"Run+Tests"+branch%3Amain)
@@ -24,162 +24,12 @@ You can install the package via composer:
 composer require --dev defstudio/pest-plugin-laravel-expectations
 ```
 
-## Usage
-
 The expectations added by this plugin are automatically loaded into Pest's expectation system. They can be used along other expectations.
 
-## Authentication Expectations
 
-### `toBeAuthenticated()`
+## Documentation
 
-Assert that the given User is authenticated
-
-```php
-expect($user)->toBeAuthenticated();
- ```
-
-### `toBeValidCredentials()`
-
-Assert that the given credentials are valid.
-
-```php
-expect(['email' => 'test@email.it', 'password' => 'foo'])->toBeValidCredentials();
- ```
-
-### `toBeInvalidCredentials()`
-
-Assert that the given credentials are invalid.
-
-```php
-expect(['email' => 'test@email.it', 'password' => 'wrongpassword'])->toBeInvalidCredentials();
- ```
-
-### `toBeAbleTo()`
-
-Assert that the given User is authorized to do something
-
-```php
-expect($user)->toBeAbleTo('edit', $post);
- ```
-
-
-## Collections Expectations
-
-
-### `toBeCollection()`
-
-Assert that the value is an instance of \Illuminate\Support\Collection
-
-```php
-expect(collect[1,2,3])->toBeCollection();
- ```
-
-### `toBeEloquentCollection()`
-
-Assert that the value is an instance of \Illuminate\Database\Eloquent\Collection
-
-```php
-expect(User::all())->toBeCollection();
- ```
-
-
-## Models Expectations
-
-### `toBeDeleted()`
-
-Assert the given model to be deleted.
-
-```php
-expect($model)->toBeDeleted();
- ```
-
-### `toBeSoftDeleted()`
-
-Assert the given model to be soft deleted.
-
-```php
-expect($model)->toBeSoftDeleted();
- ```
-
-### `toExist()`
-
-Assert the given model exists in the database.
-
-```php
-expect($model)->toExist();
- ```
-
-### `toBelongTo()`
-
-Assert the given model belongs to another one.
-
-```php
-expect($post)->toBelongTo($user);
- ```
-
-### `toOwn()`
-
-Assert the given model owns child model.
-
-```php
-expect($user)->toOwn($post); //<-- HasMany relationship
-
-expect($user)->toOwn($address); //<-- HasOne relationship
- ```
-
-## Database Expectations
-
-### `toBeInDatabase()`
-
-Assert that the given _where condition_ exists in the database
-
-```php
-expect(['name' => 'Fabio'])->toBeInDatabase(table: 'users');
- ```
-
-## Response Expectations
-
-### `toBeSuccessful()`
-
-Assert that the response has a successful status code
-
-```php
-expect(get('/secret/location'))->toBeRedirect('/login');
- ```
-
-### `toBeRedirect()`
-
-Assert that the given response is a redirection
-
-```php
-expect(get('/secret/location'))->toBeRedirect('/login');
- ```
-
-### `toBeDownload()`
-
-Assert that the given response offers a file download
-
-```php
-expect(get('/reports/last.pdf'))->toBeDownload();
- ```
-
-### `toHaveStatus()`
-
-Assert that the given response has a specific status code.
-
-```php
-expect(post('/comment'))->toHaveStatus(201);
- ```
-
-## Storage Expectations
-
-### `toExistInStorage()`
-
-Assert that the given file exist in storage
-
-```php
-expect('test_file.txt')->toExistInStorage();
- ```
+A full documentation with a detailed list of **available expectations** is available at [https://def-studio.github.io/pest-plugin-laravel-expectations-docs](https://def-studio.github.io/pest-plugin-laravel-expectations-docs/)
 
 ## Autocompletion
 
