@@ -4,6 +4,7 @@
 
 namespace Tests\Concerns;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 trait DefineRoutes
@@ -32,6 +33,14 @@ trait DefineRoutes
             Storage::put($filename, 'test');
 
             return Storage::download($filename, $filename);
+        });
+
+        $router->get('secret', function () {
+            if (Auth::guest()) {
+                abort(403);
+            }
+
+            return '42';
         });
 
         $router->get('page', function () {

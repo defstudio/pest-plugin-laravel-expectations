@@ -49,7 +49,7 @@ expect()->extend(
 expect()->extend(
     'toBeOk',
     /**
-     * Assert that the response has a 200 status code.
+     * Assert that the given response has a 200 status code.
      */
     function (): Expectation {
         /** @var TestResponse $response */
@@ -63,12 +63,26 @@ expect()->extend(
 expect()->extend(
     'toBeNotFound',
     /**
-     * Assert that the response has a not found status code.
+     * Assert that the given response has a not found status code.
      */
     function (): Expectation {
         /** @var TestResponse $response */
         $response = $this->value;
         $response->assertNotFound();
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeForbidden',
+    /**
+     * Assert that the given response has a forbidden status code.
+     */
+    function (): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertForbidden();
 
         return $this;
     }
