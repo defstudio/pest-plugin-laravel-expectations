@@ -77,7 +77,7 @@ expect()->extend(
 expect()->extend(
     'toHaveNoContent',
     /**
-     * Assert that the response has a not found status code.
+     * Assert that the response has the given status code and no content.
      */
     function (int $status = 204): Expectation {
         /** @var TestResponse $response */
