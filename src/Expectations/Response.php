@@ -110,3 +110,57 @@ expect()->extend(
         return $this;
     }
 );
+
+expect()->extend(
+    'toRenderText',
+    /*
+     * Assert that the given response contains a string or array of strings in its text.
+     *
+     * @param string|array $text
+     */
+    function ($text, bool $escape = true): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertSeeText($text, $escape);
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toRenderTextInOrder',
+    /*
+     * Assert that the given response contains an ordered sequence of strings in its text.
+     */
+    function (array $texts, bool $escape = true): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertSeeTextInOrder($texts, $escape);
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toContainText',
+    /*
+     * Assert that the given response contains a string or array of strings in its text.
+     *
+     * @param string|array $text
+     */
+    function ($text, bool $escape = true): Expectation {
+        return $this->toRenderText($text, $escape);
+    }
+);
+
+expect()->extend(
+    'toContainTextInOrder',
+    /*
+     * Assert that the given response contains an ordered sequence of strings in its text.
+     *
+     * @param string|array $text
+     */
+    function ($text, bool $escape = true): Expectation {
+        return $this->toRenderTextInOrder($text, $escape);
+    }
+);

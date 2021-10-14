@@ -5,3 +5,7 @@
 <p>
     content
 </p>
+
+<p>
+    content with <strong>bold</strong> text
+</p>
