@@ -4,6 +4,7 @@
 
 namespace Tests\Concerns;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 trait DefineRoutes
@@ -40,6 +41,10 @@ trait DefineRoutes
 
         $router->get('page', function () {
             return view('page');
+        });
+
+        $router->get('staff-only', function (Request $request) {
+            return response('hi', $request->pin == 1337 ? 200 : 401);
         });
     }
 }
