@@ -15,6 +15,10 @@ trait DefineRoutes
             return response()->noContent(200);
         })->name('ok');
 
+        $router->get('no-content', function () {
+            return response()->noContent();
+        })->name('no-content');
+
         $router->get('redirect', function () {
             return redirect()->to('/ok');
         })->name('redirect');

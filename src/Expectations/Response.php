@@ -75,6 +75,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toHaveNoContent',
+    /**
+     * Assert that the response has the given status code and no content.
+     */
+    function (int $status = 204): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertNoContent($status);
+
+        return $this;
+    }
+);
+      
+expect()->extend(
     'toBeForbidden',
     /**
      * Assert that the given response has a forbidden status code.
