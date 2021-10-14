@@ -5,7 +5,15 @@
 Assert that the response has a successful status code.
 
 ```php
-expect(get('/secret/location'))->toBeRedirect('/login');
+expect(get('/page'))->toBeSuccessful();
+ ```
+
+### `toBeOk()`
+
+Assert that the response has a 200 status code.
+
+```php
+expect(get('/page'))->toBeOk();
  ```
 
 ### `toBeRedirect()`
