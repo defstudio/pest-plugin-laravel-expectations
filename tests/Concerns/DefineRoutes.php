@@ -46,5 +46,9 @@ trait DefineRoutes
         $router->get('staff-only', function (Request $request) {
             return response('hi', $request->pin == 1337 ? 200 : 401);
         });
+
+        $router->get('secret', function () {
+            abort(403);
+        });
     }
 }
