@@ -57,9 +57,12 @@ composer test:unit
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
-## Contributing
+## Credits
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+- [Fabio Ivona](https://github.com/def-studio)
+- [All Contributors](../../contributors)
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details on how to contribute to this plugin.
 
 ## Security Vulnerabilities
 
