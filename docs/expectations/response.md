@@ -24,6 +24,14 @@ Assert that the response has a not found status code.
 expect(get('/unknown'))->toBeNotFound();
  ```
 
+### `toBeForbidden()`
+
+Assert that the given response has a forbidden status code.
+
+```php
+expect(get('/secret'))->toBeForbidden();
+ ```
+
 ### `toHaveNoContent()`
 
 Assert that the response has the given status code and no content.
