@@ -61,6 +61,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeNotFound',
+    /**
+     * Assert that the response has a not found status code.
+     */
+    function (): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertNotFound();
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toHaveStatus',
     /**
      * Assert that the given response has a specific status code.
