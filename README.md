@@ -1,4 +1,4 @@
-# A Pest plugin to add Laravel specific expectations
+![Pest Laravel Expectations](https://banners.beyondco.de/Pest%20Laravel%20Expectations.png?theme=light&packageManager=composer+require&packageName=--dev+defstudio%2Fpest-plugin-laravel-expectations&pattern=circuitBoard&style=style_2&description=Laravel+tailored+%40pestphp+expectations&md=1&showWatermark=0&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/defstudio/pest-plugin-laravel-expectations.svg?style=flat-square)](https://packagist.org/packages/defstudio/pest-plugin-laravel-expectations)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/def-studio/pest-plugin-laravel-expectations/Run%20Tests?label=tests)](https://github.com/def-studio/pest-plugin-laravel-expectations/actions?query=workflow%3A"Run+Tests"+branch%3Amain)
@@ -24,62 +24,12 @@ You can install the package via composer:
 composer require --dev defstudio/pest-plugin-laravel-expectations
 ```
 
-## Usage
-
 The expectations added by this plugin are automatically loaded into Pest's expectation system. They can be used along other expectations.
 
-## Expectations
 
-### [Authentication](docs/expectations/authentication.md)
+## Documentation
 
-- [`toBeAbleTo()`](docs/expectations/authentication.md#tobeableto)
-- [`toBeAuthenticated()`](docs/expectations/authentication.md#tobeauthenticated)
-- [`toBeInvalidCredentials()`](docs/expectations/authentication.md#tobeinvalidcredentials)
-- [`toBeValidCredentials()`](docs/expectations/authentication.md#tobevalidcredentials)
-
-### [Collections](docs/expectations/collections.md)
-
-- [`toBeCollection()`](docs/expectations/collections.md#tobecollection)
-- [`toBeEloquentCollection()`](docs/expectations/collections.md#tobeeloquentcollection)
-
-
-### [Models](docs/expectations/models.md)
-
-- [`toBeDeleted()`](docs/expectations/models.md#tobedeleted)
-- [`toBeSoftDeleted()`](docs/expectations/models.md#tobesoftdeleted)
-- [`toBelongTo()`](docs/expectations/models.md#tobelongto)
-- [`toExist()`](docs/expectations/models.md#toexist)
-- [`toOwn()`](docs/expectations/models.md#toown)
-
-
-### [Database](docs/expectations/database.md)
-
-- [`toBeInDatabase()`](docs/expectations/database.md#tobeindatabase)
-
-
-
-### [Response](docs/expectations/response.md)
-
-- [`toBeSuccessful()`](docs/expectations/response.md#tobesuccessful)
-- [`toBeOk()`](docs/expectations/response.md#tobeok)
-- [`toBeNotFound()`](docs/expectations/response.md#tobenotfound)
-- [`toBeForbidden()`](docs/expectations/response.md#tobeforbidden)
-- [`toBeUnauthorized()`](docs/expectations/response.md#tobeforbidden)
-- [`toHaveNoContent()`](docs/expectations/response.md#tohavenocontent)
-- [`toBeRedirect()`](docs/expectations/response.md#toberedirect)
-- [`toBeDownload()`](docs/expectations/response.md#tobedownload)
-- [`toHaveStatus()`](docs/expectations/response.md#tohavestatus)
-- [`toRenderInOrder()`](docs/expectations/response.md#torenderinorder)
-- [`toRenderText()`](docs/expectations/response.md#torendertext)
-- [`toRenderTextInOrder()`](docs/expectations/response.md#torendertextinorder)
-- [`toContainText()`](docs/expectations/response.md#tocontaintext)
-- [`toContainTextInOrder()`](docs/expectations/response.md#tocontaintextinorder)
-
-
-### [Storage](docs/expectations/storage.md)
-
-- [`toExistInStorage()`](docs/expectations/storage.md#toexistinstorage)
-
+A full documentation with a detailed list of **available expectations** is available at [https://def-studio.github.io/pest-plugin-laravel-expectations-docs](https://def-studio.github.io/pest-plugin-laravel-expectations-docs/)
 
 ## Autocompletion
 
