@@ -10,7 +10,7 @@ parameters:
 
     checkMissingIterableValueType: true
     checkGenericClassInNonGenericObjectType: false
-    reportUnmatchedIgnoredErrors: true
+    reportUnmatchedIgnoredErrors: false
 
     ignoreErrors:
         - "#Undefined variable: \\$this#"
@@ -22,3 +22,4 @@ parameters:
         - "#Construct empty\\(\\) is not allowed#"
         - "#construct empty\\(\\) should not be used#"
         - "#Thrown exceptions in a catch block must bundle the previous exception#"
+        - "#Call to an undefined method Illuminate\\\\Testing\\\\TestResponse::assert(V|Inv)alid#"
