@@ -75,6 +75,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toHaveNoContent',
+    /**
+     * Assert that the response has a not found status code.
+     */
+    function (int $status = 204): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertNoContent($status);
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toHaveStatus',
     /**
      * Assert that the given response has a specific status code.
