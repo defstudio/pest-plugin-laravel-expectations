@@ -78,3 +78,20 @@ expect()->extend(
         return $this;
     }
 );
+
+//TODO: alias with ->toContain() when the pipe PR gets merged
+expect()->extend(
+    'toRender',
+    /*
+     * Assert that the given response contains a string or array of strings.
+     *
+     * @param string|array $value
+     */
+    function ($value, bool $escape = true): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertSee($value, $escape);
+
+        return $this;
+    }
+);

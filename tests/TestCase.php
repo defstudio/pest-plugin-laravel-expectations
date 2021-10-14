@@ -4,42 +4,18 @@ namespace Tests;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
+use Tests\Concerns\DefineRoutes;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
+    use DefineRoutes;
+
     protected function setUp(): void
     {
         parent::setUp();
 
         $this->loadMigrationsFrom(__DIR__ . '/resources/database/migrations');
         $this->artisan('migrate', ['--database' => 'testbench'])->run();
-    }
-
-    protected function defineWebRoutes($router)
-    {
-        $router->get('ok', function () {
-            return response()->noContent(200);
-        })->name('ok');
-
-        $router->get('redirect', function () {
-            return redirect()->to('/ok');
-        })->name('redirect');
-
-        $router->get('redirect/out', function () {
-            return redirect()->to('https://www.google.it');
-        })->name('redirect.out');
-
-        $router->get('status/{status}', function ($status) {
-            return response()->json([
-                'status' => $status,
-            ], $status);
-        });
-
-        $router->get('download/{filename}', function ($filename) {
-            Storage::put($filename, 'test');
-
-            return Storage::download($filename, $filename);
-        });
     }
 
     protected function getEnvironmentSetUp($app): void

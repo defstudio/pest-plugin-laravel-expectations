@@ -13,7 +13,7 @@ test('pass', function () {
     expect($user)->toExist();
 });
 
-test('failure', function () {
+test('fail', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
@@ -37,7 +37,7 @@ test('negated pass', function () {
     expect($user)->not->toExist();
 });
 
-test('negated failure', function () {
+test('negated fail', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',

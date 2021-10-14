@@ -5,7 +5,7 @@
 >
     <testsuites>
         <testsuite name="default">
-            <directory suffix=".php">./tests</directory>
+            <directory suffix=".php">./tests/Expect</directory>
         </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">

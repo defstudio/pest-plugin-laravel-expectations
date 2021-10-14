@@ -10,7 +10,7 @@ test('pass', function () {
     ])->toBeInvalidCredentials();
 });
 
-test('failure', function () {
+test('fail', function () {
     User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
@@ -36,7 +36,7 @@ test('negated pass', function () {
     ])->not->toBeInvalidCredentials();
 });
 
-test('negated failure', function () {
+test('negated fail', function () {
     expect([
         'email'    => 'email@test.xx',
         'password' => 'password',

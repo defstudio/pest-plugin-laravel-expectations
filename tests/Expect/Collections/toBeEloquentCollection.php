@@ -8,7 +8,7 @@ test('pass', function () {
     expect('1, 2, 3')->not->toBeCollection();
 });
 
-test('failure', function () {
+test('fail', function () {
     expect(collect(['a', 'b', 'c']))->toBeEloquentCollection();
 })->throws(ExpectationFailedException::class);
 
@@ -16,6 +16,6 @@ test('negated pass', function () {
     expect(collect(['a', 'b', 'c']))->not->toBeEloquentCollection();
 });
 
-test('negated failure', function () {
+test('negated fail', function () {
     expect(Collection::empty())->not->toBeEloquentCollection();
 })->throws(ExpectationFailedException::class);

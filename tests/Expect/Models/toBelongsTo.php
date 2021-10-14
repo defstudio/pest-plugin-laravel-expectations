@@ -36,7 +36,7 @@ test('pass with custom relationship', function () {
     expect($comment)->toBelongTo($post, 'related_post');
 });
 
-test('failure without needed custom relationship', function () {
+test('fail without needed custom relationship', function () {
     $post = Post::create([
         'title' => 'foo',
     ]);
@@ -51,7 +51,7 @@ test('failure without needed custom relationship', function () {
     expect($comment)->toBelongTo($post);
 })->throws(ExpectationFailedException::class, "Failed to assert that [Tests\Models\Comment] has relationship [post]");
 
-test('failure without association', function () {
+test('fail without association', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
@@ -65,7 +65,7 @@ test('failure without association', function () {
     expect($post)->toBelongTo($user);
 })->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\Post#1] belongs to [Tests\Models\User#1]");
 
-test('failure when passing wrong model ', function () {
+test('fail when passing wrong model ', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',
@@ -85,7 +85,7 @@ test('failure when passing wrong model ', function () {
     expect($firstPost)->toBelongTo($user);
 })->throws(ExpectationFailedException::class, "Failed asserting that [Tests\Models\Post#1] belongs to [Tests\Models\User#1]");
 
-test('failure when passing wrong model class', function () {
+test('fail when passing wrong model class', function () {
     $user = User::create([
         'name'     => 'test user',
         'email'    => 'email@test.xx',

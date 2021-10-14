@@ -17,7 +17,7 @@ test('pass', function ($status) {
     Response::HTTP_SERVICE_UNAVAILABLE,
 ]);
 
-test('failure', function () {
+test('fail', function () {
     expect(get('/status/404'))->toHaveStatus(200);
 })->throws(ExpectationFailedException::class, 'Expected response status code [200] but received 404');
 
@@ -25,6 +25,6 @@ test('pass negated', function () {
     expect(get('/status/404'))->not->toHaveStatus(200);
 });
 
-test('failure negated', function () {
+test('fail negated', function () {
     expect(get('/status/200'))->not->toHaveStatus(200);
 })->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (...) not to have status 200");
