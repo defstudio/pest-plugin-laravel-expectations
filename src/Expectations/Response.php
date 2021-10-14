@@ -47,6 +47,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeOk',
+    /**
+     * Assert that the response has a 200 status code.
+     */
+    function (): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertOk();
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toHaveStatus',
     /**
      * Assert that the given response has a specific status code.
