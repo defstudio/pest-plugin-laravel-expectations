@@ -75,6 +75,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeUnauthorized',
+    /**
+     * Assert that the given response has an unauthorized status code.
+     */
+    function (): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertUnauthorized();
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toHaveNoContent',
     /**
      * Assert that the response has the given status code and no content.
