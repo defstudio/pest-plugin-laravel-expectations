@@ -28,132 +28,49 @@ composer require --dev defstudio/pest-plugin-laravel-expectations
 
 The expectations added by this plugin are automatically loaded into Pest's expectation system. They can be used along other expectations.
 
-##Expectations
+## Expectations
 
-###Authentication
-- [`toBeAuthenticated()`](docs/authentication_expectations.md#tobeauthenticated)
-- [`toBeValidCredentials()`](docs/authentication_expectations.md#tobevalidcredentials)
-- [`toBeInvalidCredentials()`](docs/authentication_expectations.md#tobeinvalidcredentials)
-- [`toBeAbleTo()`](docs/authentication_expectations.md#tobeableto)
+### [Authentication](docs/expectations/authentication.md)
 
+- [`toBeAuthenticated()`](docs/expectations/authentication.md#tobeauthenticated)
+- [`toBeValidCredentials()`](docs/expectations/authentication.md#tobevalidcredentials)
+- [`toBeInvalidCredentials()`](docs/expectations/authentication.md#tobeinvalidcredentials)
+- [`toBeAbleTo()`](docs/expectations/authentication.md#tobeableto)
 
-## Collections Expectations
+### [Collections](docs/expectations/collections.md)
 
-
-### `toBeCollection()`
-
-Assert that the value is an instance of \Illuminate\Support\Collection
-
-```php
-expect(collect[1,2,3])->toBeCollection();
- ```
-
-### `toBeEloquentCollection()`
-
-Assert that the value is an instance of \Illuminate\Database\Eloquent\Collection
-
-```php
-expect(User::all())->toBeCollection();
- ```
+- [`toBeCollection()`](docs/expectations/collections.md#tobecollection)
+- [`toBeEloquentCollection()`](docs/expectations/collections.md#tobeeloquentcollection)
 
 
-## Models Expectations
+### [Models](docs/expectations/models.md)
 
-### `toBeDeleted()`
+- [`toBeDeleted()`](docs/expectations/models.md#tobedeleted)
+- [`toBeSoftDeleted()`](docs/expectations/models.md#tobesoftdeleted)
+- [`toExist()`](docs/expectations/models.md#toexist)
+- [`toBelongTo()`](docs/expectations/models.md#tobelongto)
+- [`toOwn()`](docs/expectations/models.md#toown)
 
-Assert the given model to be deleted.
 
-```php
-expect($model)->toBeDeleted();
- ```
+### [Database](docs/expectations/database.md)
 
-### `toBeSoftDeleted()`
+- [`toBeInDatabase()`](docs/expectations/database.md#tobeindatabase)
 
-Assert the given model to be soft deleted.
 
-```php
-expect($model)->toBeSoftDeleted();
- ```
 
-### `toExist()`
+### [Response](docs/expectations/response.md)
 
-Assert the given model exists in the database.
+- [`toBeSuccessful()`](docs/expectations/response.md#tobesuccessful)
+- [`toBeRedirect()`](docs/expectations/response.md#toberedirect)
+- [`toBeDownload()`](docs/expectations/response.md#tobedownload)
+- [`toHaveStatus()`](docs/expectations/response.md#tohavestatus)
+- [`toRender()`](docs/expectations/response.md#torender)
 
-```php
-expect($model)->toExist();
- ```
 
-### `toBelongTo()`
+### [Storage](docs/expectations/storage.md)
 
-Assert the given model belongs to another one.
+- [`toExistInStorage()`](docs/expectations/storage.md#toexistinstorage)
 
-```php
-expect($post)->toBelongTo($user);
- ```
-
-### `toOwn()`
-
-Assert the given model owns child model.
-
-```php
-expect($user)->toOwn($post); //<-- HasMany relationship
-
-expect($user)->toOwn($address); //<-- HasOne relationship
- ```
-
-## Database Expectations
-
-### `toBeInDatabase()`
-
-Assert that the given _where condition_ exists in the database
-
-```php
-expect(['name' => 'Fabio'])->toBeInDatabase(table: 'users');
- ```
-
-## Response Expectations
-
-### `toBeSuccessful()`
-
-Assert that the response has a successful status code
-
-```php
-expect(get('/secret/location'))->toBeRedirect('/login');
- ```
-
-### `toBeRedirect()`
-
-Assert that the given response is a redirection
-
-```php
-expect(get('/secret/location'))->toBeRedirect('/login');
- ```
-
-### `toBeDownload()`
-
-Assert that the given response offers a file download
-
-```php
-expect(get('/reports/last.pdf'))->toBeDownload();
- ```
-
-### `toHaveStatus()`
-
-Assert that the given response has a specific status code.
-
-```php
-expect(post('/comment'))->toHaveStatus(201);
- ```
-
-## Storage Expectations
-
-### `toExistInStorage()`
-
-Assert that the given file exist in storage
-
-```php
-expect('test_file.txt')->toExistInStorage();
- ```
 
 ## Autocompletion
 

@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [v1.3.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.2.0...v1.3.0) - 2021-10-14
+### Added
+- `toRender()` expectation
 
 ## [v1.2.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.1.0...v1.2.0) - 2021-10-11
 ### Added

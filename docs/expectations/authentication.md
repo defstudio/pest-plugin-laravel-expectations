@@ -2,7 +2,7 @@
 
 ### `toBeAuthenticated()`
 
-Assert that the given User is authenticated
+Assert that the given User is authenticated.
 
 ```php
 expect($user)->toBeAuthenticated();
@@ -26,7 +26,7 @@ expect(['email' => 'test@email.it', 'password' => 'wrongpassword'])->toBeInvalid
 
 ### `toBeAbleTo()`
 
-Assert that the given User is authorized to do something
+Assert that the given User is authorized to do something.
 
 ```php
 expect($user)->toBeAbleTo('edit', $post);
