@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - `toRender()` expectation
 - `toRenderInOrder()` expectation
+- `toRenderText()` expectation
+- `toRenderTextInOrder()` expectation
+- `toContainText()` expectation
+- `toContainTextInOrder()` expectation
 
 ## [v1.2.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.1.0...v1.2.0) - 2021-10-11
 ### Added

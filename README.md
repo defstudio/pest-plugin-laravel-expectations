@@ -64,8 +64,11 @@ The expectations added by this plugin are automatically loaded into Pest's expec
 - [`toBeRedirect()`](docs/expectations/response.md#toberedirect)
 - [`toBeDownload()`](docs/expectations/response.md#tobedownload)
 - [`toHaveStatus()`](docs/expectations/response.md#tohavestatus)
-- [`toRender()`](docs/expectations/response.md#torender)
 - [`toRenderInOrder()`](docs/expectations/response.md#torenderinorder)
+- [`toRenderText()`](docs/expectations/response.md#torendertext)
+- [`toRenderTextInOrder()`](docs/expectations/response.md#torendertextinorder)
+- [`toContainText()`](docs/expectations/response.md#tocontaintext)
+- [`toContainTextInOrder()`](docs/expectations/response.md#tocontaintextinorder)
 
 
 ### [Storage](docs/expectations/storage.md)

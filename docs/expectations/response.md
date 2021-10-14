@@ -37,7 +37,7 @@ expect(post('/comment'))->toHaveStatus(201);
 Assert that the given response contains a string or array of strings.
 
 ```php
-expect(get('/page'))->toRender('<h1>title</h1>', escape: false);
+expect(get('/page'))->toRender('<h1>title</h1>');
  ```
 
 ### `toRenderInOrder()`
@@ -45,5 +45,30 @@ expect(get('/page'))->toRender('<h1>title</h1>', escape: false);
 Assert that the given response contains an ordered sequence of strings.
 
 ```php
-expect(get('/page'))->toRenderInOrder('<h1>title</h1>', escape: false);
+expect(get('/page'))->toRenderInOrder(['<h1>title</h1>', '<h3>section</h3>']);
  ```
+
+### `toRenderText()`
+
+Assert that the given response contains a string or array of strings in its text.
+
+```php
+expect(get('/page'))->toRender('title');
+ ```
+
+### `toRenderTextInOrder()`
+
+Assert that the given response contains an ordered sequence of strings in its text.
+
+```php
+expect(get('/page'))->toRenderInOrder(['title', 'content'], escape: false);
+ ```
+
+### `toContainText()`
+
+alias for [`toRenderText()`](#torendertext)
+
+### `toContainTextInOrder()`
+
+alias for [`toRenderTextInOrder()`](#torendertextinorder)
+
