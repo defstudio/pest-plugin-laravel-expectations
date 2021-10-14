@@ -87,7 +87,7 @@ expect()->extend(
         return $this;
     }
 );
-      
+
 expect()->extend(
     'toBeForbidden',
     /**
