@@ -85,12 +85,27 @@ expect()->extend(
     /*
      * Assert that the given response contains a string or array of strings.
      *
-     * @param string|array $value
+     * @param string|array $string
      */
-    function ($value, bool $escape = true): Expectation {
+    function ($string, bool $escape = true): Expectation {
         /** @var TestResponse $response */
         $response = $this->value;
-        $response->assertSee($value, $escape);
+        $response->assertSee($string, $escape);
+
+        return $this;
+    }
+);
+
+//TODO: alias with ->toContainInOrder() when the pipe PR gets merged
+expect()->extend(
+    'toRenderInOrder',
+    /*
+     * Assert that the given response contains an ordered sequence of strings
+     */
+    function (array $strings, bool $escape = true): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertSeeInOrder($strings, $escape);
 
         return $this;
     }
