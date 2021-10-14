@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeOk()` expectation
 - `toBeNotFound()` expectation
 - `toBeForbidden()` expectation
+- `toBeUnauthorized()` expectation
 - `toHaveNoContent()` expectation
 - `toRender()` expectation
 - `toRenderInOrder()` expectation

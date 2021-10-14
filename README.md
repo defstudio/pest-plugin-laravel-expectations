@@ -32,10 +32,10 @@ The expectations added by this plugin are automatically loaded into Pest's expec
 
 ### [Authentication](docs/expectations/authentication.md)
 
-- [`toBeAuthenticated()`](docs/expectations/authentication.md#tobeauthenticated)
-- [`toBeValidCredentials()`](docs/expectations/authentication.md#tobevalidcredentials)
-- [`toBeInvalidCredentials()`](docs/expectations/authentication.md#tobeinvalidcredentials)
 - [`toBeAbleTo()`](docs/expectations/authentication.md#tobeableto)
+- [`toBeAuthenticated()`](docs/expectations/authentication.md#tobeauthenticated)
+- [`toBeInvalidCredentials()`](docs/expectations/authentication.md#tobeinvalidcredentials)
+- [`toBeValidCredentials()`](docs/expectations/authentication.md#tobevalidcredentials)
 
 ### [Collections](docs/expectations/collections.md)
 
@@ -47,8 +47,8 @@ The expectations added by this plugin are automatically loaded into Pest's expec
 
 - [`toBeDeleted()`](docs/expectations/models.md#tobedeleted)
 - [`toBeSoftDeleted()`](docs/expectations/models.md#tobesoftdeleted)
-- [`toExist()`](docs/expectations/models.md#toexist)
 - [`toBelongTo()`](docs/expectations/models.md#tobelongto)
+- [`toExist()`](docs/expectations/models.md#toexist)
 - [`toOwn()`](docs/expectations/models.md#toown)
 
 
@@ -64,6 +64,7 @@ The expectations added by this plugin are automatically loaded into Pest's expec
 - [`toBeOk()`](docs/expectations/response.md#tobeok)
 - [`toBeNotFound()`](docs/expectations/response.md#tobenotfound)
 - [`toBeForbidden()`](docs/expectations/response.md#tobeforbidden)
+- [`toBeUnauthorized()`](docs/expectations/response.md#tobeforbidden)
 - [`toHaveNoContent()`](docs/expectations/response.md#tohavenocontent)
 - [`toBeRedirect()`](docs/expectations/response.md#toberedirect)
 - [`toBeDownload()`](docs/expectations/response.md#tobedownload)

@@ -32,6 +32,14 @@ Assert that the given response has a forbidden status code.
 expect(get('/secret'))->toBeForbidden();
  ```
 
+### `toBeUnauthorized()`
+
+Assert that the given response has an unauthorized status code.
+
+```php
+expect(get('/admin-area'))->toBeUnauthorized();
+ ```
+
 ### `toHaveNoContent()`
 
 Assert that the response has the given status code and no content.
