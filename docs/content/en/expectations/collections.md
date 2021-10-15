@@ -1,5 +1,11 @@
-## Collections Expectations
-
+---
+title: Collections Expectations
+menuTitle: Collections
+description: ''
+category: 'Expectations'
+fullscreen: false
+position: 10
+---
 
 ### `toBeCollection()`
 

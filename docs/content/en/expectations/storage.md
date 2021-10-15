@@ -1,4 +1,11 @@
-## Storage Expectations
+---
+title: Storage Expectations
+menuTitle: Storage
+description: ''
+category: 'Expectations'
+fullscreen: false
+position: 10
+---
 
 ### `toExistInStorage()`
 

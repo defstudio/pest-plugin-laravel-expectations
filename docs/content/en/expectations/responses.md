@@ -1,4 +1,11 @@
-## Response Expectations
+---
+title: Responses Expectations
+menuTitle: Responses
+description: ''
+category: 'Expectations'
+fullscreen: false
+position: 10
+---
 
 ### `toBeSuccessful()`
 
@@ -106,9 +113,8 @@ expect(get('/page'))->toRenderInOrder(['title', 'content'], escape: false);
 
 ### `toContainText()`
 
-alias for [`toRenderText()`](#torendertext)
+alias for [`toRenderText()`](expectations/responses#torendertext)
 
 ### `toContainTextInOrder()`
 
-alias for [`toRenderTextInOrder()`](#torendertextinorder)
-
+alias for [`toRenderTextInOrder()`](expectations/responses#torendertextinorder)

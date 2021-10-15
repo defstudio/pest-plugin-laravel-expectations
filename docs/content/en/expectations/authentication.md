@@ -1,4 +1,11 @@
-## Authentication Expectations
+---
+title: Authentication Expectations
+menuTitle: Authentication
+description: ''
+category: 'Expectations'
+fullscreen: false
+position: 10
+---
 
 ### `toBeAuthenticated()`
 

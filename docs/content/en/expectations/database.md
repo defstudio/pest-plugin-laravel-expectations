@@ -1,4 +1,11 @@
-## Database Expectations
+---
+title: Database Expectations
+menuTitle: Database
+description: ''
+category: 'Expectations'
+fullscreen: false
+position: 10
+---
 
 ### `toBeInDatabase()`
 

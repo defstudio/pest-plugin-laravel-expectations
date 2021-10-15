@@ -1,4 +1,11 @@
-## Models Expectations
+---
+title: Models Expectations
+menuTitle: Models
+description: ''
+category: 'Expectations'
+fullscreen: false
+position: 10
+---
 
 ### `toBeDeleted()`
 
