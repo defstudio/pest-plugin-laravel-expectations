@@ -86,7 +86,19 @@ Assert that the response is a superset of the given JSON.
 ```php
 expect(get('/api/post/11'))->toHaveJson(['id' => 11]);
  ```
->
+
+### `toHaveExactJson()`
+
+Assert that the response has the exact given JSON.
+
+```php
+expect(get('/api/post/11'))->toHaveExactJson([
+    'id' => 11,
+    'title' => 'Test Post',
+    'content' => "my content"
+]);
+ ```
+
 ### `toRender()`
 
 Assert that the response contains the given string or array of strings.
