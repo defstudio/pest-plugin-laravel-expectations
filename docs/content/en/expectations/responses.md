@@ -33,7 +33,7 @@ expect(get('/unknown'))->toBeNotFound();
 
 ### `toBeForbidden()`
 
-Assert that the given response has a forbidden status code.
+Assert that the response has a forbidden status code.
 
 ```php
 expect(get('/secret'))->toBeForbidden();
@@ -41,7 +41,7 @@ expect(get('/secret'))->toBeForbidden();
 
 ### `toBeUnauthorized()`
 
-Assert that the given response has an unauthorized status code.
+Assert that the response has an unauthorized status code.
 
 ```php
 expect(get('/admin-area'))->toBeUnauthorized();
@@ -57,7 +57,7 @@ expect(post('/timer/ping'))->toHaveNoContent();
 
 ### `toBeRedirect()`
 
-Assert that the given response is a redirection.
+Assert that the response is a redirection.
 
 ```php
 expect(get('/secret/location'))->toBeRedirect('/login');
@@ -65,23 +65,31 @@ expect(get('/secret/location'))->toBeRedirect('/login');
 
 ### `toBeDownload()`
 
-Assert that the given response offers a file download.
+Assert that the response offers a file download.
 
 ```php
 expect(get('/reports/last.pdf'))->toBeDownload();
  ```
-
+<
 ### `toHaveStatus()`
 
-Assert that the given response has a specific status code.
+Assert that the response has the given status code.
 
 ```php
 expect(post('/comment'))->toHaveStatus(201);
  ```
 
+### `toHaveJson()`
+
+Assert that the response is a superset of the given JSON.
+
+```php
+expect(get('/api/post/11'))->toHaveJson(['id' => 11]);
+ ```
+>
 ### `toRender()`
 
-Assert that the given response contains a string or array of strings.
+Assert that the response contains the given string or array of strings.
 
 ```php
 expect(get('/page'))->toRender('<h1>title</h1>');
@@ -89,7 +97,7 @@ expect(get('/page'))->toRender('<h1>title</h1>');
 
 ### `toRenderInOrder()`
 
-Assert that the given response contains an ordered sequence of strings.
+Assert that the response contains the given ordered sequence of strings.
 
 ```php
 expect(get('/page'))->toRenderInOrder(['<h1>title</h1>', '<h3>section</h3>']);
@@ -97,7 +105,7 @@ expect(get('/page'))->toRenderInOrder(['<h1>title</h1>', '<h3>section</h3>']);
 
 ### `toRenderText()`
 
-Assert that the given response contains a string or array of strings in its text.
+Assert that the response contains the given string or array of strings in its text.
 
 ```php
 expect(get('/page'))->toRender('title');
@@ -105,7 +113,7 @@ expect(get('/page'))->toRender('title');
 
 ### `toRenderTextInOrder()`
 
-Assert that the given response contains an ordered sequence of strings in its text.
+Assert that the response contains the given ordered sequence of strings in its text.
 
 ```php
 expect(get('/page'))->toRenderInOrder(['title', 'content'], escape: false);

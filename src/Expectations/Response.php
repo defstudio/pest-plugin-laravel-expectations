@@ -10,7 +10,7 @@ use PHPUnit\Framework\ExpectationFailedException;
 expect()->extend(
     'toBeRedirect',
     /**
-     * Assert that the given response is a redirection.
+     * Assert that the response is a redirection.
      */
     function (string $uri = null): Expectation {
         /** @var TestResponse $response */
@@ -35,7 +35,7 @@ expect()->extend(
 expect()->extend(
     'toBeSuccessful',
     /**
-     * Assert that the given response has a successful status code.
+     * Assert that the response has a successful status code.
      */
     function (): Expectation {
         /** @var TestResponse $response */
@@ -49,7 +49,7 @@ expect()->extend(
 expect()->extend(
     'toBeOk',
     /**
-     * Assert that the given response has a 200 status code.
+     * Assert that the response has a 200 status code.
      */
     function (): Expectation {
         /** @var TestResponse $response */
@@ -63,7 +63,7 @@ expect()->extend(
 expect()->extend(
     'toBeNotFound',
     /**
-     * Assert that the given response has a not found status code.
+     * Assert that the response has a not found status code.
      */
     function (): Expectation {
         /** @var TestResponse $response */
@@ -77,7 +77,7 @@ expect()->extend(
 expect()->extend(
     'toBeUnauthorized',
     /**
-     * Assert that the given response has an unauthorized status code.
+     * Assert that the response has an unauthorized status code.
      */
     function (): Expectation {
         /** @var TestResponse $response */
@@ -105,7 +105,7 @@ expect()->extend(
 expect()->extend(
     'toBeForbidden',
     /**
-     * Assert that the given response has a forbidden status code.
+     * Assert that the response has a forbidden status code.
      */
     function (): Expectation {
         /** @var TestResponse $response */
@@ -119,7 +119,7 @@ expect()->extend(
 expect()->extend(
     'toHaveStatus',
     /**
-     * Assert that the given response has a specific status code.
+     * Assert that the response has the given status code.
      */
     function (int $status): Expectation {
         /** @var TestResponse $response */
@@ -133,7 +133,7 @@ expect()->extend(
 expect()->extend(
     'toBeDownload',
     /**
-     * Assert that the given response offers a file download.
+     * Assert that the response offers a file download.
      */
     function (string $filename = null): Expectation {
         /** @var TestResponse $response */
@@ -152,8 +152,8 @@ expect()->extend(
 //TODO: alias with ->toContain() when the pipe PR gets merged
 expect()->extend(
     'toRender',
-    /*
-     * Assert that the given response contains a string or array of strings.
+    /**
+     * Assert that the response contains the given string or array of strings.
      *
      * @param string|array $string
      */
@@ -169,8 +169,8 @@ expect()->extend(
 //TODO: alias with ->toContainInOrder() when the pipe PR gets merged
 expect()->extend(
     'toRenderInOrder',
-    /*
-     * Assert that the given response contains an ordered sequence of strings
+    /**
+     * Assert that the response contains the given ordered sequence of strings.
      */
     function (array $strings, bool $escape = false): Expectation {
         /** @var TestResponse $response */
@@ -183,8 +183,8 @@ expect()->extend(
 
 expect()->extend(
     'toRenderText',
-    /*
-     * Assert that the given response contains a string or array of strings in its text.
+    /**
+     * Assert that the response contains the given string or array of strings in its text.
      *
      * @param string|array $text
      */
@@ -199,8 +199,8 @@ expect()->extend(
 
 expect()->extend(
     'toRenderTextInOrder',
-    /*
-     * Assert that the given response contains an ordered sequence of strings in its text.
+    /**
+     * Assert that the response contains the given ordered sequence of strings in its text.
      */
     function (array $texts, bool $escape = false): Expectation {
         /** @var TestResponse $response */
@@ -213,8 +213,8 @@ expect()->extend(
 
 expect()->extend(
     'toContainText',
-    /*
-     * Assert that the given response contains a string or array of strings in its text.
+    /**
+     * Assert that the response contains the fiven string or array of strings in its text.
      *
      * @param string|array $text
      */
@@ -225,12 +225,29 @@ expect()->extend(
 
 expect()->extend(
     'toContainTextInOrder',
-    /*
-     * Assert that the given response contains an ordered sequence of strings in its text.
+    /**
+     * Assert that the response contains the given ordered sequence of strings in its text.
      *
      * @param string|array $text
      */
     function ($text, bool $escape = false): Expectation {
         return $this->toRenderTextInOrder($text, $escape);
+    }
+);
+
+expect()->extend(
+    'toHaveJson',
+    /**
+     * Assert that the response is a superset of the given JSON.
+     *
+     * @param array|callable $value
+     */
+    function ($value, bool $strict = false): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+
+        $response->assertJson($value, $strict);
+
+        return $this;
     }
 );
