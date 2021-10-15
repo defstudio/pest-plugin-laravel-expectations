@@ -240,13 +240,30 @@ expect()->extend(
     /**
      * Assert that the response is a superset of the given JSON.
      *
-     * @param array|callable $value
+     * @param array|callable $json
      */
-    function ($value, bool $strict = false): Expectation {
+    function ($json, bool $strict = false): Expectation {
         /** @var TestResponse $response */
         $response = $this->value;
 
-        $response->assertJson($value, $strict);
+        $response->assertJson($json, $strict);
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toHaveExactJson',
+    /**
+     * Assert that the response has the exact given JSON.
+     *
+     * @param array|callable $json
+     */
+    function ($json): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+
+        $response->assertExactJson($json);
 
         return $this;
     }
