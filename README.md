@@ -64,7 +64,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 - [Fabio Ivona](https://github.com/def-studio)
 - [All Contributors](../../contributors)
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details on how to contribute to this plugin.
+Please see the [contributing guide](https://def-studio.github.io/pest-plugin-laravel-expectations-docs/developers/contribute) for details on how to contribute to this plugin.
 
 ## Security Vulnerabilities
 
