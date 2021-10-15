@@ -31,40 +31,25 @@ The expectations added by this plugin are automatically loaded into Pest's expec
 
 A full documentation with a detailed list of **available expectations** is available at:
 
-[https://def-studio.github.io/pest-plugin-laravel-expectations-docs](https://def-studio.github.io/pest-plugin-laravel-expectations-docs/)
+[https://def-studio.github.io/pest-plugin-laravel-expectations-docs](https://def-studio.github.io/pest-plugin-laravel-expectations/)
 
 ## Autocompletion
 
 For PhpStorm users, a nice Plugin has been developed by [Oliver Nybroe](https://github.com/olivernybroe). It adds full autocompletion to ours Laravel Expectations, it is worth to take a look: [https://github.com/pestphp/pest-intellij](https://github.com/pestphp/pest-intellij)
 
-
-## Tests
-
-Run all tests:
-```bash
-composer test
-```
-
-Check types:
-```bash
-composer test:types
-```
-
-Unit tests:
-```bash
-composer test:unit
-```
-
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+All notable changes to this project in our [changelog](https://def-studio.github.io/pest-plugin-laravel-expectations/getting-started/changelog). For a full understanding of what changed and the PR that where merged, see also the [releases page](https://def-studio.github.io/pest-plugin-laravel-expectations/releases)
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/)
+and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Credits
 
 - [Fabio Ivona](https://github.com/def-studio)
 - [All Contributors](../../contributors)
 
-Please see the [contributing guide](https://def-studio.github.io/pest-plugin-laravel-expectations-docs/developers/contribute) for details on how to contribute to this plugin.
+Please see the [contributing guide](https://def-studio.github.io/pest-plugin-laravel-expectations/developers/contribute) for details on how to contribute to this plugin.
 
 ## Security Vulnerabilities
 

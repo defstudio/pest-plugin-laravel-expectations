@@ -2,7 +2,7 @@ import theme from '@nuxt/content-theme-docs'
 
 export default theme({
   docs: {
-    primaryColor: '#20cbff'
+    primaryColor: '#1093ff'
   },
   target: 'static',
   content: {

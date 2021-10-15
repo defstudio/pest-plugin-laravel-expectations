@@ -6,7 +6,7 @@ category: 'GETTING STARTED'
 fullscreen: false
 ---
 
-All notable changes to this project will be documented in this file. For a full understanding of what changed, [see the releases page](https://github.com/def-studio/pest-plugin-laravel-expectations/releases)
+All notable changes to this project will be documented in this file. For a full understanding of what changed and the PR that where merged, see also the [releases page](/releases)
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
@@ -27,7 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toContainTextInOrder()` expectation
 
 **Updated**
-- new fresh [documentation site](https://def-studio.github.io/pest-plugin-laravel-expectations-docs)
+- new fresh [documentation site](https://def-studio.github.io/pest-plugin-laravel-expectations)
 
 ## [v1.2.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.1.0...v1.2.0) - 2021-10-11
 

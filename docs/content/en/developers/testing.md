@@ -10,7 +10,7 @@ position: 22
 
 ## Lint
 
-Lint your code to ensure it mets our package styling standards:
+Lint your code to ensure it fullfils our package styling standards:
 ```bash
 composer lint
 ```
