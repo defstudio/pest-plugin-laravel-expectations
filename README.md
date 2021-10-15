@@ -39,7 +39,7 @@ For PhpStorm users, a nice Plugin has been developed by [Oliver Nybroe](https://
 
 ## Changelog
 
-All notable changes to this project in our [changelog](https://def-studio.github.io/pest-plugin-laravel-expectations/getting-started/changelog). For a full understanding of what changed and the PR that where merged, see also the [releases page](https://def-studio.github.io/pest-plugin-laravel-expectations/releases)
+All notable changes to this project in our [changelog](https://def-studio.github.io/pest-plugin-laravel-expectations/changelog). For a full understanding of what changed and the PR that where merged, see also the [releases page](https://def-studio.github.io/pest-plugin-laravel-expectations/releases)
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
