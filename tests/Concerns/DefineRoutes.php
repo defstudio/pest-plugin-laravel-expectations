@@ -50,5 +50,18 @@ trait DefineRoutes
         $router->get('secret', function () {
             abort(403);
         });
+
+        $router->get('json', function () {
+            return response()->json([
+               'foo' => [
+                   'bar' => 'baz',
+               ],
+                'qux' => 1,
+               'quuz' => [
+                   'corge',
+                   'grault',
+               ],
+           ]);
+        });
     }
 }
