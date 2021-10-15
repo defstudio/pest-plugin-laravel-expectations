@@ -3,7 +3,6 @@ title: Installation & Configuration
 menuTitle: 'Installation'
 description: ''
 position: 2
-category: 'GETTING STARTED'
 fullscreen: true
 ---
 

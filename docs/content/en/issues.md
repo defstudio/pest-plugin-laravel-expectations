@@ -3,7 +3,6 @@ title: Questions and Issues
 menuTitle: 'Questions and Issues'
 description: ''
 position: 4
-category: 'GETTING STARTED'
 fullscreen: true
 ---
 

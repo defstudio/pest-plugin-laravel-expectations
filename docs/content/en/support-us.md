@@ -2,7 +2,6 @@
 title: Support Us
 description: ''
 position: 7
-category: 'GETTING STARTED'
 fullscreen: true
 ---
 

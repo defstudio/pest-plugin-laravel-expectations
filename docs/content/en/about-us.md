@@ -2,7 +2,6 @@
 title: About def:studio
 description: ''
 position: 6
-category: 'GETTING STARTED'
 fullscreen: true
 ---
 

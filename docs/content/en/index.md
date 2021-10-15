@@ -3,7 +3,6 @@ title: 'Pest Laravel Expectations'
 menuTitle: 'Introduction'
 description: 'Laravel tailored @pestphp expectations for web artisans'
 position: 1
-category: 'GETTING STARTED'
 fullscreen: true
 ---
 

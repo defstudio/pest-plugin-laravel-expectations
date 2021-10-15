@@ -2,7 +2,6 @@
 title: Changelog
 description: ''
 position: 5
-category: 'GETTING STARTED'
 fullscreen: false
 ---
 
