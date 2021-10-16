@@ -268,3 +268,35 @@ expect()->extend(
         return $this;
     }
 );
+
+expect()->extend(
+    'toHaveValid',
+    /**
+     * Assert that the response doesn't have the given validation error keys.
+     *
+     * @param string|array|null $keys
+     */
+    function ($keys = null, string $errorBag = 'default', string $responseKey = 'errors'): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertValid($keys, $errorBag, $responseKey);
+
+        return $this;
+    },
+);
+
+expect()->extend(
+    'toHaveInvalid',
+    /**
+     * Assert that the response has the given validation error keys.
+     *
+     * @param string|array|null $keys
+     */
+    function ($keys = null, string $errorBag = 'default', string $responseKey = 'errors'): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertInvalid($keys, $errorBag, $responseKey);
+
+        return $this;
+    },
+);

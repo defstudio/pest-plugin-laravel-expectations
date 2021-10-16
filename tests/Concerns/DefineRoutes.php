@@ -63,5 +63,11 @@ trait DefineRoutes
                ],
            ]);
         });
+
+        $router->post('validate', function (Request $request) {
+            $request->validate(['email' => 'required|email']);
+
+            return response()->noContent(200);
+        });
     }
 }
