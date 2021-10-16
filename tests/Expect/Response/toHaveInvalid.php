@@ -7,11 +7,13 @@ use PHPUnit\Framework\ExpectationFailedException;
 test('pass', function () {
     $response = post('/validate', ['email' => 'taylor']);
 
-    if (version_compare(App::version(), '8.55', '>=')) {
-        expect($response)->toHaveInvalid(['email']);
+    if (version_compare(App::version(), '8.55', '<')) {
+        expect($response)->toBeRedirect();
+
+        return;
     }
 
-    expect($response)->toBeRedirect();
+    expect($response)->toHaveInvalid(['email']);
 });
 
 test('fails', function () {
@@ -27,11 +29,13 @@ test('fails', function () {
 test('pass with negation', function () {
     $response = post('/validate', ['email' => 'taylor@laravel.com']);
 
-    if (version_compare(App::version(), '8.55', '>=')) {
-        expect($response)->not->toHaveInvalid(['email']);
+    if (version_compare(App::version(), '8.55', '<')) {
+        expect($response)->not->toBeRedirect();
+
+        return;
     }
 
-    expect($response)->not->toBeRedirect();
+    expect($response)->not->toHaveInvalid(['email']);
 });
 
 test('fails with negation', function () {
