@@ -7,11 +7,11 @@ use PHPUnit\Framework\ExpectationFailedException;
 test('pass', function () {
     $response = post('/validate', ['email' => 'taylor@laravel.com']);
 
-    if (version_compare(App::version(), '8.55', '>=')) {
-        expect($response)->toHaveValid(['email']);
+    if (version_compare(App::version(), '8.55', '<')) {
+        expect($response)->toBeOk();
     }
 
-    expect($response)->toBeOk();
+    expect($response)->toHaveValid(['email']);
 });
 
 test('fails', function () {
