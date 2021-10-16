@@ -9,6 +9,7 @@ test('pass', function () {
 
     if (version_compare(App::version(), '8.55', '<')) {
         expect($response)->toBeOk();
+        return;
     }
 
     expect($response)->toHaveValid(['email']);
@@ -27,11 +28,12 @@ test('fails', function () {
 test('pass with negation', function () {
     $response = post('/validate');
 
-    if (version_compare(App::version(), '8.55', '>=')) {
-        expect($response)->not->toHaveValid(['email']);
+    if (version_compare(App::version(), '8.55', '<')) {
+        expect($response)->not->toBeOk();
+        return;
     }
 
-    expect($response)->not->toBeOk();
+    expect($response)->not->toHaveValid(['email']);
 });
 
 test('fails with negation', function () {
