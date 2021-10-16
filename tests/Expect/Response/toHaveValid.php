@@ -9,6 +9,7 @@ test('pass', function () {
 
     if (version_compare(App::version(), '8.55', '<')) {
         expect($response)->toBeOk();
+
         return;
     }
 
@@ -30,6 +31,7 @@ test('pass with negation', function () {
 
     if (version_compare(App::version(), '8.55', '<')) {
         expect($response)->not->toBeOk();
+
         return;
     }
 
