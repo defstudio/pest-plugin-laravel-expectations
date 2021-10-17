@@ -300,6 +300,23 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toHaveJsonFragment',
+    /**
+     * Assert that the response contains the given JSON fragment.
+     *
+     * @param array|callable $json
+     */
+    function ($json): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+
+        $response->assertJsonFragment($json);
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toHaveValid',
     /**
      * Assert that the response doesn't have the given validation error keys.

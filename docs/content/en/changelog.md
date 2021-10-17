@@ -17,8 +17,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - `toConfirmCreation()` expectation
 - `toBeRedirectToSignedRoute()` expectation
+- `toHaveJson()` expectation
 - `toHaveExactJson()` expectation
-- `toHaveExactJson()` expectation
+- `toHaveJsonFragment()` expectation
 
 ### [v1.3.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.2.0...v1.3.0) - 2021-15-10
 
