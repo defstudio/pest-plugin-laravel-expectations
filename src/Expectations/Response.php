@@ -77,6 +77,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toConfirmCreation',
+    /**
+     * Assert that the response has a 201 status code.
+     */
+    function (): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertCreated();
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeNotFound',
     /**
      * Assert that the response has a not found status code.
