@@ -23,6 +23,14 @@ Assert that the response has a 200 status code.
 expect(get('/page'))->toBeOk();
  ```
 
+### `toConfirmCreation()`
+
+Assert that the response has a 201 status code.
+
+```php
+expect(post('/comment'))->toConfirmCreation();
+ ```
+
 ### `toBeNotFound()`
 
 Assert that the response has a not found status code.
