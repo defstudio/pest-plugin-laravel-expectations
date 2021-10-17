@@ -33,6 +33,22 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeRedirectToSignedRoute',
+    /**
+     * Assert whether the response is redirecting to a given signed route.
+     *
+     * @param mixed $parameters
+     */
+    function (string $name = null, $parameters = []): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertRedirectToSignedRoute($name, $parameters);
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeSuccessful',
     /**
      * Assert that the response has a successful status code.
