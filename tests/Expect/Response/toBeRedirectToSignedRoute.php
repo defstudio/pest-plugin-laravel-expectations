@@ -52,8 +52,6 @@ test('pass with negation and wrong parameters', function () {
     $response = get('/redirect-signed');
 
     if (!method_exists(TestResponse::class, 'assertRedirectToSignedRoute')) {
-        expect($response)->not->toBeRedirect();
-
         return;
     }
 
