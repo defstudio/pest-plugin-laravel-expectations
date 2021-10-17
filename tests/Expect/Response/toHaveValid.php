@@ -1,13 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\App;
+use Illuminate\Testing\TestResponse;
 use function Pest\Laravel\post;
 use PHPUnit\Framework\ExpectationFailedException;
 
 test('pass', function () {
     $response = post('/validate', ['email' => 'taylor@laravel.com']);
 
-    if (version_compare(App::version(), '8.55', '<')) {
+    if (!method_exists(TestResponse::class, 'assertValid')) {
         expect($response)->toBeOk();
 
         return;
@@ -19,7 +19,7 @@ test('pass', function () {
 test('fails', function () {
     $response = post('/validate', ['email' => 'taylor']);
 
-    if (version_compare(App::version(), '8.55', '<')) {
+    if (!method_exists(TestResponse::class, 'assertValid')) {
         throw new ExpectationFailedException("Found unexpected validation error for key: 'email'");
     }
 
@@ -29,7 +29,7 @@ test('fails', function () {
 test('pass with negation', function () {
     $response = post('/validate');
 
-    if (version_compare(App::version(), '8.55', '<')) {
+    if (!method_exists(TestResponse::class, 'assertValid')) {
         expect($response)->not->toBeOk();
 
         return;
@@ -41,7 +41,7 @@ test('pass with negation', function () {
 test('fails with negation', function () {
     $response = post('/validate', ['email' => 'taylor@laravel.com']);
 
-    if (version_compare(App::version(), '8.55', '<')) {
+    if (!method_exists(TestResponse::class, 'assertValid')) {
         throw new ExpectationFailedException('Expecting Illuminate\Testing\TestResponse Object (...) not to have valid Array (...)');
     }
 
