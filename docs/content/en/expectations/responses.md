@@ -115,6 +115,16 @@ expect(get('/api/post/11'))->toHaveExactJson([
 ]);
  ```
 
+### `toHaveJsonFragment()`
+
+Assert that the response contains the given JSON fragment.
+
+```php
+expect(get('/api/post/11'))->toHaveJsonFragment([
+        'tags' => ['hot', 'news']
+]);
+ ```
+
 ### `toRender()`
 
 Assert that the response contains the given string or array of strings.
