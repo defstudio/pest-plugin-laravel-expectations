@@ -31,7 +31,7 @@ trait DefineRoutes
             return response()->json([
                 'status' => $status,
             ], $status);
-        });
+        })->name('status');
 
         $router->get('download/{filename}', function ($filename) {
             Storage::put($filename, 'test');
@@ -49,6 +49,10 @@ trait DefineRoutes
 
         $router->get('secret', function () {
             abort(403);
+        });
+
+        $router->get('redirect-signed', function () {
+            return redirect()->signedRoute('status', 200);
         });
 
         $router->get('json', function () {
