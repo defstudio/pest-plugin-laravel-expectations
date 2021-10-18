@@ -95,6 +95,22 @@ Assert that the response has the given status code.
 expect(post('/comment'))->toHaveStatus(201);
  ```
 
+### `toHaveValid()`
+
+Assert that the response doesn't have the given validation error keys.
+
+```php
+expect(post('/register'), ['email' => 'taylor@laravel.com'])->toHaveValid(['email']);
+ ```
+
+### `toHaveInvalid()`
+
+Assert that the response has the given validation error keys.
+
+```php
+expect(post('/register'), ['email' => 'taylor'])->toHaveInvalid(['email']);
+ ```
+
 ### `toHaveJson()`
 
 Assert that the response is a superset of the given JSON.
