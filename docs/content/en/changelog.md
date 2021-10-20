@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toHaveJson()` expectation
 - `toHaveExactJson()` expectation
 - `toHaveJsonFragment()` expectation
+- `toHaveJsonPath()` expectation
 - `toHaveValid()` expectation
 - `toHaveInvalid()` expectation
 
