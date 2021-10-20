@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toHaveExactJson()` expectation
 - `toHaveJsonFragment()` expectation
 - `toHaveJsonPath()` expectation
+- `toHaveJsonStructure()` expectation
 - `toHaveValid()` expectation
 - `toHaveInvalid()` expectation
 

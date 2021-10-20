@@ -317,6 +317,21 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toHaveJsonStructure',
+    /**
+     * Assert that the response has a given JSON structure.
+     */
+    function (array $structure = null, array $responseData = null): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+
+        $response->assertJsonStructure($structure, $responseData);
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toHaveJsonPath',
     /**
      * Assert that the expected value and type exists at the given path in the response.
