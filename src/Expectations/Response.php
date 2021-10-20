@@ -347,3 +347,22 @@ expect()->extend(
         return $this;
     },
 );
+
+expect()->extend(
+    'toHaveSession',
+    /**
+     * Assert that the session has a given value.
+     *
+     * @param string|array $key
+     * @param mixed        $value
+     *
+     * @return $this
+     */
+    function ($key, $value = null): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertSessionHas($key, $value);
+
+        return $this;
+    },
+);

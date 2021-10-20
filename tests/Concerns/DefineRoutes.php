@@ -33,6 +33,12 @@ trait DefineRoutes
             ], $status);
         })->name('status');
 
+        $router->get('session', function () {
+            session(['foo' => 'bar']);
+
+            return response();
+        })->name('status');
+
         $router->get('download/{filename}', function ($filename) {
             Storage::put($filename, 'test');
 
