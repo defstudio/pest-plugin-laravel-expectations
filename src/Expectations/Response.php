@@ -317,6 +317,23 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toHaveJsonPath',
+    /**
+     * Assert that the expected value and type exists at the given path in the response.
+     *
+     * @param mixed $expect
+     */
+    function (string $path, $expect): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+
+        $response->assertJsonPath($path, $expect);
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toHaveValid',
     /**
      * Assert that the response doesn't have the given validation error keys.

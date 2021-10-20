@@ -141,6 +141,14 @@ expect(get('/api/post/11'))->toHaveJsonFragment([
 ]);
  ```
 
+### `toHaveJsonPath()`
+
+Assert that the expected value and type exists at the given path in the response.
+
+```php
+expect(get('/api/post/11'))->toHaveJsonPath('options.public', true);
+ ```
+
 ### `toRender()`
 
 Assert that the response contains the given string or array of strings.
