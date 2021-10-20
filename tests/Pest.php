@@ -6,7 +6,10 @@ use Tests\TestCase;
 
 uses(TestCase::class)->in('Expect');
 
-function build_response(closure $setup): TestResponse
+/**
+ * @param callable(Response $response) $setup
+ */
+function build_response(callable $setup): TestResponse
 {
     return TestResponse::fromBaseResponse(tap(new Response(), $setup));
 }
