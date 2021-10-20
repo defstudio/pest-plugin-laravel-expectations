@@ -149,6 +149,14 @@ Assert that the expected value and type exists at the given path in the response
 expect(get('/api/post/11'))->toHaveJsonPath('options.public', true);
  ```
 
+### `toHaveJsonStructure()`
+
+Assert that the response has a given JSON structure.
+
+```php
+expect(get('/api/post/11'))->toHaveJsonStructure(['options' => ['user']]);
+ ```
+
 ### `toRender()`
 
 Assert that the response contains the given string or array of strings.
