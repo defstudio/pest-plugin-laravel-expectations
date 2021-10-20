@@ -349,6 +349,22 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toHaveJsonValidationErrors',
+    /**
+     * Assert that the response has the given JSON validation errors.
+     *
+     * @param string|array $errors
+     */
+    function ($errors = null, string $responseKey = 'errors'): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertJsonValidationErrors($errors, $responseKey);
+
+        return $this;
+    },
+);
+
+expect()->extend(
     'toHaveValid',
     /**
      * Assert that the response doesn't have the given validation error keys.
