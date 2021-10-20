@@ -86,13 +86,21 @@ Assert that the response offers a file download.
 ```php
 expect(get('/reports/last.pdf'))->toBeDownload();
  ```
-<
+
 ### `toHaveStatus()`
 
 Assert that the response has the given status code.
 
 ```php
 expect(post('/comment'))->toHaveStatus(201);
+ ```
+
+### `toHaveLocation()`
+
+Assert that the current location header matches the given URI.
+
+```php
+expect(get('/secret'))->toHaveLocation('/login');
  ```
 
 ### `toHaveValid()`

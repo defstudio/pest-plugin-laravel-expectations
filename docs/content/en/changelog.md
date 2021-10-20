@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 **Added**
 
+- `toHaveLocation()` expectation
 - `toConfirmCreation()` expectation
 - `toBeRedirectToSignedRoute()` expectation
 - `toHaveJson()` expectation

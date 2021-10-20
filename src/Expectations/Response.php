@@ -395,3 +395,17 @@ expect()->extend(
         return $this;
     },
 );
+
+expect()->extend(
+    'toHaveLocation',
+    /**
+     * Assert that the current location header matches the given URI.
+     */
+    function (string $uri): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertLocation($uri);
+
+        return $this;
+    },
+);
