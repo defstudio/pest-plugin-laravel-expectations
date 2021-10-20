@@ -108,7 +108,7 @@ expect(post('/register'), ['email' => 'taylor@laravel.com'])->toHaveValid(['emai
 Assert that the response has the given validation error keys.
 
 ```php
-expect(post('/register'), ['email' => 'taylor'])->toHaveInvalid(['email']);
+expect(post('/register'), ['email' => 'taylor'])->toHaveInvalid(['email' => 'invalid email']);
  ```
 
 ### `toHaveJson()`
@@ -147,6 +147,14 @@ Assert that the expected value and type exists at the given path in the response
 
 ```php
 expect(get('/api/post/11'))->toHaveJsonPath('options.public', true);
+ ```
+
+### `toHaveJsonValidationErrors()`
+
+Assert that the response has the given JSON validation errors.
+
+```php
+expect(post('/comments'))->toHaveJsonValidationErrors(['content' => 'content cannot be empty']);
  ```
 
 ### `toHaveJsonStructure()`
