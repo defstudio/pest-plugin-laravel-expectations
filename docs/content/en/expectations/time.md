@@ -39,6 +39,14 @@ Assert the date is in the future.
 expect(now()->addYear())->toBeFuture();
  ```
 
+### `toBePast()`
+
+Assert the date is in the past.
+
+```php
+expect(now()->subDay())->toBePast();
+ ```
+
 ### `toBeSameDayAs()`
 
 Assert the date is the same day as the given one.
