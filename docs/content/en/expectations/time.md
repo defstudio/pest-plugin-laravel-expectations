@@ -20,7 +20,15 @@ expect('2021-10-20')->toBeSameDayAs(today());
 Assert the date is the same hour as the given one.
 
 ```php
-expect('2021-10-20')->toBeSameDayAs(today());
+expect('2021-10-20')->toBeSameMonthAs(today());
+ ```
+
+### `toBeSameMonthAs()`
+
+Assert the date is the same hour as the given one.
+
+```php
+expect('2021-10-20')->toBeSameMonthAs(today());
  ```
 
 ### `toBeSameYearAs()`
@@ -28,5 +36,5 @@ expect('2021-10-20')->toBeSameDayAs(today());
 Assert the date is the same year as the given one.
 
 ```php
-expect('2020-10-20')->toBeSameDayAs(today());
+expect('2020-10-20')->toBeSameMonthAs(today());
  ```
