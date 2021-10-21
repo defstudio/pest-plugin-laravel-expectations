@@ -14,7 +14,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 **Added**
 
-- `toBeSameDayAs()` expectation
 - `toHaveLocation()` expectation
 - `toConfirmCreation()` expectation
 - `toBeRedirectToSignedRoute()` expectation
