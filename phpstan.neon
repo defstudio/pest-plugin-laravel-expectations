@@ -22,4 +22,5 @@ parameters:
         - "#Construct empty\\(\\) is not allowed#"
         - "#construct empty\\(\\) should not be used#"
         - "#Thrown exceptions in a catch block must bundle the previous exception#"
+        - "#is not allowed to extend \"Exception\"#"
         - "#Call to an undefined method Illuminate\\\\Testing\\\\TestResponse::assert(V|Inv)alid#"
