@@ -21,7 +21,7 @@ test('fails if value cannot be cast to carbon', function () {
 })->throws(InvalidDataException::class, 'Cannot cast [Array (...)] to a Carbon\Carbon instance');
 
 test('fails', function () {
-    expect(new DateTime('2021-01-01'))->toBeSameWeekAs(new DateTime('2021-01-04 22:55:00'));
+    expect(new DateTime('2021-01-01'))->toBeSameWeekAs(new DateTime('2021-01-06 22:55:00'));
 })->throws(ExpectationFailedException::class, 'Failed to assert that [2021-01-02 00:00:00] is same week as 2021-01-01 22:55:00');
 
 test('pass negated', function () {
