@@ -15,6 +15,14 @@ Assert the date is the same day as the given one.
 expect('2021-10-20')->toBeSameDayAs(today());
  ```
 
+### `toBeSameHourAs()`
+
+Assert the date is the same hour as the given one.
+
+```php
+expect('2021-10-20')->toBeSameDayAs(today());
+ ```
+
 ### `toBeSameYearAs()`
 
 Assert the date is the same year as the given one.

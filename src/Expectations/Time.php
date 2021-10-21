@@ -41,3 +41,20 @@ expect()->extend(
         return $this;
     }
 );
+
+expect()->extend(
+    'toBeSameHourAs',
+    /**
+     * Assert the date is the same hour as the given one.
+     *
+     * @param DateTimeInterface|string $date
+     */
+    function ($date): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+        $expected = ValueProcessor::getCarbonDate($date);
+
+        assertTrue($value->isSameHour($expected), sprintf('Failed to assert that [%s] is same hour as %s', $value, $expected));
+
+        return $this;
+    }
+);
