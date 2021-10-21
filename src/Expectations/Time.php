@@ -76,6 +76,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBePast',
+    /**
+     * Assert the date is in the past.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isPast(), sprintf('Failed to assert that [%s] is in the past', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeSameDayAs',
     /**
      * Assert the date is the same day as the given one.
