@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeSameHourAs()` expectation
 - `toBeSameMonthAs()` expectation
 - `toBeSameYearAs()` expectation
+- `toBeSameWeekAs()` expectation
 
 ### [v1.4.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.3.0...v1.4.0) - 2021-10-21
 

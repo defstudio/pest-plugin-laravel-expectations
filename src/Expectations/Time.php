@@ -75,3 +75,20 @@ expect()->extend(
         return $this;
     }
 );
+
+expect()->extend(
+    'toBeSameWeekAs',
+    /**
+     * Assert the date is the same week as the given one.
+     *
+     * @param DateTimeInterface|string $date
+     */
+    function ($date): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+        $expected = ValueProcessor::getCarbonDate($date);
+
+        assertTrue($value->isSameWeek($expected), sprintf('Failed to assert that [%s] is same week as %s', $value, $expected));
+
+        return $this;
+    }
+);
