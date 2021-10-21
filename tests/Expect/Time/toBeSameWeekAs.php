@@ -22,7 +22,7 @@ test('fails if value cannot be cast to carbon', function () {
 
 test('fails', function () {
     expect(new DateTime('2021-01-01'))->toBeSameWeekAs(new DateTime('2021-01-04 22:55:00'));
-})->throws(ExpectationFailedException::class, 'Failed to assert that [2021-01-01 00:00:00] is same week as 2021-01-01 22:55:00');
+})->throws(ExpectationFailedException::class, 'Failed to assert that [2021-01-01 00:00:00] is same week as 2021-01-04 22:55:00');
 
 test('pass negated', function () {
     expect(now()->addWeek())->not->toBeSameWeekAs(now());
