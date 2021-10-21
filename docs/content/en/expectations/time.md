@@ -31,6 +31,14 @@ Assert the date is between the given ones.
 expect('2021-10-20')->toBeBetween(today(), today()->addWeek());
  ```
 
+### `toBeFuture()`
+
+Assert the date is in the future.
+
+```php
+expect(now()->addYear())->toBeFuture();
+ ```
+
 ### `toBeSameDayAs()`
 
 Assert the date is the same day as the given one.
