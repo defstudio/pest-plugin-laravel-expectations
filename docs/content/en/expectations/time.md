@@ -38,3 +38,11 @@ Assert the date is the same year as the given one.
 ```php
 expect('2020-10-20')->toBeSameMonthAs(today());
  ```
+
+### `toBeSameWeekAs()`
+
+Assert the date is the same week as the given one.
+
+```php
+expect('2020-10-20')->toBeSameWeekAs(today());
+ ```
