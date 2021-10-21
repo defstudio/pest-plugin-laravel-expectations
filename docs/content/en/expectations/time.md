@@ -15,6 +15,14 @@ Assert the date is after the given one.
 expect('2021-10-20')->toBeAfter(today());
  ```
 
+### `toBeBefore()`
+
+Assert the date is before the given one.
+
+```php
+expect('2021-10-20')->toBeBefore(today());
+ ```
+
 ### `toBeSameDayAs()`
 
 Assert the date is the same day as the given one.

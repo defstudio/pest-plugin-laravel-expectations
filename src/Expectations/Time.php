@@ -26,6 +26,23 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeBefore',
+    /**
+     * Assert the date is before the given one.
+     *
+     * @param DateTimeInterface|string $date
+     */
+    function ($date): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+        $expected = ValueProcessor::getCarbonDate($date);
+
+        assertTrue($value->isBefore($expected), sprintf('Failed to assert that [%s] is before %s', $value, $expected));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeSameDayAs',
     /**
      * Assert the date is the same day as the given one.
