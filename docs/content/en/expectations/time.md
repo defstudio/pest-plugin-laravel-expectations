@@ -7,6 +7,14 @@ fullscreen: false
 position: 10
 ---
 
+### `toBeAfter()`
+
+Assert the date is after the given one.
+
+```php
+expect('2021-10-20')->toBeAfter(today());
+ ```
+
 ### `toBeSameDayAs()`
 
 Assert the date is the same day as the given one.

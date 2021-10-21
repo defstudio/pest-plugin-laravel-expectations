@@ -9,6 +9,23 @@ use Pest\Expectation;
 use function PHPUnit\Framework\assertTrue;
 
 expect()->extend(
+    'toBeAfter',
+    /**
+     * Assert the date is after the given one.
+     *
+     * @param DateTimeInterface|string $date
+     */
+    function ($date): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+        $expected = ValueProcessor::getCarbonDate($date);
+
+        assertTrue($value->isAfter($expected), sprintf('Failed to assert that [%s] is after %s', $value, $expected));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeSameDayAs',
     /**
      * Assert the date is the same day as the given one.
