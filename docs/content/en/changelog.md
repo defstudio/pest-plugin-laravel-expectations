@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeAfter()` expectation
 - `toBeBefore()` expectation
 - `toBeBetween()` expectation
+- `toBeCurrentMonth()` expectation
 - `toBeCurrentYear()` expectation
 - `toBeFuture()` expectation
 - `toBeLastYear()` expectation
