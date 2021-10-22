@@ -351,7 +351,7 @@ expect()->extend(
 expect()->extend(
     'toHaveHeader',
     /**
-     * Asserts that the response contains the given header and equals the optional value.
+     * Assert that the response contains the given header and equals the optional value.
      *
      * @param string $headerName
      * @param mixed  $value
