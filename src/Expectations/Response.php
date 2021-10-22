@@ -397,6 +397,22 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toHaveHeader',
+    /**
+     * Assert that the response contains the given header and equals the optional value.
+     *
+     * @param mixed  $value
+     */
+    function (string $headerName, $value = null): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertHeader($headerName, $value);
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toHaveSession',
     /**
      * Assert that the session has a given value.
@@ -412,8 +428,8 @@ expect()->extend(
         $response->assertSessionHas($key, $value);
 
         return $this;
-    },
-);
+    }
+};
 
 expect()->extend(
     'toHaveLocation',
