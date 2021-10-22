@@ -47,6 +47,14 @@ Assert the date is in the future.
 expect(now()->addYear())->toBeFuture();
  ```
 
+### `toBeNextYear()`
+
+Assert the date is in the next year.
+
+```php
+expect(now()->addYear())->toBeNextYear();
+ ```
+
 ### `toBePast()`
 
 Assert the date is in the past.

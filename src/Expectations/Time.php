@@ -90,6 +90,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeNextYear',
+    /**
+     * Assert the date is in the next year.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isNextYear(), sprintf('Failed to assert that [%s] is in the next year', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBePast',
     /**
      * Assert the date is in the past.
