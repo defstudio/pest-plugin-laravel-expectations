@@ -7,20 +7,20 @@ fullscreen: false
 position: 10
 ---
 
+### `toBeAbleTo()`
+
+Assert that the given User is authorized to do something.
+
+```php
+expect($user)->toBeAbleTo('edit', $post);
+ ```
+
 ### `toBeAuthenticated()`
 
 Assert that the given User is authenticated.
 
 ```php
 expect($user)->toBeAuthenticated();
- ```
-
-### `toBeValidCredentials()`
-
-Assert that the given credentials are valid.
-
-```php
-expect(['email' => 'test@email.it', 'password' => 'foo'])->toBeValidCredentials();
  ```
 
 ### `toBeInvalidCredentials()`
@@ -31,10 +31,10 @@ Assert that the given credentials are invalid.
 expect(['email' => 'test@email.it', 'password' => 'wrongpassword'])->toBeInvalidCredentials();
  ```
 
-### `toBeAbleTo()`
+### `toBeValidCredentials()`
 
-Assert that the given User is authorized to do something.
+Assert that the given credentials are valid.
 
 ```php
-expect($user)->toBeAbleTo('edit', $post);
+expect(['email' => 'test@email.it', 'password' => 'foo'])->toBeValidCredentials();
  ```
