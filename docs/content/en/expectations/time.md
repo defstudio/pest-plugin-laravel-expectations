@@ -55,6 +55,14 @@ Assert the date is in the future.
 expect(now()->addYear())->toBeFuture();
  ```
 
+### `toBeLastMonth()`
+
+Assert the date is in the last month.
+
+```php
+expect(now()->subMonth())->toBeLastMonth();
+ ```
+
 ### `toBeLastYear()`
 
 Assert the date is in the last year.
@@ -68,7 +76,7 @@ expect(now()->subYear())->toBeLastYear();
 Assert the date is in the next month.
 
 ```php
-expect(now()->addYear())->toBeNextMonth();
+expect(now()->addMonth())->toBeNextMonth();
  ```
 
 ### `toBeNextYear()`

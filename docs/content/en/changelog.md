@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeCurrentMonth()` expectation
 - `toBeCurrentYear()` expectation
 - `toBeFuture()` expectation
+- `toBeLastMonth()` expectation
 - `toBeLastYear()` expectation
 - `toBeNextYear()` expectation
 - `toBeNextMonth()` expectation
