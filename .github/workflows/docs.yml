@@ -2,9 +2,6 @@ name: docs
 
 on:
   push:
-    paths:
-      - '/docs/content/en/*'
-      - '/docs/content/en/*/*'
     tags:
       - v*
 
