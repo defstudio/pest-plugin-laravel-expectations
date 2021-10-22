@@ -55,6 +55,22 @@ Assert that the response has an unauthorized status code.
 expect(get('/admin-area'))->toBeUnauthorized();
  ```
 
+### `toHaveSession()`
+
+Assert that the session has a given value.
+
+```php
+expect(post('/users', $newUserData))->toHaveSession('success');
+ ```
+
+### `toHaveHeader()`
+
+Assert that the response contains the given header and equals the optional value.
+
+```php
+expect(post('/users', $newUserData))->toHaveHeader('Location', '/user/11/edit');
+ ```
+
 ### `toHaveNoContent()`
 
 Assert that the response has the given status code and no content.

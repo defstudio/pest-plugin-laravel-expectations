@@ -33,7 +33,6 @@ trait DefineRoutes
             ], $status);
         })->name('status');
 
-
         $router->get('header', function () {
             return response('', 200, [
                 'foo' => 'bar',
@@ -45,7 +44,6 @@ trait DefineRoutes
 
             return response();
         })->name('session');
-
 
         $router->get('download/{filename}', function ($filename) {
             Storage::put($filename, 'test');
