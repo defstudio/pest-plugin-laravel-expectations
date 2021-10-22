@@ -158,3 +158,11 @@ Assert the date is the same week as the given one.
 ```php
 expect('2020-10-20')->toBeSameWeekAs(today());
  ```
+
+### `toBeWeekday()`
+
+Assert the date is a weekday (between monday and friday).
+
+```php
+expect('2020-10-22')->toBeWeekday();
+ ```
