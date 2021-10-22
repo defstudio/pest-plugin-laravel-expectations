@@ -86,13 +86,21 @@ Assert that the response offers a file download.
 ```php
 expect(get('/reports/last.pdf'))->toBeDownload();
  ```
-<
+
 ### `toHaveStatus()`
 
 Assert that the response has the given status code.
 
 ```php
 expect(post('/comment'))->toHaveStatus(201);
+ ```
+
+### `toHaveLocation()`
+
+Assert that the current location header matches the given URI.
+
+```php
+expect(get('/secret'))->toHaveLocation('/login');
  ```
 
 ### `toHaveValid()`
@@ -108,7 +116,7 @@ expect(post('/register'), ['email' => 'taylor@laravel.com'])->toHaveValid(['emai
 Assert that the response has the given validation error keys.
 
 ```php
-expect(post('/register'), ['email' => 'taylor'])->toHaveInvalid(['email']);
+expect(post('/register'), ['email' => 'taylor'])->toHaveInvalid(['email' => 'invalid email']);
  ```
 
 ### `toHaveJson()`
@@ -139,6 +147,30 @@ Assert that the response contains the given JSON fragment.
 expect(get('/api/post/11'))->toHaveJsonFragment([
         'tags' => ['hot', 'news']
 ]);
+ ```
+
+### `toHaveJsonPath()`
+
+Assert that the expected value and type exists at the given path in the response.
+
+```php
+expect(get('/api/post/11'))->toHaveJsonPath('options.public', true);
+ ```
+
+### `toHaveJsonValidationErrors()`
+
+Assert that the response has the given JSON validation errors.
+
+```php
+expect(post('/comments'))->toHaveJsonValidationErrors(['content' => 'content cannot be empty']);
+ ```
+
+### `toHaveJsonStructure()`
+
+Assert that the response has a given JSON structure.
+
+```php
+expect(get('/api/post/11'))->toHaveJsonStructure(['options' => ['user']]);
  ```
 
 ### `toRender()`
