@@ -317,12 +317,110 @@ expect()->extend(
 expect()->extend(
     'toBeWeekend',
     /**
-     * Assert the date is saturday or sunday.
+     * Assert the date is Saturday or Sunday.
      */
     function (): Expectation {
         $value = ValueProcessor::getCarbonDate($this->value);
 
-        assertTrue($value->isWeekend(), sprintf('Failed to assert that [%s] is saturday or sunday', $value));
+        assertTrue($value->isWeekend(), sprintf('Failed to assert that [%s] is Saturday or Sunday', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeTuesday',
+    /**
+     * Assert the date is Tuesday.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isTuesday(), sprintf('Failed to assert that [%s] is Tuesday', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeMonday',
+    /**
+     * Assert the date is Monday.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isMonday(), sprintf('Failed to assert that [%s] is Monday', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeWednesday',
+    /**
+     * Assert the date is Wednesday.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isWednesday(), sprintf('Failed to assert that [%s] is Wednesday', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeThursday',
+    /**
+     * Assert the date is Thursday.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isThursday(), sprintf('Failed to assert that [%s] is Thursday', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeFriday',
+    /**
+     * Assert the date is Friday.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isFriday(), sprintf('Failed to assert that [%s] is Friday', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeSaturday',
+    /**
+     * Assert the date is Saturday.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isSaturday(), sprintf('Failed to assert that [%s] is Saturday', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeSunday',
+    /**
+     * Assert the date is Sunday.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isSunday(), sprintf('Failed to assert that [%s] is Sunday', $value));
 
         return $this;
     }
