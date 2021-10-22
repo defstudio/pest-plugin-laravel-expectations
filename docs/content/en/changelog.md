@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeSameMonthAs()` expectation
 - `toBeSameYearAs()` expectation
 - `toBeSameWeekAs()` expectation
+- `toBeWeekday()` expectation
 - `toHaveHeader()` expectation
 - `toHaveSession()` expectation
 

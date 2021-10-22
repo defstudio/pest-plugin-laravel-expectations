@@ -299,3 +299,17 @@ expect()->extend(
         return $this;
     }
 );
+
+expect()->extend(
+    'toBeWeekday',
+    /**
+     * Assert the date is a weekday (between monday and friday).
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isWeekday(), sprintf('Failed to assert that [%s] is a weekday', $value));
+
+        return $this;
+    }
+);
