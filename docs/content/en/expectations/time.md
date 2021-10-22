@@ -63,6 +63,14 @@ Assert the date is in the future.
 expect(now()->addYear())->toBeFuture();
  ```
 
+### `toBeFriday()`
+
+Assert the date is Friday.
+
+```php
+ expect('2021-10-23')->toBeFriday();
+ ```
+
 ### `toBeLastMonth()`
 
 Assert the date is in the last month.
@@ -85,6 +93,14 @@ Assert the date is in the last year.
 
 ```php
 expect(now()->subYear())->toBeLastYear();
+ ```
+
+### `toBeMonday()`
+
+Assert the date is Monday.
+
+```php
+ expect('2021-10-19')->toBeMonday();
  ```
 
 ### `toBeNextMonth()`
@@ -159,6 +175,38 @@ Assert the date is the same week as the given one.
 expect('2020-10-20')->toBeSameWeekAs(today());
  ```
 
+### `toBeSaturday()`
+
+Assert the date is Saturday.
+
+```php
+ expect('2021-10-24')->toBeSaturday();
+ ```
+
+### `toBeSunday()`
+
+Assert the date is Sunday.
+
+```php
+ expect('2021-10-25')->toBeSunday();
+ ```
+
+### `toBeTuesday()`
+
+Assert the date is Tuesday.
+
+```php
+ expect('2021-10-20')->toBeTuesday();
+ ```
+
+### `toBeThursday()`
+
+Assert the date is Thursday.
+
+```php
+ expect('2021-10-22')->toBeThursday();
+ ```
+
 ### `toBeWeekday()`
 
 Assert the date is a weekday (between monday and friday).
@@ -169,8 +217,16 @@ expect('2020-10-22')->toBeWeekday();
 
 ### `toBeWeekend()`
 
-Assert the date is saturday or sunday.
+Assert the date is Saturday or Sunday.
 
 ```php
 expect('2020-10-23')->toBeWeekend();
+ ```
+
+### `toBeWednesday()`
+
+Assert the date is Wednesday.
+
+```php
+ expect('2021-10-21')->toBeWednesday();
  ```

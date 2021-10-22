@@ -20,10 +20,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeCurrentMonth()` expectation
 - `toBeCurrentWeek()` expectation
 - `toBeCurrentYear()` expectation
+- `toBeFriday()` expectation
 - `toBeFuture()` expectation
 - `toBeLastMonth()` expectation
 - `toBeLastWeek()` expectation
 - `toBeLastYear()` expectation
+- `toBeMonday()` expectation
 - `toBeNextMonth()` expectation
 - `toBeNextWeek()` expectation
 - `toBeNextYear()` expectation
@@ -33,6 +35,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeSameMonthAs()` expectation
 - `toBeSameYearAs()` expectation
 - `toBeSameWeekAs()` expectation
+- `toBeSaturday()` expectation
+- `toBeSunday()` expectation
+- `toBeThursday()` expectation
+- `toBeTuesday()` expectation
+- `toBeWednesday()` expectation
 - `toBeWeekday()` expectation
 - `toBeWeekend()` expectation
 - `toHaveHeader()` expectation
