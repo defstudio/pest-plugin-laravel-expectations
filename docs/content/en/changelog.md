@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeSameYearAs()` expectation
 - `toBeSameWeekAs()` expectation
 - `toBeWeekday()` expectation
+- `toBeWeekend()` expectation
 - `toHaveHeader()` expectation
 - `toHaveSession()` expectation
 
