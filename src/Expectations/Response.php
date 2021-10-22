@@ -354,7 +354,7 @@ expect()->extend(
      * Assert that the session has a given value.
      *
      * @param string|array $key
-     * @param mixed        $value
+     * @param mixed $value
      *
      * @return $this
      */
