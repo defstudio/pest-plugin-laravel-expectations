@@ -62,6 +62,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeCurrentMonth',
+    /**
+     * Assert the date is in the current month.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isCurrentMonth(), sprintf('Failed to assert that [%s] is in the current month', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeCurrentYear',
     /**
      * Assert the date is in the current year.
