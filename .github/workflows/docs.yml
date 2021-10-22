@@ -3,7 +3,8 @@ name: docs
 on:
   push:
     paths:
-      - '/docs/content/en/**/*.md'
+      - '/docs/content/en/*'
+      - '/docs/content/en/*/*/'
     tags:
       - v*
 
