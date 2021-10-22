@@ -118,20 +118,6 @@ expect()->extend(
 );
 
 expect()->extend(
-    'toBeLastYear',
-    /**
-     * Assert the date is in the last year.
-     */
-    function (): Expectation {
-        $value = ValueProcessor::getCarbonDate($this->value);
-
-        assertTrue($value->isLastYear(), sprintf('Failed to assert that [%s] is in the last year', $value));
-
-        return $this;
-    }
-);
-
-expect()->extend(
     'toBeLastMonth',
     /**
      * Assert the date is in the last month.
@@ -140,6 +126,34 @@ expect()->extend(
         $value = ValueProcessor::getCarbonDate($this->value);
 
         assertTrue($value->isLastMonth(), sprintf('Failed to assert that [%s] is in the last month', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeLastWeek',
+    /**
+     * Assert the date is in the last week.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isLastWeek(), sprintf('Failed to assert that [%s] is in the last week', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeLastYear',
+    /**
+     * Assert the date is in the last year.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isLastYear(), sprintf('Failed to assert that [%s] is in the last year', $value));
 
         return $this;
     }

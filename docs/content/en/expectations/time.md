@@ -71,6 +71,14 @@ Assert the date is in the last month.
 expect(now()->subMonth())->toBeLastMonth();
  ```
 
+### `toBeLastWeek()`
+
+Assert the date is in the last week.
+
+```php
+expect(now()->subWeek())->toBeLastWeek();
+ ```
+
 ### `toBeLastYear()`
 
 Assert the date is in the last year.
