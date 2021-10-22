@@ -353,12 +353,9 @@ expect()->extend(
     /**
      * Assert that the response contains the given header and equals the optional value.
      *
-     * @param string $headerName
      * @param mixed  $value
-     *
-     * @return $this
      */
-    function ($headerName, $value = null): Expectation {
+    function (string $headerName, $value = null): Expectation {
         /** @var TestResponse $response */
         $response = $this->value;
         $response->assertHeader($headerName, $value);
