@@ -9,7 +9,7 @@ test('pass', function () {
 
 test('fail', function () {
     expect(get('/header'))->toHaveHeader('foo', 'baz');
-})->throws(ExpectationFailedException::class, 'Failed asserting that two strings are equal.');
+})->throws(ExpectationFailedException::class, 'Header [foo] was found, but value [bar] does not match [baz]');
 
 test('pass negated', function () {
     expect(get('/header'))->not->toHaveHeader('foo', 'baz');
