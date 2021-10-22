@@ -76,6 +76,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeCurrentWeek',
+    /**
+     * Assert the date is in the current week.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isCurrentWeek(), sprintf('Failed to assert that [%s] is in the current week', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeCurrentYear',
     /**
      * Assert the date is in the current year.
