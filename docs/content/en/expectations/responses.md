@@ -236,4 +236,3 @@ Assert that the response contains the given ordered sequence of strings in its t
 ```php
 expect(get('/page'))->toRenderInOrder(['title', 'content'], escape: false);
  ```
-
