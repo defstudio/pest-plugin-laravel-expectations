@@ -28,6 +28,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toHaveHeader()` expectation
 - `toHaveSession()` expectation
 
+**Updated**
+
+- Documentation refactor
+
 ### [v1.4.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.3.0...v1.4.0) - 2021-10-21
 
 **Added**
