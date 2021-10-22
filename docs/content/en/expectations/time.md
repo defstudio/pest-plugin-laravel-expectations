@@ -166,3 +166,11 @@ Assert the date is a weekday (between monday and friday).
 ```php
 expect('2020-10-22')->toBeWeekday();
  ```
+
+### `toBeWeekend()`
+
+Assert the date is saturday or sunday.
+
+```php
+expect('2020-10-23')->toBeWeekend();
+ ```
