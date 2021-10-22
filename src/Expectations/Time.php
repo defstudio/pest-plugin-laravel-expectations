@@ -146,20 +146,6 @@ expect()->extend(
 );
 
 expect()->extend(
-    'toBeNextYear',
-    /**
-     * Assert the date is in the next year.
-     */
-    function (): Expectation {
-        $value = ValueProcessor::getCarbonDate($this->value);
-
-        assertTrue($value->isNextYear(), sprintf('Failed to assert that [%s] is in the next year', $value));
-
-        return $this;
-    }
-);
-
-expect()->extend(
     'toBeNextMonth',
     /**
      * Assert the date is in the next month.
@@ -168,6 +154,34 @@ expect()->extend(
         $value = ValueProcessor::getCarbonDate($this->value);
 
         assertTrue($value->isNextMonth(), sprintf('Failed to assert that [%s] is in the next month', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeNextWeek',
+    /**
+     * Assert the date is in the next week.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isNextWeek(), sprintf('Failed to assert that [%s] is in the next week', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeNextYear',
+    /**
+     * Assert the date is in the next year.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isNextYear(), sprintf('Failed to assert that [%s] is in the next year', $value));
 
         return $this;
     }

@@ -87,6 +87,14 @@ Assert the date is in the next month.
 expect(now()->addMonth())->toBeNextMonth();
  ```
 
+### `toBeNextWeek()`
+
+Assert the date is in the next week.
+
+```php
+expect(now()->addWeek())->toBeNextWeek();
+ ```
+
 ### `toBeNextYear()`
 
 Assert the date is in the next year.
