@@ -118,6 +118,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeNextMonth',
+    /**
+     * Assert the date is in the next month.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isNextMonth(), sprintf('Failed to assert that [%s] is in the next month', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBePast',
     /**
      * Assert the date is in the past.
