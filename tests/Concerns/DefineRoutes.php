@@ -43,6 +43,15 @@ trait DefineRoutes
             return view('page');
         });
 
+        $router->get('session/all', function () {
+            session([
+                'foo' => 'bar',
+                'baz' => 'biz',
+            ]);
+
+            return response();
+        })->name('session.all');
+
         $router->get('staff-only', function (Request $request) {
             return response('hi', $request->pin == 1337 ? 200 : 401);
         });

@@ -347,3 +347,19 @@ expect()->extend(
         return $this;
     },
 );
+
+expect()->extend(
+    'toHaveAllSession',
+    /**
+     * Assert that the session has a given list of values.
+     *
+     * @param mixed $value
+     */
+    function (array $bindings): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertSessionHasAll($bindings);
+
+        return $this;
+    },
+);
