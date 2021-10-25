@@ -317,6 +317,54 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toHaveJsonStructure',
+    /**
+     * Assert that the response has a given JSON structure.
+     */
+    function (array $structure = null, array $responseData = null): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+
+        $response->assertJsonStructure($structure, $responseData);
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toHaveJsonPath',
+    /**
+     * Assert that the expected value and type exists at the given path in the response.
+     *
+     * @param mixed $expect
+     */
+    function (string $path, $expect): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+
+        $response->assertJsonPath($path, $expect);
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toHaveJsonValidationErrors',
+    /**
+     * Assert that the response has the given JSON validation errors.
+     *
+     * @param string|array $errors
+     */
+    function ($errors = null, string $responseKey = 'errors'): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertJsonValidationErrors($errors, $responseKey);
+
+        return $this;
+    },
+);
+
+expect()->extend(
     'toHaveValid',
     /**
      * Assert that the response doesn't have the given validation error keys.
@@ -349,6 +397,41 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toHaveHeader',
+    /**
+     * Assert that the response contains the given header and equals the optional value.
+     *
+     * @param mixed $value
+     */
+    function (string $headerName, $value = null): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertHeader($headerName, $value);
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toHaveSession',
+    /**
+     * Assert that the session has a given value.
+     *
+     * @param string|array $key
+     * @param mixed        $value
+     *
+     * @return $this
+     */
+    function ($key, $value = null): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertSessionHas($key, $value);
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toHaveAllSession',
     /**
      * Assert that the session has a given list of values.
@@ -359,6 +442,20 @@ expect()->extend(
         /** @var TestResponse $response */
         $response = $this->value;
         $response->assertSessionHasAll($bindings);
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toHaveLocation',
+    /**
+     * Assert that the current location header matches the given URI.
+     */
+    function (string $uri): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertLocation($uri);
 
         return $this;
     },

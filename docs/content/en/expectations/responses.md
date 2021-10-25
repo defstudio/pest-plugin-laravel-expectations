@@ -7,36 +7,12 @@ fullscreen: false
 position: 10
 ---
 
-### `toBeSuccessful()`
+### `toBeDownload()`
 
-Assert that the response has a successful status code.
-
-```php
-expect(get('/page'))->toBeSuccessful();
- ```
-
-### `toBeOk()`
-
-Assert that the response has a 200 status code.
+Assert that the response offers a file download.
 
 ```php
-expect(get('/page'))->toBeOk();
- ```
-
-### `toConfirmCreation()`
-
-Assert that the response has a 201 status code.
-
-```php
-expect(post('/comment'))->toConfirmCreation();
- ```
-
-### `toBeNotFound()`
-
-Assert that the response has a not found status code.
-
-```php
-expect(get('/unknown'))->toBeNotFound();
+expect(get('/reports/last.pdf'))->toBeDownload();
  ```
 
 ### `toBeForbidden()`
@@ -47,20 +23,20 @@ Assert that the response has a forbidden status code.
 expect(get('/secret'))->toBeForbidden();
  ```
 
-### `toBeUnauthorized()`
+### `toBeNotFound()`
 
-Assert that the response has an unauthorized status code.
+Assert that the response has a not found status code.
 
 ```php
-expect(get('/admin-area'))->toBeUnauthorized();
+expect(get('/unknown'))->toBeNotFound();
  ```
 
-### `toHaveNoContent()`
+### `toBeOk()`
 
-Assert that the response has the given status code and no content.
+Assert that the response has a 200 status code.
 
 ```php
-expect(post('/timer/ping'))->toHaveNoContent();
+expect(get('/page'))->toBeOk();
  ```
 
 ### `toBeRedirect()`
@@ -79,14 +55,86 @@ Assert whether the response is redirecting to a given signed route.
 expect(get('/secret/location'))->toBeRedirect('/login');
  ```
 
-### `toBeDownload()`
+### `toBeSuccessful()`
 
-Assert that the response offers a file download.
+Assert that the response has a successful status code.
 
 ```php
-expect(get('/reports/last.pdf'))->toBeDownload();
+expect(get('/page'))->toBeSuccessful();
  ```
-<
+
+### `toBeUnauthorized()`
+
+Assert that the response has an unauthorized status code.
+
+```php
+expect(get('/admin-area'))->toBeUnauthorized();
+ ```
+
+### `toConfirmCreation()`
+
+Assert that the response has a 201 status code.
+
+```php
+expect(post('/comment'))->toConfirmCreation();
+ ```
+
+### `toContainText()`
+
+alias for [`toRenderText()`](expectations/responses#torendertext)
+
+```php
+expect(get('/page'))->toContainText('title');
+ ```
+
+### `toContainTextInOrder()`
+
+alias for [`toRenderTextInOrder()`](expectations/responses#torendertextinorder)
+
+```php
+expect(get('/page'))->toContainTextInOrder(['title', 'content']);
+ ```
+
+### `toHaveHeader()`
+
+Assert that the response contains the given header and equals the optional value.
+
+```php
+expect(post('/users', $newUserData))->toHaveHeader('Location', '/user/11/edit');
+ ```
+
+### `toHaveLocation()`
+
+Assert that the current location header matches the given URI.
+
+```php
+expect(get('/secret'))->toHaveLocation('/login');
+ ```
+
+### `toHaveInvalid()`
+
+Assert that the response has the given validation error keys.
+
+```php
+expect(post('/register'), ['email' => 'taylor'])->toHaveInvalid(['email' => 'invalid email']);
+ ```
+
+### `toHaveNoContent()`
+
+Assert that the response has the given status code and no content.
+
+```php
+expect(post('/timer/ping'))->toHaveNoContent();
+ ```
+
+### `toHaveSession()`
+
+Assert that the session has a given value.
+
+```php
+expect(post('/users', $newUserData))->toHaveSession('success');
+ ```
+
 ### `toHaveStatus()`
 
 Assert that the response has the given status code.
@@ -103,22 +151,6 @@ Assert that the response doesn't have the given validation error keys.
 expect(post('/register'), ['email' => 'taylor@laravel.com'])->toHaveValid(['email']);
  ```
 
-### `toHaveInvalid()`
-
-Assert that the response has the given validation error keys.
-
-```php
-expect(post('/register'), ['email' => 'taylor'])->toHaveInvalid(['email']);
- ```
-
-### `toHaveJson()`
-
-Assert that the response is a superset of the given JSON.
-
-```php
-expect(get('/api/post/11'))->toHaveJson(['id' => 11]);
- ```
-
 ### `toHaveExactJson()`
 
 Assert that the response has the exact given JSON.
@@ -131,6 +163,14 @@ expect(get('/api/post/11'))->toHaveExactJson([
 ]);
  ```
 
+### `toHaveJson()`
+
+Assert that the response is a superset of the given JSON.
+
+```php
+expect(get('/api/post/11'))->toHaveJson(['id' => 11]);
+ ```
+
 ### `toHaveJsonFragment()`
 
 Assert that the response contains the given JSON fragment.
@@ -139,6 +179,30 @@ Assert that the response contains the given JSON fragment.
 expect(get('/api/post/11'))->toHaveJsonFragment([
         'tags' => ['hot', 'news']
 ]);
+ ```
+
+### `toHaveJsonPath()`
+
+Assert that the expected value and type exists at the given path in the response.
+
+```php
+expect(get('/api/post/11'))->toHaveJsonPath('options.public', true);
+ ```
+
+### `toHaveJsonStructure()`
+
+Assert that the response has a given JSON structure.
+
+```php
+expect(get('/api/post/11'))->toHaveJsonStructure(['options' => ['user']]);
+ ```
+
+### `toHaveJsonValidationErrors()`
+
+Assert that the response has the given JSON validation errors.
+
+```php
+expect(post('/comments'))->toHaveJsonValidationErrors(['content' => 'content cannot be empty']);
  ```
 
 ### `toRender()`
@@ -172,11 +236,3 @@ Assert that the response contains the given ordered sequence of strings in its t
 ```php
 expect(get('/page'))->toRenderInOrder(['title', 'content'], escape: false);
  ```
-
-### `toContainText()`
-
-alias for [`toRenderText()`](expectations/responses#torendertext)
-
-### `toContainTextInOrder()`
-
-alias for [`toRenderTextInOrder()`](expectations/responses#torendertextinorder)

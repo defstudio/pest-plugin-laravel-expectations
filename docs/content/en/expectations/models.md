@@ -15,12 +15,12 @@ Assert the given model to be deleted.
 expect($model)->toBeDeleted();
  ```
 
-### `toBeSoftDeleted()`
+### `toBelongTo()`
 
-Assert the given model to be soft deleted.
+Assert the given model belongs to another one.
 
 ```php
-expect($model)->toBeSoftDeleted();
+expect($post)->toBelongTo($user);
  ```
 
 ### `toExist()`
@@ -31,12 +31,12 @@ Assert the given model exists in the database.
 expect($model)->toExist();
  ```
 
-### `toBelongTo()`
+### `toBeSoftDeleted()`
 
-Assert the given model belongs to another one.
+Assert the given model to be soft deleted.
 
 ```php
-expect($post)->toBelongTo($user);
+expect($model)->toBeSoftDeleted();
  ```
 
 ### `toOwn()`

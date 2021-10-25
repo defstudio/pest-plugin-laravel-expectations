@@ -10,20 +10,64 @@ All notable changes to this project will be documented in this file. For a full 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-
 ### Unreleased
 
 **Added**
 
+- `toBeAfter()` expectation
+- `toBeBefore()` expectation
+- `toBeBetween()` expectation
+- `toBeCurrentDay()` expectation
+- `toBeCurrentMonth()` expectation
+- `toBeCurrentWeek()` expectation
+- `toBeCurrentYear()` expectation
+- `toBeFriday()` expectation
+- `toBeFuture()` expectation
+- `toBeLastMonth()` expectation
+- `toBeLastWeek()` expectation
+- `toBeLastYear()` expectation
+- `toBeMonday()` expectation
+- `toBeNextMonth()` expectation
+- `toBeNextWeek()` expectation
+- `toBeNextYear()` expectation
+- `toBePast()` expectation
+- `toBeSameDayAs()` expectation
+- `toBeSameHourAs()` expectation
+- `toBeSameMonthAs()` expectation
+- `toBeSameYearAs()` expectation
+- `toBeSameWeekAs()` expectation
+- `toBeSaturday()` expectation
+- `toBeSunday()` expectation
+- `toBeToday()` expectation
+- `toBeThursday()` expectation
+- `toBeTuesday()` expectation
+- `toBeWednesday()` expectation
+- `toBeWeekday()` expectation
+- `toBeWeekend()` expectation
+- `toHaveHeader()` expectation
+- `toHaveSession()` expectation
+
+**Updated**
+
+- Documentation refactor
+
+### [v1.4.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.3.0...v1.4.0) - 2021-10-21
+
+**Added**
+
+- `toHaveLocation()` expectation
 - `toConfirmCreation()` expectation
 - `toBeRedirectToSignedRoute()` expectation
 - `toHaveJson()` expectation
 - `toHaveExactJson()` expectation
 - `toHaveJsonFragment()` expectation
+- `toHaveJsonPath()` expectation
+- `toHaveJsonStructure()` expectation
+- `toHaveJsonValidationErrors()` expectation
 - `toHaveValid()` expectation
 - `toHaveInvalid()` expectation
 
-### [v1.3.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.2.0...v1.3.0) - 2021-15-10
+### [v1.3.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.2.0...v1.3.0) - 2021-10-15
 
 **Added**
 - `toBeOk()` expectation
