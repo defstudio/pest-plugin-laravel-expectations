@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeCurrentYear()` expectation
 - `toBeFriday()` expectation
 - `toBeFuture()` expectation
+- `toBeFuture()` expectation
 - `toBeLastMonth()` expectation
 - `toBeLastWeek()` expectation
 - `toBeLastYear()` expectation
@@ -44,6 +45,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeWednesday()` expectation
 - `toBeWeekday()` expectation
 - `toBeWeekend()` expectation
+- `toHaveAllSession()` expectation
 - `toHaveHeader()` expectation
 - `toHaveSession()` expectation
 
