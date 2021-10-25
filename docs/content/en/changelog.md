@@ -48,6 +48,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toHaveAllSession()` expectation
 - `toHaveHeader()` expectation
 - `toHaveSession()` expectation
+- `toBeMissingInStorage()` expectation
 
 **Updated**
 
