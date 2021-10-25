@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file. For a full 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-### Unreleased
+### [v1.5.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.4.0...v1.5.0) - 2021-10-25
 
 **Added**
 
