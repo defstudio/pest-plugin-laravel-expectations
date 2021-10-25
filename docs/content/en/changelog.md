@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeAfter()` expectation
 - `toBeBefore()` expectation
 - `toBeBetween()` expectation
+- `toBeCurrentDay()` expectation
 - `toBeCurrentMonth()` expectation
 - `toBeCurrentWeek()` expectation
 - `toBeCurrentYear()` expectation
@@ -37,6 +38,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeSameWeekAs()` expectation
 - `toBeSaturday()` expectation
 - `toBeSunday()` expectation
+- `toBeToday()` expectation
 - `toBeThursday()` expectation
 - `toBeTuesday()` expectation
 - `toBeWednesday()` expectation
