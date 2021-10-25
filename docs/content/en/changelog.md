@@ -46,6 +46,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeWeekend()` expectation
 - `toHaveHeader()` expectation
 - `toHaveSession()` expectation
+- `toBeMissingInStorage()` expectation
 
 **Updated**
 
