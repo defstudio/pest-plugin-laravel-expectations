@@ -432,6 +432,22 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toHaveAllSession',
+    /**
+     * Assert that the session has a given list of values.
+     *
+     * @param mixed $value
+     */
+    function (array $bindings): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertSessionHasAll($bindings);
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toHaveLocation',
     /**
      * Assert that the current location header matches the given URI.
