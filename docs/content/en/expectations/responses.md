@@ -95,12 +95,28 @@ alias for [`toRenderTextInOrder()`](expectations/responses#torendertextinorder)
 expect(get('/page'))->toContainTextInOrder(['title', 'content']);
  ```
 
+### `toHaveAllSession()`
+
+Assert that the session has a given list of values.
+
+```php
+expect(get('/data'))->toHaveAllSession(['foo', 'bar']);
+ ```
+
 ### `toHaveHeader()`
 
 Assert that the response contains the given header and equals the optional value.
 
 ```php
 expect(post('/users', $newUserData))->toHaveHeader('Location', '/user/11/edit');
+ ```
+
+### `toHaveInvalid()`
+
+Assert that the response has the given validation error keys.
+
+```php
+expect(post('/register'), ['email' => 'taylor'])->toHaveInvalid(['email' => 'invalid email']);
  ```
 
 ### `toHaveLocation()`
@@ -111,12 +127,12 @@ Assert that the current location header matches the given URI.
 expect(get('/secret'))->toHaveLocation('/login');
  ```
 
-### `toHaveInvalid()`
+### `toHaveMissingHeader()`
 
-Assert that the response has the given validation error keys.
+Assert that the response does not contain the given header.
 
 ```php
-expect(post('/register'), ['email' => 'taylor'])->toHaveInvalid(['email' => 'invalid email']);
+expect(get('/data'))->toHaveMissingHeader('baz');
  ```
 
 ### `toHaveNoContent()`

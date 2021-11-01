@@ -31,6 +31,14 @@ Assert the date is between the given ones.
 expect('2021-10-20')->toBeBetween(today(), today()->addWeek());
  ```
 
+### `toBeCurrentDay()`
+
+Assert the date is today.
+
+```php
+expect(now())->toBeCurrentDay();
+ ```
+
 ### `toBeCurrentMonth()`
 
 Assert the date is in the current month.
@@ -189,6 +197,14 @@ Assert the date is Sunday.
 
 ```php
  expect('2021-10-25')->toBeSunday();
+ ```
+
+### `toBeToday()`
+
+alias for [`toBeCurrentDay()`](expectations/time#tobecurrentday)
+
+```php
+ expect(now())->toBeToday();
  ```
 
 ### `toBeTuesday()`

@@ -413,6 +413,22 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toHaveMissingHeader',
+    /**
+     * Asserts that the response does not contain the given header.
+     *
+     * @param mixed $value
+     */
+    function ($headerName): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertHeaderMissing($headerName);
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toHaveSession',
     /**
      * Assert that the session has a given value.
@@ -426,6 +442,22 @@ expect()->extend(
         /** @var TestResponse $response */
         $response = $this->value;
         $response->assertSessionHas($key, $value);
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toHaveAllSession',
+    /**
+     * Assert that the session has a given list of values.
+     *
+     * @param mixed $value
+     */
+    function (array $bindings): Expectation {
+        /** @var TestResponse $response */
+        $response = $this->value;
+        $response->assertSessionHasAll($bindings);
 
         return $this;
     }
