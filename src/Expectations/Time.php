@@ -204,6 +204,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeMidday',
+    /**
+     * Assert the date midday.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isMidday(), sprintf('Failed to assert that [%s] is midday', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeNextMonth',
     /**
      * Assert the date is in the next month.
