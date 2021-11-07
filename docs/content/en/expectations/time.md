@@ -31,6 +31,14 @@ Assert the date is between the given ones.
 expect('2021-10-20')->toBeBetween(today(), today()->addWeek());
  ```
 
+### `toBeBirthday()`
+
+Assert the date a birthday.
+
+```php
+expect('2021-10-20')->toBeBirthday('1985-10-20');
+ ```
+
 ### `toBeCurrentDay()`
 
 Assert the date is today.
