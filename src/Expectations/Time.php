@@ -62,6 +62,26 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeBirthday',
+    /**
+     * Assert the date a birthday.
+     *
+     * @param DateTimeInterface|string|null $date
+     */
+    function ($date = null): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        if ($date !== null) {
+            $date = ValueProcessor::getCarbonDate($date);
+        }
+
+        assertTrue($value->isBirthday($date), sprintf('Failed to assert that [%s] is a birthday', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeCurrentDay',
     /**
      * Assert the date is today.
