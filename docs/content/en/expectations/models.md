@@ -23,12 +23,12 @@ Assert the given model belongs to another one.
 expect($post)->toBelongTo($user);
  ```
 
-### `toExist()`
+### `toBeSameModelAs()`
 
-Assert the given model exists in the database.
+Assert that the given model has the same ID and belong to the same table of another model.
 
 ```php
-expect($model)->toExist();
+expect($post)->toBeSameModelAs($anotherPost);
  ```
 
 ### `toBeSoftDeleted()`
@@ -37,6 +37,14 @@ Assert the given model to be soft deleted.
 
 ```php
 expect($model)->toBeSoftDeleted();
+ ```
+
+### `toExist()`
+
+Assert the given model exists in the database.
+
+```php
+expect($model)->toExist();
  ```
 
 ### `toOwn()`
