@@ -148,6 +148,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeEndOfDay',
+    /**
+     * Assert the date is end of day.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isEndOfDay(), sprintf('Failed to assert that [%s] is end of day', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeFuture',
     /**
      * Assert the date is in the future.
