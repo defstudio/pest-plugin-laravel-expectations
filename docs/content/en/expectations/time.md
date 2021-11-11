@@ -127,6 +127,14 @@ Assert the date is midday.
 expect(now()->subYear())->toBeLastYear();
  ```
 
+### `toBeMidnight()`
+
+Assert the date is start of day / midnight.
+
+```php
+expect(now()->subYear())->toBeLastYear();
+ ```
+
 ### `toBeMonday()`
 
 Assert the date is Monday.
