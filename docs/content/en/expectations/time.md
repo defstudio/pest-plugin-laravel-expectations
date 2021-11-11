@@ -71,6 +71,14 @@ Assert the date is in the current year.
 expect(now())->toBeCurrentYear();
  ```
 
+### `toBeEndOfDay()`
+
+Assert the date is end of day.
+
+```php
+expect(now())->toBeEndOfDay();
+ ```
+
 ### `toBeFuture()`
 
 Assert the date is in the future.

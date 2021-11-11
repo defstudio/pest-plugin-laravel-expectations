@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 **Added**
 
 - `toBeBirthday()` expectation
+- `toBeEndOfDay()` expectation
 - `toBeSameModelAs()` expectation
 - `toBeMidday()` expectation
 
