@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeSameModelAs()` expectation
 - `toBeMidday()` expectation
 - `toBeMidnight()` expectation
+- `toBeStartOfDay()` expectation
 
 ### [v1.5.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.4.0...v1.5.0) - 2021-10-25
 

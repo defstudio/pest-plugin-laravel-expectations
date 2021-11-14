@@ -223,6 +223,14 @@ Assert the date is Saturday.
  expect('2021-10-24')->toBeSaturday();
  ```
 
+### `toBeStartOfDay()`
+
+Assert the date is start of day / midnight.
+
+```php
+ expect('2021-10-24 00:00:00')->toBeStartOfDay();
+ ```
+
 ### `toBeSunday()`
 
 Assert the date is Sunday.
