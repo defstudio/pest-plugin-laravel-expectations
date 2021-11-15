@@ -401,6 +401,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeStartOfDay',
+    /**
+     * Assert the date is start of day / midnight.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isStartOfDay(), sprintf('Failed to assert that [%s] is start of day', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeWeekend',
     /**
      * Assert the date is Saturday or Sunday.
