@@ -28,7 +28,7 @@ final class RelationshipGuesser
     /** @var string */
     private $hintedRelationshipName = '';
 
-    /** @var Array<string> */
+    /** @var array<string> */
     private $triedRelationshipNames = [];
 
     /** @var string */
