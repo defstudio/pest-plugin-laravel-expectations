@@ -7,6 +7,10 @@ fullscreen: false
 position: 10
 ---
 
+<alert type="info">**Note: this plugin wraps Responses to TestResponse, so expectations in this page can be used both with get()/post() calls and with object returned from response() helpers.</alert>
+
+
+
 ### `toBeDownload()`
 
 Assert that the response offers a file download.
