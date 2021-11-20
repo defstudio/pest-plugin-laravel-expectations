@@ -9,6 +9,12 @@ test('pass', function () {
     expect($response)->toBeOk();
 });
 
+test('pass with simple response', function () {
+    $response = response()->noContent(200);
+
+    expect($response)->toBeOk();
+});
+
 test('fails', function () {
     $response = get('/redirect');
 
