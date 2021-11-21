@@ -10,6 +10,7 @@ use function Pest\Laravel\assertInvalidCredentials;
 use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertTrue;
 use SebastianBergmann\Exporter\Exporter;
+use Illuminate\Support\Facades\Auth;
 
 expect()->extend(
     'toBeAuthenticated',
