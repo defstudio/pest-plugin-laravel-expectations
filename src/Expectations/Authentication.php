@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Contracts\Auth\Access\Authorizable;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Auth;
 use Pest\Expectation;
 use function Pest\Laravel\assertAuthenticated;
@@ -20,7 +21,7 @@ expect()->extend(
     function (string $guard = null): Expectation {
         assertAuthenticated($guard);
 
-        /** @var \Illuminate\Contracts\Auth\Authenticatable $authenticated */
+        /** @var Authenticatable $authenticated */
         $authenticated = Auth::guard($guard)->user();
 
         // @phpstan-ignore-next-line

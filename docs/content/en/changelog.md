@@ -10,6 +10,12 @@ All notable changes to this project will be documented in this file. For a full 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+### [v1.6.2](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.6.1...v1.6.2) - 2021-11-21
+
+**Fix**
+
+- Take given guard into account in `->toBeAuthenticated()` expectation
+
 ### [v1.6.1](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.6.0...v1.6.1) - 2021-11-20
 
 **Changed**
