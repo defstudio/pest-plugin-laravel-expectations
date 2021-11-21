@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Contracts\Auth\Access\Authorizable;
+use Illuminate\Support\Facades\Auth;
 use Pest\Expectation;
 use function Pest\Laravel\assertAuthenticated;
 use function Pest\Laravel\assertCredentials;
@@ -10,7 +11,6 @@ use function Pest\Laravel\assertInvalidCredentials;
 use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertTrue;
 use SebastianBergmann\Exporter\Exporter;
-use Illuminate\Support\Facades\Auth;
 
 expect()->extend(
     'toBeAuthenticated',
@@ -20,10 +20,11 @@ expect()->extend(
     function (string $guard = null): Expectation {
         assertAuthenticated($guard);
 
+        /** @var \Illuminate\Contracts\Auth\Authenticatable $authenticated */
         $authenticated = Auth::guard($guard)->user();
-        assertNotNull($authenticated, "No authenticated user found with guard '$guard'");
-        
-        assertEquals($this->value->id, $authenticated->id, "The User ID #{$this->value->id} doesn't match authenticated User ID #$authenticated->id");
+
+        // @phpstan-ignore-next-line
+        assertEquals($this->value->id, $authenticated->id, "The User ID #{$this->value->id} doesn't match authenticated User ID #{$authenticated->id}");
 
         return $this;
     }
