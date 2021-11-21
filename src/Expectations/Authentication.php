@@ -19,7 +19,7 @@ expect()->extend(
     function (string $guard = null): Expectation {
         assertAuthenticated($guard);
 
-        $authenticated = Auth::user();
+        $authenticated = Auth::guard($guard)->user();
         assertEquals($this->value->id, $authenticated->id, "The User ID #{$this->value->id} doesn't match authenticated User ID #$authenticated->id");
 
         return $this;
