@@ -21,7 +21,7 @@ expect()->extend(
         assertAuthenticated($guard);
 
         $authenticated = Auth::guard($guard)->user();
-        assertNotNull($authenticated, "No user is currently authenticated");
+        assertNotNull($authenticated, "No authenticated user found with guard '$guard'");
         
         assertEquals($this->value->id, $authenticated->id, "The User ID #{$this->value->id} doesn't match authenticated User ID #$authenticated->id");
 
