@@ -2,11 +2,25 @@
 
 declare(strict_types=1);
 
+namespace DefStudio\PestLaravelExpectations\Expectations;
+
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
 use Pest\Expectation;
 use PHPUnit\Framework\AssertionFailedError;
 use PHPUnit\Framework\ExpectationFailedException;
+
+function getTestableResponse(Expectation $expectation): TestResponse
+{
+    /** @var TestResponse|Response $response */
+    $response = $expectation->value;
+
+    if ($response instanceof TestResponse) {
+        return $response;
+    }
+
+    return TestResponse::fromBaseResponse($response);
+}
 
 expect()->extend(
     'toBeRedirect',
