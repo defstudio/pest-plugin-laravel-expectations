@@ -28,12 +28,7 @@ expect()->extend(
      * Assert that the response is a redirection.
      */
     function (string $uri = null): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertRedirect();
 
@@ -59,12 +54,7 @@ expect()->extend(
      * @param mixed $parameters
      */
     function (string $name = null, $parameters = []): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertRedirectToSignedRoute($name, $parameters);
 
@@ -78,12 +68,7 @@ expect()->extend(
      * Assert that the response has a successful status code.
      */
     function (): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertSuccessful();
 
@@ -97,12 +82,7 @@ expect()->extend(
      * Assert that the response has a 200 status code.
      */
     function (): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertOk();
 
@@ -116,12 +96,7 @@ expect()->extend(
      * Assert that the response has a 201 status code.
      */
     function (): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertCreated();
 
@@ -135,12 +110,7 @@ expect()->extend(
      * Assert that the response has a not found status code.
      */
     function (): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertNotFound();
 
@@ -154,12 +124,7 @@ expect()->extend(
      * Assert that the response has an unauthorized status code.
      */
     function (): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertUnauthorized();
 
@@ -173,12 +138,7 @@ expect()->extend(
      * Assert that the response has the given status code and no content.
      */
     function (int $status = 204): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertNoContent($status);
 
@@ -192,12 +152,7 @@ expect()->extend(
      * Assert that the response has a forbidden status code.
      */
     function (): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertForbidden();
 
@@ -211,12 +166,7 @@ expect()->extend(
      * Assert that the response has the given status code.
      */
     function (int $status): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertStatus($status);
 
@@ -230,12 +180,7 @@ expect()->extend(
      * Assert that the response offers a file download.
      */
     function (string $filename = null): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         try {
             $response->assertDownload($filename);
@@ -256,12 +201,7 @@ expect()->extend(
      * @param string|array $string
      */
     function ($string, bool $escape = false): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertSee($string, $escape);
 
@@ -276,12 +216,7 @@ expect()->extend(
      * Assert that the response contains the given ordered sequence of strings.
      */
     function (array $strings, bool $escape = false): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertSeeInOrder($strings, $escape);
 
@@ -297,12 +232,7 @@ expect()->extend(
      * @param string|array $text
      */
     function ($text, bool $escape = false): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertSeeText($text, $escape);
 
@@ -316,12 +246,7 @@ expect()->extend(
      * Assert that the response contains the given ordered sequence of strings in its text.
      */
     function (array $texts, bool $escape = false): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertSeeTextInOrder($texts, $escape);
 
@@ -361,12 +286,7 @@ expect()->extend(
      * @param array|callable $json
      */
     function ($json, bool $strict = false): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertJson($json, $strict);
 
@@ -382,12 +302,7 @@ expect()->extend(
      * @param array|callable $json
      */
     function ($json): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertExactJson($json);
 
@@ -403,12 +318,7 @@ expect()->extend(
      * @param array|callable $json
      */
     function ($json): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertJsonFragment($json);
 
@@ -422,12 +332,7 @@ expect()->extend(
      * Assert that the response has a given JSON structure.
      */
     function (array $structure = null, array $responseData = null): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertJsonStructure($structure, $responseData);
 
@@ -443,12 +348,7 @@ expect()->extend(
      * @param mixed $expect
      */
     function (string $path, $expect): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertJsonPath($path, $expect);
 
@@ -464,12 +364,7 @@ expect()->extend(
      * @param string|array $errors
      */
     function ($errors = null, string $responseKey = 'errors'): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertJsonValidationErrors($errors, $responseKey);
 
@@ -485,12 +380,7 @@ expect()->extend(
      * @param string|array|null $keys
      */
     function ($keys = null, string $errorBag = 'default', string $responseKey = 'errors'): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertValid($keys, $errorBag, $responseKey);
 
@@ -506,12 +396,7 @@ expect()->extend(
      * @param string|array|null $keys
      */
     function ($keys = null, string $errorBag = 'default', string $responseKey = 'errors'): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertInvalid($keys, $errorBag, $responseKey);
 
@@ -527,12 +412,7 @@ expect()->extend(
      * @param mixed $value
      */
     function (string $headerName, $value = null): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertHeader($headerName, $value);
 
@@ -546,12 +426,7 @@ expect()->extend(
      * Asserts that the response does not contain the given header.
      */
     function (string $headerName): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertHeaderMissing($headerName);
 
@@ -570,8 +445,8 @@ expect()->extend(
      * @return $this
      */
     function ($key, $value = null): Expectation {
-        /** @var TestResponse $response */
-        $response = $this->value;
+        $response = getTestableResponse($this);
+
         $response->assertSessionHas($key, $value);
 
         return $this;
@@ -584,12 +459,7 @@ expect()->extend(
      * Assert that the session has a given list of values.
      */
     function (array $bindings): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertSessionHasAll($bindings);
 
@@ -603,12 +473,7 @@ expect()->extend(
      * Assert that the current location header matches the given URI.
      */
     function (string $uri): Expectation {
-        /** @var TestResponse|Response $response */
-        $response = $this->value;
-
-        if ($response instanceof Response) {
-            $response = TestResponse::fromBaseResponse($response);
-        }
+        $response = getTestableResponse($this);
 
         $response->assertLocation($uri);
 
