@@ -354,6 +354,23 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeSameMinuteAs',
+    /**
+     * Assert the date is the same minute as the given one.
+     *
+     * @param DateTimeInterface|string $date
+     */
+    function ($date): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+        $expected = ValueProcessor::getCarbonDate($date);
+
+        assertTrue($value->isSameMinute($expected), sprintf('Failed to assert that [%s] is same minute as %s', $value, $expected));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeSameMonthAs',
     /**
      * Assert the date is the same month as the given one.
