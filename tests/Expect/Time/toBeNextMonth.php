@@ -7,11 +7,11 @@ test('pass', function () {
 });
 
 test('fails', function () {
-    expect('2999-01-01')->toBeNextMonth();
-})->throws(ExpectationFailedException::class, 'Failed to assert that [2999-01-01 00:00:00] is in the next month');
+    expect(now())->toBeNextMonth();
+})->throws(ExpectationFailedException::class);
 
 test('pass negated', function () {
-    expect('2999-01-01')->not->toBeNextMonth();
+    expect(now())->not->toBeNextMonth();
 });
 
 test('fails negated', function () {

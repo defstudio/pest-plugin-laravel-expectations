@@ -353,6 +353,23 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeSameSecondAs',
+    /**
+     * Assert the date is the same second as the given one.
+     *
+     * @param DateTimeInterface|string $date
+     */
+    function ($date): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+        $expected = ValueProcessor::getCarbonDate($date);
+
+        assertTrue($value->isSameSecond($expected), sprintf('Failed to assert that [%s] is same second as %s', $value, $expected));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeSameYearAs',
     /**
      * Assert the date is the same year as the given one.
