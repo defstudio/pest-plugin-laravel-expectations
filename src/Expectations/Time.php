@@ -96,6 +96,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeCurrentHour',
+    /**
+     * Assert the date is in the current hour.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isCurrentHour(), sprintf('Failed to assert that [%s] is in the current hour', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeCurrentMinute',
     /**
      * Assert the date is in the current minute.

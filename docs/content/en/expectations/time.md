@@ -47,6 +47,14 @@ Assert the date is today.
 expect(now())->toBeCurrentDay();
  ```
 
+### `toBeCurrentHour()`
+
+Assert the date is in the current hour.
+
+```php
+expect(now())->toBeCurrentHour();
+ ```
+
 ### `toBeCurrentMinute()`
 
 Assert the date is in the current minute.
