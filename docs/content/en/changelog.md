@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toBeCurrentMinute` expectation
 - `toBeSameMinuteAs` expectation
 - `toBeCurrentHour` expectation
+- `toBeTomorrow` expectation
 
 ### [v1.6.5](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.6.4...v1.6.5) - 2021-11-24
 

@@ -287,6 +287,14 @@ alias for [`toBeCurrentDay()`](expectations/time#tobecurrentday)
  expect(now())->toBeToday();
  ```
 
+### `toBeTomorrow()`
+
+Assert the date is tomorrow.
+
+```php
+ expect(now()->addDay())->toBeTomorrow();
+ ```
+
 ### `toBeTuesday()`
 
 Assert the date is Tuesday.
