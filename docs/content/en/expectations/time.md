@@ -55,6 +55,14 @@ Assert the date is in the current month.
 expect(now())->toBeCurrentMonth();
  ```
 
+### `toBeCurrentSecond()`
+
+Assert the date is in the current second.
+
+```php
+expect(now())->toBeCurrentSecond();
+ ```
+
 ### `toBeCurrentWeek()`
 
 Assert the date is in the current week.

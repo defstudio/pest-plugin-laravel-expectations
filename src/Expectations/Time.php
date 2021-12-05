@@ -96,16 +96,6 @@ expect()->extend(
 );
 
 expect()->extend(
-    'toBeToday',
-    /**
-     * Assert the date is today.
-     */
-    function (): Expectation {
-        return $this->toBeCurrentDay();
-    }
-);
-
-expect()->extend(
     'toBeCurrentMonth',
     /**
      * Assert the date is in the current month.
@@ -114,6 +104,20 @@ expect()->extend(
         $value = ValueProcessor::getCarbonDate($this->value);
 
         assertTrue($value->isCurrentMonth(), sprintf('Failed to assert that [%s] is in the current month', $value));
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeCurrentSecond',
+    /**
+     * Assert the date is in the current second.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isCurrentSecond(), sprintf('Failed to assert that [%s] is in the current second', $value));
 
         return $this;
     }
@@ -400,6 +404,16 @@ expect()->extend(
         assertTrue($value->isSameWeek($expected), sprintf('Failed to assert that [%s] is same week as %s', $value, $expected));
 
         return $this;
+    }
+);
+
+expect()->extend(
+    'toBeToday',
+    /**
+     * Assert the date is today.
+     */
+    function (): Expectation {
+        return $this->toBeCurrentDay();
     }
 );
 
