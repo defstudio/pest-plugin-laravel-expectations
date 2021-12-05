@@ -334,3 +334,11 @@ Assert the date is Wednesday.
 ```php
  expect('2021-10-21')->toBeWednesday();
  ```
+
+### `toBeYesterday()`
+
+Assert the date is yesterday.
+
+```php
+ expect('2021-10-21')->toBeYesterday();
+ ```

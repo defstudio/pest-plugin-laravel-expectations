@@ -615,3 +615,17 @@ expect()->extend(
         return $this;
     }
 );
+
+expect()->extend(
+    'toBeYesterday',
+    /**
+     * Assert the date is yesterday.
+     */
+    function (): Expectation {
+        $value = ValueProcessor::getCarbonDate($this->value);
+
+        assertTrue($value->isYesterday(), sprintf('Failed to assert that [%s] is yesterday', $value));
+
+        return $this;
+    }
+);
