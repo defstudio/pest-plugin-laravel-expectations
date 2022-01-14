@@ -13,9 +13,17 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
-        php: ['7.3', '7.4', '8.0', '8.1']
-        dependency-version: [prefer-lowest, prefer-stable]
+        os: [ ubuntu-latest, macos-latest ]
+        php: [ 7.3, 7.4, 8.0, 8.1 ]
+        laravel-version: [ 7.*, 8.*, 9.* ]
+        dependency-version: [ prefer-lowest, prefer-stable ]
+        include:
+          - laravel: 9.*
+            testbench: 7.*
+          - laravel: 8.*
+            testbench: ^6.23
+          - laravel: 7.*
+            testbench: ^5.20
         exclude:
           - php: 8.1
             dependency-version: prefer-lowest
@@ -24,27 +32,28 @@ jobs:
           - php: 8.1
             os: windows-latest
 
-
-    name: PHP ${{ matrix.php }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
+    name: PHP${{ matrix.php }} - Laravel${{ matrix.laravel-version }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: ${{ matrix.php }}
-        tools: composer:v2
-        coverage: none
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer:v2
+          coverage: none
 
-    - name: Setup Problem Matches
-      run: |
-        echo "::add-matcher::${{ runner.tool_cache }}/php.json"
-        echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+      - name: Setup Problem Matches
+        run: |
+          echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
-    - name: Install PHP dependencies
-      run: composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
+      - name: Install PHP dependencies
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel-version }} "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest --no-progress --ansi
 
-    - name: Unit Tests
-      run: ./vendor/bin/pest --colors=always
+      - name: Execute Tests
+        run: ./vendor/bin/pest --colors=always
