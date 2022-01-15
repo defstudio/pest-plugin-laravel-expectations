@@ -18,7 +18,7 @@ jobs:
 #        laravel: [ 7.*, 8.*, 9.* ]
         laravel: [ '7.*' ]
         dependency-version: [ prefer-lowest, prefer-stable ]
-#        include:
+        include:
 #          - laravel: 9.*
 #            testbench: 7.*
 #          - laravel: 8.*
