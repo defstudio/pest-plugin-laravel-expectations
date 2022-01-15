@@ -19,7 +19,7 @@ test('fails', function () {
     $response = get('/ok');
 
     expect($response)->toBeRedirect();
-})->throws(ExpectationFailedException::class, 'Response status code [200] is not a redirect status code');
+})->throws(ExpectationFailedException::class);
 
 test('fails with uri check', function () {
     $response = get('/redirect/out');

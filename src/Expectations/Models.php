@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Pest\Expectation;
 use function Pest\Laravel\assertDatabaseHas;
-use function Pest\Laravel\assertDeleted;
+use function Pest\Laravel\assertModelMissing;
 use function Pest\Laravel\assertSoftDeleted;
 use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertTrue;
@@ -25,7 +25,7 @@ expect()->extend(
      * Assert that the given model is deleted.
      */
     function (): Expectation {
-        assertDeleted($this->value);
+        assertModelMissing($this->value);
 
         return $this;
     }
