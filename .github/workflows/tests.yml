@@ -30,10 +30,6 @@ jobs:
         exclude:
           - php: 8.1
             dependency-version: prefer-lowest
-          - php: 8.1
-            os: macos-latest
-          - php: 8.1
-            os: windows-latest
 
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
