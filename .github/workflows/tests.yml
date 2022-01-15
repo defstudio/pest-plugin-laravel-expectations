@@ -43,7 +43,7 @@ jobs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: ${{ matrix.php }}
+        php: ${{ matrix.php }}
         tools: composer:v2
         coverage: none
 
