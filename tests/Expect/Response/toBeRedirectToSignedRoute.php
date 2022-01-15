@@ -24,7 +24,7 @@ test('fails', function () {
     }
 
     expect($response)->toBeRedirectToSignedRoute('status', 200);
-})->throws(ExpectationFailedException::class, 'Response status code [200] is not a redirect status code');
+})->throws(ExpectationFailedException::class);
 
 test('fails parameter checking', function () {
     $response = get('/redirect-signed');
