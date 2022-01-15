@@ -11,6 +11,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+### [v1.8.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.7.0...v1.8.0) - 2021-01-15
+
+**Added**
+
+- Laravel 9 support
+
+
 ### [v1.7.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.6.5...v1.7.0) - 2021-12-05
 
 **Added**
