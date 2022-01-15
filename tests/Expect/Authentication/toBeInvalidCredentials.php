@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Hash;
 use PHPUnit\Framework\ExpectationFailedException;
 use Tests\Models\User;
 

@@ -23,8 +23,8 @@ jobs:
 #            testbench: 7.*
 #          - laravel: 8.*
 #            testbench: ^6.23
-#          - laravel: 7.*
-#            testbench: ^5.20
+          - laravel: 7.*
+            testbench: ^5.20
 
         exclude:
           - laravel: 9.*
