@@ -16,7 +16,7 @@ jobs:
 
         php: [ 7.3, 7.4, 8.0, 8.1 ]
         laravel: [ 8.*, 9.* ]
-        dependency-version: [prefer-lowest, prefer-stable]
+        dependency-version: [ prefer-lowest, prefer-stable ]
 
         include:
           - laravel: 8.*
@@ -26,30 +26,32 @@ jobs:
 
         exclude:
           - laravel: 9
-            php: [ 7.3, 7.4 ]
+            php: 7.3
+          - laravel: 9
+            php: 7.4
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: ${{ matrix.php }}
-        tools: composer:v2
-        coverage: none
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer:v2
+          coverage: none
 
-    - name: Setup Problem Matches
-      run: |
-        echo "::add-matcher::${{ runner.tool_cache }}/php.json"
-        echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+      - name: Setup Problem Matches
+        run: |
+          echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
-    - name: Install PHP dependencies
-      run: |
-        composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
-        composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-progress --ansi
+      - name: Install PHP dependencies
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-progress --ansi
 
-    - name: Execute Tests
-      run: ./vendor/bin/pest --colors=always
+      - name: Execute Tests
+        run: ./vendor/bin/pest --colors=always
