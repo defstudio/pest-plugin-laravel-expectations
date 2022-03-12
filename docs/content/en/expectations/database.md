@@ -39,5 +39,6 @@ $query = User::query()
 expect($query)->toMatchQuery(
     'and "email" = ?',
     ['luke@pest.dev'],
+    false,
 );
 ```
