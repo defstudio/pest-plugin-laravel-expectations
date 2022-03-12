@@ -11,6 +11,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+### [v1.9.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.7.0...v1.8.1) - 2021-01-15
+
+**Added**
+
+- `toMatchQuery` expectation
+
+
 ### [v1.8.1](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.7.0...v1.8.1) - 2021-01-15
 
 **Added**
