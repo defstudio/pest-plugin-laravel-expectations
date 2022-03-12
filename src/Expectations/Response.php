@@ -192,7 +192,7 @@ expect()->extend(
     }
 );
 
-//TODO: alias with ->toContain() when the pipe PR gets merged
+// TODO: alias with ->toContain() when the pipe PR gets merged
 expect()->extend(
     'toRender',
     /**
@@ -209,7 +209,7 @@ expect()->extend(
     }
 );
 
-//TODO: alias with ->toContainInOrder() when the pipe PR gets merged
+// TODO: alias with ->toContainInOrder() when the pipe PR gets merged
 expect()->extend(
     'toRenderInOrder',
     /**

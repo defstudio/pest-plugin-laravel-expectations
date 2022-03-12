@@ -16,7 +16,7 @@ expect()->extend(
      * @param DateTimeInterface|string $date
      */
     function ($date): Expectation {
-        $value = ValueProcessor::getCarbonDate($this->value);
+        $value    = ValueProcessor::getCarbonDate($this->value);
         $expected = ValueProcessor::getCarbonDate($date);
 
         assertTrue($value->isAfter($expected), sprintf('Failed to assert that [%s] is after %s', $value, $expected));
@@ -33,7 +33,7 @@ expect()->extend(
      * @param DateTimeInterface|string $date
      */
     function ($date): Expectation {
-        $value = ValueProcessor::getCarbonDate($this->value);
+        $value    = ValueProcessor::getCarbonDate($this->value);
         $expected = ValueProcessor::getCarbonDate($date);
 
         assertTrue($value->isBefore($expected), sprintf('Failed to assert that [%s] is before %s', $value, $expected));
@@ -51,9 +51,9 @@ expect()->extend(
      * @param DateTimeInterface|string $to
      */
     function ($from, $to, bool $equal = true): Expectation {
-        $value = ValueProcessor::getCarbonDate($this->value);
+        $value         = ValueProcessor::getCarbonDate($this->value);
         $expected_from = ValueProcessor::getCarbonDate($from);
-        $expected_to = ValueProcessor::getCarbonDate($to);
+        $expected_to   = ValueProcessor::getCarbonDate($to);
 
         assertTrue($value->isBetween($expected_from, $expected_to, $equal), sprintf('Failed to assert that [%s] is between %s and %s', $value, $expected_from, $expected_to));
 
@@ -341,7 +341,7 @@ expect()->extend(
      * @param DateTimeInterface|string $date
      */
     function ($date): Expectation {
-        $value = ValueProcessor::getCarbonDate($this->value);
+        $value    = ValueProcessor::getCarbonDate($this->value);
         $expected = ValueProcessor::getCarbonDate($date);
 
         assertTrue($value->isSameDay($expected), sprintf('Failed to assert that [%s] is same day as %s', $value, $expected));
@@ -358,7 +358,7 @@ expect()->extend(
      * @param DateTimeInterface|string $date
      */
     function ($date): Expectation {
-        $value = ValueProcessor::getCarbonDate($this->value);
+        $value    = ValueProcessor::getCarbonDate($this->value);
         $expected = ValueProcessor::getCarbonDate($date);
 
         assertTrue($value->isSameHour($expected), sprintf('Failed to assert that [%s] is same hour as %s', $value, $expected));
@@ -375,7 +375,7 @@ expect()->extend(
      * @param DateTimeInterface|string $date
      */
     function ($date): Expectation {
-        $value = ValueProcessor::getCarbonDate($this->value);
+        $value    = ValueProcessor::getCarbonDate($this->value);
         $expected = ValueProcessor::getCarbonDate($date);
 
         assertTrue($value->isSameMinute($expected), sprintf('Failed to assert that [%s] is same minute as %s', $value, $expected));
@@ -392,7 +392,7 @@ expect()->extend(
      * @param DateTimeInterface|string $date
      */
     function ($date): Expectation {
-        $value = ValueProcessor::getCarbonDate($this->value);
+        $value    = ValueProcessor::getCarbonDate($this->value);
         $expected = ValueProcessor::getCarbonDate($date);
 
         assertTrue($value->isSameMonth($expected), sprintf('Failed to assert that [%s] is same month as %s', $value, $expected));
@@ -409,7 +409,7 @@ expect()->extend(
      * @param DateTimeInterface|string $date
      */
     function ($date): Expectation {
-        $value = ValueProcessor::getCarbonDate($this->value);
+        $value    = ValueProcessor::getCarbonDate($this->value);
         $expected = ValueProcessor::getCarbonDate($date);
 
         assertTrue($value->isSameSecond($expected), sprintf('Failed to assert that [%s] is same second as %s', $value, $expected));
@@ -426,7 +426,7 @@ expect()->extend(
      * @param DateTimeInterface|string $date
      */
     function ($date): Expectation {
-        $value = ValueProcessor::getCarbonDate($this->value);
+        $value    = ValueProcessor::getCarbonDate($this->value);
         $expected = ValueProcessor::getCarbonDate($date);
 
         assertTrue($value->isSameYear($expected), sprintf('Failed to assert that [%s] is same year as %s', $value, $expected));
@@ -443,7 +443,7 @@ expect()->extend(
      * @param DateTimeInterface|string $date
      */
     function ($date): Expectation {
-        $value = ValueProcessor::getCarbonDate($this->value);
+        $value    = ValueProcessor::getCarbonDate($this->value);
         $expected = ValueProcessor::getCarbonDate($date);
 
         assertTrue($value->isSameWeek($expected), sprintf('Failed to assert that [%s] is same week as %s', $value, $expected));

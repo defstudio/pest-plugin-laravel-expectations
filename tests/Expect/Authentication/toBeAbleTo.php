@@ -17,7 +17,7 @@ test('pass with single argument', function () {
 });
 
 test('pass with multiple arguments', function () {
-    $user = User::make(['id' => 1]);
+    $user   = User::make(['id' => 1]);
     $post_1 = Post::make(['user_id' => 1]);
     $post_2 = Post::make(['user_id' => 1]);
 
