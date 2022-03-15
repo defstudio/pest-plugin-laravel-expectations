@@ -1,5 +1,7 @@
 <?php
 
+/* @noinspection PhpUndefinedFieldInspection */
+
 declare(strict_types=1);
 
 use Pest\Expectation;
