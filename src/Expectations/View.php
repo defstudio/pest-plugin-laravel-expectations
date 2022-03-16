@@ -1,7 +1,6 @@
 <?php
 
 /** @noinspection DuplicatedCode */
-
 /* @noinspection PhpUndefinedFieldInspection */
 /* @noinspection PhpMethodParametersCountMismatchInspection */
 
@@ -16,8 +15,7 @@ expect()->extend(
      */
     function (string $name): Expectation {
             // @phpstan-ignore-next-line
-            $this->toBeInstanceOf(\Illuminate\View\View::class)
-            ->name()->toBe($name);
+            $this->toBeInstanceOf(\Illuminate\View\View::class)->name()->toBe($name);
 
         return $this;
     }
