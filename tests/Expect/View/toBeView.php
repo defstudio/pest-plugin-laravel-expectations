@@ -9,3 +9,7 @@ test('pass', function () {
 test('fail', function () {
     expect('page')->toBeView('page');
 })->throws(ExpectationFailedException::class);
+
+test('negated pass', function () {
+    expect('page')->not->toBeView('page');
+});
