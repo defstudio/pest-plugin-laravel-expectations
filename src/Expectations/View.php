@@ -13,9 +13,11 @@ expect()->extend(
     /**
      * Assert that the given view is an instance of view and name is identical.
      */
-    function (string $name): Expectation {
+    function (string $name, array $data = []): Expectation {
         // @phpstan-ignore-next-line
-        $this->toBeInstanceOf(\Illuminate\View\View::class)->name()->toBe($name);
+        $this->toBeInstanceOf(\Illuminate\View\View::class)
+            ->name()->toBe($name)
+            ->getData()->toHaveKeys($data);
 
         return $this;
     }
