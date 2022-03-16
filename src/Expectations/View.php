@@ -11,7 +11,8 @@ use Pest\Expectation;
 expect()->extend(
     'toBeView',
     /**
-     * Assert that the given view is an instance of view and name is identical.
+     * Assert that the given view is an instance of view and name is identical with data passed.
+     * Assert that view contains the provided data.
      */
     function (string $name, array $data = []): Expectation {
         // @phpstan-ignore-next-line
