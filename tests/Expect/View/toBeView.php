@@ -6,5 +6,5 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
 test('pass', function () {
-   expect(view('index'))->toBeView('index');
+   expect(view('page'))->toBeView('page');
 });
