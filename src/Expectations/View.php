@@ -19,6 +19,7 @@ expect()->extend(
         $view = $this->value;
 
         expect($view)
+            // @phpstan-ignore-next-line
             ->toBeInstanceOf(\Illuminate\View\View::class)
             ->name()->toBe($name);
 
