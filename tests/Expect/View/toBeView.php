@@ -7,7 +7,7 @@ test('pass if missing data parameter', function () {
 });
 
 test('pass with data parameter', function () {
-    expect(view('page')->with('data', 'foo'))->toBeView('page', 'data');
+    expect(view('page')->with('data', 'foo'))->toBeView('page', ['data']);
 });
 
 test('fail', function () {
