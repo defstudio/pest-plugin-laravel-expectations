@@ -2,8 +2,12 @@
 
 use PHPUnit\Framework\ExpectationFailedException;
 
-test('pass', function () {
+test('pass if missing data parameter', function () {
     expect(view('page'))->toBeView('page');
+});
+
+test('pass with data parameter', function () {
+    expect(view('page')->with('data', 'foo'))->toBeView('page', 'data');
 });
 
 test('fail', function () {
