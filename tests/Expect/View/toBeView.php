@@ -10,7 +10,7 @@ test('pass with data parameter', function () {
     expect(view('page')->with('data', 'foo'))->toBeView('page', ['data']);
 });
 
-test('fail', function () {
+test('fails if name parameter cannot be instance of view', function () {
     expect('page')->toBeView('page');
 })->throws(ExpectationFailedException::class);
 
