@@ -11,7 +11,7 @@ use Pest\Expectation;
 expect()->extend(
     'toBeView',
     /**
-     * Assert that the given view is an instance of view and name is identical
+     * Assert that the given view is an instance of view and name is identical.
      */
     function (string $name): Expectation {
         // @phpstan-ignore-next-line
