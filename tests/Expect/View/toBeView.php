@@ -14,6 +14,10 @@ test('fail if value is not instance of view', function () {
     expect('page')->toBeView('page');
 })->throws(ExpectationFailedException::class);
 
+test('fail if view name is not the expected one', function () {
+    expect(view('page'))->toBeView('index');
+})->throws(ExpectationFailedException::class);
+
 test('negated pass', function () {
     expect('page')->not->toBeView('page');
 });
