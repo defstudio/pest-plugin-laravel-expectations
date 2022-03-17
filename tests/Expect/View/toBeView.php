@@ -19,8 +19,8 @@ test('negated pass', function () {
 });
 
 test('negated pass if view name is not the expected one', function () {
-    expect(view('page'))->toBeView('index');
-})->throws(ExpectationFailedException::class);
+    expect(view('page'))->not->toBeView('index');
+});
 
 test('negated fail', function () {
     expect(view('page'))->not->toBeView('page');
