@@ -20,4 +20,4 @@ test('negated pass', function () {
 
 test('negated fail', function () {
     expect(view('page'))->not->toBeView('page');
-})->throws(ExceptionFailedException::class);
+})->throws(ExpectationFailedException::class);
