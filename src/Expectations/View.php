@@ -17,7 +17,7 @@ expect()->extend(
         // @phpstan-ignore-next-line
         $this->toBeInstanceOf(\Illuminate\View\View::class)
             ->name()->toBe($name)
-            ->getData()->toHaveKeys($data);
+            ->getData()->toMatchArray($data);
 
         return $this;
     }
