@@ -9,7 +9,7 @@ position: 10
 
 ### `toBeView()`
 
-Assert that the value is an instance of \Illuminate\View\View, also name and data is identical with data passed.
+Assert that the value is an instance of \Illuminate\View\View with the given name.
 
 ```php
 expect(view('page'))->toBeView('page');
