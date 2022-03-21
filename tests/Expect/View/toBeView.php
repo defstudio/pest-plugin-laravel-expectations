@@ -29,3 +29,7 @@ test('negated pass if view name is not the expected one', function () {
 test('negated fail', function () {
     expect(view('page'))->not->toBeView('page');
 })->throws(ExpectationFailedException::class);
+
+test('fail if data passed not match', function () {
+    expect(view('page')->with('data', 'foo'))->toBeView('page', ['data' => 'bar']);
+})->throws(ExpectationFailedException::class);
