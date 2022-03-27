@@ -11,7 +11,7 @@ use Pest\Expectation;
 expect()->extend(
     'toBeView',
     /**
-     * Assert that the value is an instance of \Illuminate\View\View, also name and data is identical with data passed.
+     * Assert that the value is an instance of \Illuminate\View\View, and (optionally) that its name and data are the expected ones.
      */
     function (string $name, array $data = []): Expectation {
         // @phpstan-ignore-next-line
