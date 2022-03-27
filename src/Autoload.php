@@ -11,4 +11,4 @@ require_once 'Expectations/Models.php';
 require_once 'Expectations/Response.php';
 require_once 'Expectations/Storage.php';
 require_once 'Expectations/Time.php';
-require_once 'Expectations/View.php';
+require_once 'Expectations/Views.php';
