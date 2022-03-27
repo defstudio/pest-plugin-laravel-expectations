@@ -17,7 +17,7 @@ expect(view('page'))->toBeView('page');
 
 It can optionally check that the array was given to the view.
 ```php
-expect(view('page')->with('data', 'foo'))->toBeView('page', ['data']);
+expect(view('page')->with('data', 'foo'))->toBeView('page', ['data' => 42]);
  ```
 
 
