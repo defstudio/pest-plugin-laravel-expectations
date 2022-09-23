@@ -8,7 +8,7 @@ position: 21
 ---
 
 
-1. Fork the [main repository](https://github.com/def-studio/pest-plugin-laravel-expectations) by clicking the **Fork** button
+1. Fork the [main repository](https://github.com/defstudio/pest-plugin-laravel-expectations) by clicking the **Fork** button
 
 2. Clone your forked project to your development machine
 ```bash

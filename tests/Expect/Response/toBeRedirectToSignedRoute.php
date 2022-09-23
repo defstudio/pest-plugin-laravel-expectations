@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Testing\TestResponse;
+
 use function Pest\Laravel\get;
+
 use PHPUnit\Framework\ExpectationFailedException;
 
 test('pass', function () {

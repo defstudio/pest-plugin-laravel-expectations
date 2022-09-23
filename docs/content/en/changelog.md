@@ -149,7 +149,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `toContainTextInOrder()` expectation
 
 **Updated**
-- new fresh [documentation site](https://def-studio.github.io/pest-plugin-laravel-expectations)
+- new fresh [documentation site](https://defstudio.github.io/pest-plugin-laravel-expectations)
 
 
 ### [v1.2.0](https://github.com/pestphp/defstudio-plugin-laravel-expectations/compare/v1.1.0...v1.2.0) - 2021-10-11
@@ -225,6 +225,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Documentation
 
-### [v0.0.1](https://github.com/def-studio/pest-plugin-laravel-expectations/tree/v0.0.1) - 2021-10-03
+### [v0.0.1](https://github.com/defstudio/pest-plugin-laravel-expectations/tree/v0.0.1) - 2021-10-03
 
 - First version

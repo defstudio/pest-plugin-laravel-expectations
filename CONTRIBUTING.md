@@ -9,7 +9,7 @@ Please review these guidelines before submitting any pull requests.
 2. Create a new branch
 3. Code, test, commit and push
 4. Open a pull request detailing your changes. Make sure to follow the [template](.github/PULL_REQUEST_TEMPLATE.md)
-5. Open a pull request to update the [documentation repository](https://github.com/def-studio/pest-plugin-laravel-expectations-docs) according to the PR changes
+5. Open a pull request to update the [documentation repository](https://github.com/defstudio/pest-plugin-laravel-expectations-docs) according to the PR changes
 ## Guidelines
 
 * Please ensure the coding style running `composer lint`.

@@ -6,6 +6,7 @@ declare(strict_types=1);
 
 use DefStudio\PestLaravelExpectations\Helpers\ValueProcessor;
 use Pest\Expectation;
+
 use function PHPUnit\Framework\assertTrue;
 
 expect()->extend(

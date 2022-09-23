@@ -6,11 +6,13 @@ use Illuminate\Contracts\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Auth;
 use Pest\Expectation;
+
 use function Pest\Laravel\assertAuthenticated;
 use function Pest\Laravel\assertCredentials;
 use function Pest\Laravel\assertInvalidCredentials;
 use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertTrue;
+
 use SebastianBergmann\Exporter\Exporter;
 
 expect()->extend(

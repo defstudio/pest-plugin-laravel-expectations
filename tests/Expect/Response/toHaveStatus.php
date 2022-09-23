@@ -1,6 +1,7 @@
 <?php
 
 use function Pest\Laravel\get;
+
 use PHPUnit\Framework\ExpectationFailedException;
 use Symfony\Component\HttpFoundation\Response;
 
