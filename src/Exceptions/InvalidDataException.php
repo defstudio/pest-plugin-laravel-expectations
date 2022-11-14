@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace DefStudio\PestLaravelExpectations\Exceptions;
 
-use Exception;
 use SebastianBergmann\Exporter\Exporter;
 
-final class InvalidDataException extends Exception
+final class InvalidDataException extends \Exception
 {
     /**
      * @param mixed $value
