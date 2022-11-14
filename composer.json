@@ -53,7 +53,7 @@
     },
     "require-dev": {
         "orchestra/testbench": "^6.21 || ^7.0",
-        "pestphp/pest-dev-tools": "dev-master"
+        "pestphp/pest-dev-tools": "^v1.0.0"
     },
     "extra": {
         "branch-alias": {
