@@ -56,7 +56,7 @@ expect(get('/secret/location'))->toBeRedirect('/login');
 Assert whether the response is redirecting to a given signed route.
 
 ```php
-expect(get('/secret/location'))->toBeRedirect('/login');
+expect(get('/secret/location'))->toBeRedirectToSignedRoute('login');
  ```
 
 ### `toBeSuccessful()`
