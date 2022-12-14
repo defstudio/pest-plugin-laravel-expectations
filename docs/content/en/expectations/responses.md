@@ -246,7 +246,7 @@ expect(get('/page'))->toRenderInOrder(['<h1>title</h1>', '<h3>section</h3>']);
 Assert that the response contains the given string or array of strings in its text.
 
 ```php
-expect(get('/page'))->toRender('title');
+expect(get('/page'))->toRenderText('title');
  ```
 
 ### `toRenderTextInOrder()`
@@ -254,5 +254,5 @@ expect(get('/page'))->toRender('title');
 Assert that the response contains the given ordered sequence of strings in its text.
 
 ```php
-expect(get('/page'))->toRenderInOrder(['title', 'content'], escape: false);
+expect(get('/page'))->toRenderTextInOrder(['title', 'content'], escape: false);
  ```
