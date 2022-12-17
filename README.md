@@ -1,8 +1,8 @@
 ![Pest Laravel Expectations](https://banners.beyondco.de/Pest%20Laravel%20Expectations.png?theme=light&packageManager=composer+require&packageName=--dev+defstudio%2Fpest-plugin-laravel-expectations&pattern=circuitBoard&style=style_2&description=Laravel+tailored+%40pestphp+expectations&md=1&showWatermark=0&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/defstudio/pest-plugin-laravel-expectations.svg?style=flat-square)](https://packagist.org/packages/defstudio/pest-plugin-laravel-expectations)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/defstudio/pest-plugin-laravel-expectations/Run%20Tests?label=tests)](https://github.com/defstudio/pest-plugin-laravel-expectations/actions?query=workflow%3A"Run+Tests"+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/defstudio/pest-plugin-laravel-expectations/Static%20Analysis?label=code%20style)](https://github.com/defstudio/pest-plugin-laravel-expectations/actions?query=workflow%3A"Static+Analysis"+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/defstudio/pest-plugin-laravel-expectations/tests.yml?branch=master&label=tests)](https://github.com/defstudio/pest-plugin-laravel-expectations/actions?query=workflow%3A"Run+Tests"+branch%3Amaster)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/defstudio/pest-plugin-laravel-expectations/static.yml?branch=master&label=code%20style)](https://github.com/defstudio/pest-plugin-laravel-expectations/actions?query=workflow%3A"Static+Analysis"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/defstudio/pest-plugin-laravel-expectations.svg?style=flat-square)](https://packagist.org/packages/defstudio/pest-plugin-laravel-expectations)
 [![License](https://img.shields.io/packagist/l/defstudio/pest-plugin-laravel-expectations)](https://packagist.org/packages/defstudio/pest-plugin-laravel-expectations)
 
