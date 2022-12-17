@@ -14,12 +14,12 @@ fullscreen: true
     <img style="display: inline-block; margin-top: 0.5em; margin-bottom: 0.5em" src="https://img.shields.io/packagist/v/defstudio/pest-plugin-laravel-expectations.svg?style=flat-square" alt="Latest Version on Packagist">
 </a>
 
-<a href="https://github.com/defstudio/pest-plugin-laravel-expectations/actions?query=workflow%3A'Run+Tests'+branch%3Amain" target="_blank">
-    <img style="display: inline-block; margin-top: 0.5em; margin-bottom: 0.5em" src="https://img.shields.io/github/workflow/status/defstudio/pest-plugin-laravel-expectations/Run%20Tests?label=tests" alt="GitHub Tests Action Status">
+<a href="https://github.com/defstudio/pest-plugin-laravel-expectations/actions?query=workflow%3A'Run+Tests'+branch%3Amaster" target="_blank">
+    <img style="display: inline-block; margin-top: 0.5em; margin-bottom: 0.5em" src="https://img.shields.io/github/actions/workflow/status/defstudio/pest-plugin-laravel-expectations/tests.yml?branch=main&label=tests" alt="GitHub Tests Action Status">
 </a>
 
-<a href="https://github.com/defstudio/pest-plugin-laravel-expectations/actions?query=workflow%3A'Static+Analysis'+branch%3Amain" target="_blank">
-    <img style="display: inline-block; margin-top: 0.5em; margin-bottom: 0.5em" src="https://img.shields.io/github/workflow/status/defstudio/pest-plugin-laravel-expectations/Static%20Analysis?label=code%20style" alt="GitHub Code Style Action Status">
+<a href="https://github.com/defstudio/pest-plugin-laravel-expectations/actions?query=workflow%3A'Static+Analysis'+branch%3Amaster" target="_blank">
+    <img style="display: inline-block; margin-top: 0.5em; margin-bottom: 0.5em" src="https://img.shields.io/github/workflow/status/defstudio/pest-plugin-laravel-expectations/static.yml?branch=master&label=code%20style" alt="GitHub Code Style Action Status">
 </a>
 
 <a href="https://packagist.org/packages/defstudio/pest-plugin-laravel-expectations" target="_blank">
