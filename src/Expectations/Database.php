@@ -6,10 +6,9 @@ namespace DefStudio\PestLaravelExpectations;
 
 use Illuminate\Support\Str;
 use Pest\Expectation;
+use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\assertDatabaseHas;
-
-use PHPUnit\Framework\Assert;
 
 expect()->extend(
     'toBeInDatabase',

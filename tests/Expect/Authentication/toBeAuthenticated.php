@@ -1,9 +1,9 @@
 <?php
 
-use function Pest\Laravel\actingAs;
-
 use PHPUnit\Framework\ExpectationFailedException;
 use Tests\Models\User;
+
+use function Pest\Laravel\actingAs;
 
 test('pass', function () {
     $user = User::make([

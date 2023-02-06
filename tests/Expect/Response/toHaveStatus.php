@@ -1,9 +1,9 @@
 <?php
 
-use function Pest\Laravel\get;
-
 use PHPUnit\Framework\ExpectationFailedException;
 use Symfony\Component\HttpFoundation\Response;
+
+use function Pest\Laravel\get;
 
 test('pass', function ($status) {
     expect(get("/status/$status"))->toHaveStatus($status);

@@ -1,8 +1,8 @@
 <?php
 
-use function Pest\Laravel\get;
-
 use PHPUnit\Framework\ExpectationFailedException;
+
+use function Pest\Laravel\get;
 
 test('pass', function ($structure) {
     expect(get('json'))->toHaveJsonStructure($structure);
