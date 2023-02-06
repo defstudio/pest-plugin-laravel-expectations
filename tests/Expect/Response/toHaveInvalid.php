@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Testing\TestResponse;
+use PHPUnit\Framework\ExpectationFailedException;
 
 use function Pest\Laravel\post;
-
-use PHPUnit\Framework\ExpectationFailedException;
 
 test('pass', function () {
     $response = post('/validate', ['email' => 'taylor']);

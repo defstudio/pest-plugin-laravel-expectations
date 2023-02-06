@@ -1,8 +1,8 @@
 <?php
 
-use function Pest\Laravel\get;
-
 use PHPUnit\Framework\ExpectationFailedException;
+
+use function Pest\Laravel\get;
 
 test('pass', function () {
     expect(get('/page'))->toRender('<h1>title</h1>');
