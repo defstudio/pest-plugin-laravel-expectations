@@ -12,3 +12,8 @@ For PhpStorm users, a nice Plugin has been developed by [Oliver Nybroe](https://
 
 ![](https://raw.githubusercontent.com/defstudio/pest-plugin-laravel-expectations-docs/main/static/docs/phpstorm-autocompletion.png "PhpStorm Autocompletion")
 
+## Visual Studio Code Autocompletion
+
+For [Visual Studio Code](https://code.visualstudio.com/) users, there is the snippet's json file for [download](defstudio.code-snippets). Read more about [user snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets).
+
+
