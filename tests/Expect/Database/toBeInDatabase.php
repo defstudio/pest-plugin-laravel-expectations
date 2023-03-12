@@ -5,8 +5,8 @@ use Tests\Models\User;
 
 test('pass', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => Hash::make('password'),
     ]);
 
@@ -25,8 +25,8 @@ test('negated pass', function () {
 
 test('negated fail', function () {
     User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => Hash::make('password'),
     ]);
 

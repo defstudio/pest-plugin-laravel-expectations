@@ -52,7 +52,7 @@ test('pass with custom errors key', function () {
     $response = build_response(function (Response $response) {
         $response->setContent(json_encode([
             'status' => 'ok',
-            'data'   => ['foo' => 'oops'],
+            'data' => ['foo' => 'oops'],
         ]));
     });
 

@@ -1,18 +1,17 @@
 <?php
 
-use PHPUnit\Framework\ExpectationFailedException;
-
 use function Pest\Laravel\get;
+use PHPUnit\Framework\ExpectationFailedException;
 
 test('pass', function ($structure) {
     expect(get('json'))->toHaveJsonStructure($structure);
 })->with([
-    'without structure'              => null,
-    'at root'                        => ['structure' => ['foo']],
-    'nested'                         => ['structure' => ['foobar' => ['foobar_foo', 'foobar_bar']]],
+    'without structure' => null,
+    'at root' => ['structure' => ['foo']],
+    'nested' => ['structure' => ['foobar' => ['foobar_foo', 'foobar_bar']]],
     'wildcard (repeating structure)' => ['structure' => ['bars' => ['*' => ['bar', 'foo']]]],
-    'wildcard (numeric keys)'        => ['structure' => ['numeric_keys' => ['*' => ['bar', 'foo']]]],
-    'nested after wildcard'          => ['structure' => ['baz' => ['*' => ['foo', 'bar' => ['foo', 'bar']]]]],
+    'wildcard (numeric keys)' => ['structure' => ['numeric_keys' => ['*' => ['bar', 'foo']]]],
+    'nested after wildcard' => ['structure' => ['baz' => ['*' => ['foo', 'bar' => ['foo', 'bar']]]]],
 ]);
 
 test('fails', function () {

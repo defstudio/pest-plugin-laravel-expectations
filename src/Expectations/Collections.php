@@ -10,10 +10,8 @@ expect()->extend(
     /**
      * Assert that the value is an instance of \Illuminate\Support\Collection.
      */
-    function (): Expectation {
-        // @phpstan-ignore-next-line
-        return $this->toBeInstanceOf(Collection::class);
-    }
+    fn (): Expectation => // @phpstan-ignore-next-line
+$this->toBeInstanceOf(Collection::class)
 );
 
 expect()->extend(
@@ -21,8 +19,6 @@ expect()->extend(
     /**
      * Assert that the value is an instance of \Illuminate\Database\Eloquent\Collection.
      */
-    function (): Expectation {
-        // @phpstan-ignore-next-line
-        return $this->toBeInstanceOf(\Illuminate\Database\Eloquent\Collection::class);
-    }
+    fn (): Expectation => // @phpstan-ignore-next-line
+$this->toBeInstanceOf(\Illuminate\Database\Eloquent\Collection::class)
 );

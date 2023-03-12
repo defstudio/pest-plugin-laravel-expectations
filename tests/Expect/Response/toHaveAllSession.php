@@ -1,8 +1,7 @@
 <?php
 
-use PHPUnit\Framework\ExpectationFailedException;
-
 use function Pest\Laravel\get;
+use PHPUnit\Framework\ExpectationFailedException;
 
 test('pass with only values', function () {
     expect(get('/session/all'))->toHaveAllSession([

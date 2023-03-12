@@ -8,7 +8,7 @@ test('pass', function () {
 
 test('fails', function () {
     expect(today()->subMonths(2))->toBeLastMonth();
-})->throws(ExpectationFailedException::class, 'Failed to assert that [' . today()->subMonths(2)->format('Y-m-d H:i:s') . '] is in the last month');
+})->throws(ExpectationFailedException::class, 'Failed to assert that ['.today()->subMonths(2)->format('Y-m-d H:i:s').'] is in the last month');
 
 test('pass negated', function () {
     expect(today()->subMonths(2))->not->toBeLastMonth();

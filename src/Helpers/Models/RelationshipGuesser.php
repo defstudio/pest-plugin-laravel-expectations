@@ -16,30 +16,24 @@ use PHPUnit\Framework\ExpectationFailedException;
  */
 final class RelationshipGuesser
 {
-    /** @var Model */
-    private $model;
+    private ?Model $model = null;
 
-    /** @var Model */
-    private $related;
+    private ?Model $related = null;
 
-    /** @var string */
-    private $relationshipClass;
+    private ?string $relationshipClass = null;
 
-    /** @var string */
-    private $hintedRelationshipName = '';
+    private string $hintedRelationshipName = '';
 
     /** @var array<string> */
-    private $triedRelationshipNames = [];
+    private array $triedRelationshipNames = [];
 
-    /** @var string */
-    private $foundRelationshipName = '';
+    private string $foundRelationshipName = '';
 
-    /** @var bool */
-    private $throwException = true;
+    private bool $throwException = true;
 
     public static function from(Model $model): self
     {
-        $guesser        = new self();
+        $guesser = new self();
         $guesser->model = $model;
 
         return $guesser;
@@ -75,28 +69,28 @@ final class RelationshipGuesser
 
     public function guess(): string
     {
-        if (!empty($this->hintedRelationshipName)) {
+        if (! empty($this->hintedRelationshipName)) {
             $this->foundRelationshipName = $this->hintedRelationshipName;
         }
 
         if ($this->relationshipClass == BelongsTo::class) {
-            $this->try(Str::camel(class_basename($this->related)));
-            $this->try(Str::snake(class_basename($this->related)));
+            $this->try(Str::camel(class_basename($this->related))); //@phpstan-ignore-line
+            $this->try(Str::snake(class_basename($this->related))); //@phpstan-ignore-line
         }
 
         if ($this->relationshipClass == HasOne::class) {
-            $this->try(Str::camel(class_basename($this->related)));
-            $this->try(Str::snake(class_basename($this->related)));
+            $this->try(Str::camel(class_basename($this->related))); //@phpstan-ignore-line
+            $this->try(Str::snake(class_basename($this->related))); //@phpstan-ignore-line
         }
 
         if ($this->relationshipClass == HasMany::class) {
-            $this->try(Str::camel(Str::plural(class_basename($this->related))));
-            $this->try(Str::snake(Str::plural(class_basename($this->related))));
+            $this->try(Str::camel(Str::plural(class_basename($this->related)))); //@phpstan-ignore-line
+            $this->try(Str::snake(Str::plural(class_basename($this->related)))); //@phpstan-ignore-line
         }
 
         if ($this->throwException && empty($this->foundRelationshipName)) {
             $triedNames = implode(' / ', array_unique($this->triedRelationshipNames));
-            throw new ExpectationFailedException(sprintf('Failed to assert that [%s] has relationship [%s]', get_class($this->model), $triedNames));
+            throw new ExpectationFailedException(sprintf('Failed to assert that [%s] has relationship [%s]', $this->model::class, $triedNames)); //@phpstan-ignore-line
         }
 
         return $this->foundRelationshipName;
@@ -108,12 +102,13 @@ final class RelationshipGuesser
             return;
         }
 
-        if (!empty($this->foundRelationshipName)) {
+        if (! empty($this->foundRelationshipName)) {
             return;
         }
 
         $this->triedRelationshipNames[] = $relationshipName;
 
+        /* @phpstan-ignore-next-line */
         if (method_exists($this->model, $relationshipName)) {
             $this->validateRelationship($relationshipName);
             $this->foundRelationshipName = $relationshipName;
@@ -122,15 +117,12 @@ final class RelationshipGuesser
 
     private function validateRelationship(string $relationshipName): void
     {
-        if (!$this->model->{$relationshipName}() instanceof $this->relationshipClass) {
-            throw new ExpectationFailedException(sprintf('Failed to assert that [%s] has relationship [%s] of type [%s]', get_class($this->model), $relationshipName, $this->relationshipClass));
+        if (! $this->model->{$relationshipName}() instanceof $this->relationshipClass) {
+            throw new ExpectationFailedException(sprintf('Failed to assert that [%s] has relationship [%s] of type [%s]', $this->model::class, $relationshipName, $this->relationshipClass)); //@phpstan-ignore-line
         }
     }
 
-    /**
-     * @return HasOne|HasMany|BelongsTo
-     */
-    public function getRelationship()
+    public function getRelationship(): HasOne|HasMany|BelongsTo
     {
         return $this->model->{$this->foundRelationshipName}();
     }

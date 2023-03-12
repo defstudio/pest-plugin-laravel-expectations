@@ -1,8 +1,7 @@
 <?php
 
-use PHPUnit\Framework\ExpectationFailedException;
-
 use function Pest\Laravel\get;
+use PHPUnit\Framework\ExpectationFailedException;
 
 test('pass', function () {
     $response = get('/redirect');
@@ -38,4 +37,4 @@ test('fails with negation', function () {
     $response = get('/redirect');
 
     expect($response)->not->toBeRedirect();
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (...) not to be redirect");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to be redirect");

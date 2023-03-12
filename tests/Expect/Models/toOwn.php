@@ -8,8 +8,8 @@ use Tests\Models\User;
 
 test('[HasMany] pass', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -29,7 +29,7 @@ test('[HasMany] pass with custom relationship', function () {
 
     $comment = Comment::make([
         'header' => 'foo',
-        'body'   => 'bar',
+        'body' => 'bar',
     ]);
 
     $post->posted_comments()->save($comment);
@@ -44,7 +44,7 @@ test('[HasMany] fail without needed custom relationship', function () {
 
     $comment = Comment::make([
         'header' => 'foo',
-        'body'   => 'bar',
+        'body' => 'bar',
     ]);
 
     $post->posted_comments()->save($comment);
@@ -54,8 +54,8 @@ test('[HasMany] fail without needed custom relationship', function () {
 
 test('[HasMany] fail without association', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -68,8 +68,8 @@ test('[HasMany] fail without association', function () {
 
 test('[HasMany] fail when passing wrong model ', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -88,8 +88,8 @@ test('[HasMany] fail when passing wrong model ', function () {
 
 test('[HasMany] fail when passing wrong model class', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -99,7 +99,7 @@ test('[HasMany] fail when passing wrong model class', function () {
 
     $comment = Comment::make([
         'header' => 'foo',
-        'body'   => 'bar',
+        'body' => 'bar',
     ]);
 
     $post->posted_comments()->save($comment);
@@ -109,8 +109,8 @@ test('[HasMany] fail when passing wrong model class', function () {
 
 test('[HasOne] pass', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -125,8 +125,8 @@ test('[HasOne] pass', function () {
 
 test('[HasOne] fail without association', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -139,8 +139,8 @@ test('[HasOne] fail without association', function () {
 
 test('[HasOne] fail when passing wrong model ', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -159,8 +159,8 @@ test('[HasOne] fail when passing wrong model ', function () {
 
 test('[HasOne] fail when passing wrong model class', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -170,7 +170,7 @@ test('[HasOne] fail when passing wrong model class', function () {
 
     $comment = Comment::create([
         'header' => 'foo',
-        'body'   => 'bar',
+        'body' => 'bar',
     ]);
 
     $user->address()->save($address);

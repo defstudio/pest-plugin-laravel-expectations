@@ -5,8 +5,8 @@ use Tests\Models\User;
 
 test('pass', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -15,8 +15,8 @@ test('pass', function () {
 
 test('fail', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -27,8 +27,8 @@ test('fail', function () {
 
 test('negated pass', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -39,8 +39,8 @@ test('negated pass', function () {
 
 test('negated fail', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
