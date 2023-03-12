@@ -77,9 +77,6 @@
         "test:lint": "pint --test",
         "test:types": "phpstan analyse --ansi --memory-limit=-1 --debug",
         "test:unit": "php vendor/bin/pest --colors=always --exclude-group=integration --compact",
-        "test:inline": "php vendor/bin/pest --colors=always --configuration=phpunit.inline.xml",
-        "test:parallel": "php vendor/bin/pest --colors=always --exclude-group=integration --parallel --processes=10",
-        "test:integration": "php vendor/bin/pest --colors=always --group=integration -v",
         "update:snapshots": "REBUILD_SNAPSHOTS=true php vendor/bin/pest --colors=always",
         "test": [
             "@test:refactor",
