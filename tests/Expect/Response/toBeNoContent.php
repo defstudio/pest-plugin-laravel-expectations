@@ -1,8 +1,7 @@
 <?php
 
-use PHPUnit\Framework\ExpectationFailedException;
-
 use function Pest\Laravel\get;
+use PHPUnit\Framework\ExpectationFailedException;
 
 test('pass', function () {
     $response = get('/no-content');
@@ -38,4 +37,4 @@ test('fails with negation', function () {
     $response = get('/status/204');
 
     expect($response)->not->toHaveNoContent();
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (...) not to have no content");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to have no content");

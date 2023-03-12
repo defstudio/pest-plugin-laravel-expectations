@@ -5,8 +5,8 @@ use Tests\Models\SoftDeletableUser;
 
 test('pass', function () {
     $user = SoftDeletableUser::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -17,8 +17,8 @@ test('pass', function () {
 
 test('fail', function () {
     $user = SoftDeletableUser::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -27,8 +27,8 @@ test('fail', function () {
 
 test('negated pass', function () {
     $user = SoftDeletableUser::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -37,8 +37,8 @@ test('negated pass', function () {
 
 test('negated fail', function () {
     $user = SoftDeletableUser::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 

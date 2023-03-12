@@ -6,9 +6,8 @@ namespace DefStudio\PestLaravelExpectations;
 
 use Illuminate\Support\Str;
 use Pest\Expectation;
-use PHPUnit\Framework\Assert;
-
 use function Pest\Laravel\assertDatabaseHas;
+use PHPUnit\Framework\Assert;
 
 expect()->extend(
     'toBeInDatabase',
@@ -22,7 +21,7 @@ expect()->extend(
     }
 );
 
-expect()->extend('toMatchQuery', function (string $sql, array $bindings, bool $exact = true) {
+expect()->extend('toMatchQuery', function (string $sql, array $bindings, bool $exact = true): void {
     if ($exact) {
         Assert::assertSame($sql, $this->value->toSql());
         Assert::assertSame($bindings, $this->value->getBindings());

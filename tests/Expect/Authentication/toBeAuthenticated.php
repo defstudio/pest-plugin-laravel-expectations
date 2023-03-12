@@ -1,14 +1,13 @@
 <?php
 
+use function Pest\Laravel\actingAs;
 use PHPUnit\Framework\ExpectationFailedException;
 use Tests\Models\User;
 
-use function Pest\Laravel\actingAs;
-
 test('pass', function () {
     $user = User::make([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -19,8 +18,8 @@ test('pass', function () {
 
 test('fail with guest', function () {
     $user = User::make([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -29,16 +28,16 @@ test('fail with guest', function () {
 
 test('fail with wrong user', function () {
     $user1 = User::make([
-        'id'       => 1,
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'id' => 1,
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
     $user2 = User::make([
-        'id'       => 2,
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'id' => 2,
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -49,8 +48,8 @@ test('fail with wrong user', function () {
 
 test('negated pass with guest', function () {
     $user = User::make([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -59,16 +58,16 @@ test('negated pass with guest', function () {
 
 test('negated pass with wrong user', function () {
     $user1 = User::make([
-        'id'       => 1,
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'id' => 1,
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
     $user2 = User::make([
-        'id'       => 2,
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'id' => 2,
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -79,12 +78,12 @@ test('negated pass with wrong user', function () {
 
 test('negated fail', function () {
     $user = User::make([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
     actingAs($user);
 
     expect($user)->not->toBeAuthenticated();
-})->throws(ExpectationFailedException::class, "Expecting Tests\Models\User Object (...) not to be authenticated");
+})->throws(ExpectationFailedException::class, "Expecting Tests\Models\User Object (…) not to be authenticated");

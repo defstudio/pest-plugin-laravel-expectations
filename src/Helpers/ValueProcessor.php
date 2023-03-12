@@ -14,15 +14,13 @@ use DefStudio\PestLaravelExpectations\Exceptions\InvalidDataException;
 final class ValueProcessor
 {
     /**
-     * @param mixed $value
-     *
      * @throws InvalidDataException
      */
-    public static function getCarbonDate($value): CarbonInterface
+    public static function getCarbonDate(mixed $value): CarbonInterface
     {
         $carbon = Carbon::make($value);
 
-        if ($carbon === null) {
+        if (! $carbon instanceof \Carbon\Carbon) {
             throw InvalidDataException::cannotCast($value, Carbon::class);
         }
 

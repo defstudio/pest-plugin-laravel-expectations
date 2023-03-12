@@ -5,8 +5,8 @@ use Tests\Models\User;
 
 test('pass', function () {
     $user_1 = User::create([
-        'name'     => 'first user',
-        'email'    => '1@test.xx',
+        'name' => 'first user',
+        'email' => '1@test.xx',
         'password' => 'password',
     ]);
 
@@ -17,14 +17,14 @@ test('pass', function () {
 
 test('fail', function () {
     $user_1 = User::create([
-        'name'     => 'first user',
-        'email'    => '1@test.xx',
+        'name' => 'first user',
+        'email' => '1@test.xx',
         'password' => 'password',
     ]);
 
     $user_2 = User::create([
-        'name'     => 'second user',
-        'email'    => '2@test.xx',
+        'name' => 'second user',
+        'email' => '2@test.xx',
         'password' => 'password',
     ]);
 
@@ -33,14 +33,14 @@ test('fail', function () {
 
 test('negated pass', function () {
     $user_1 = User::create([
-        'name'     => 'first user',
-        'email'    => '1@test.xx',
+        'name' => 'first user',
+        'email' => '1@test.xx',
         'password' => 'password',
     ]);
 
     $user_2 = User::create([
-        'name'     => 'second user',
-        'email'    => '2@test.xx',
+        'name' => 'second user',
+        'email' => '2@test.xx',
         'password' => 'password',
     ]);
 
@@ -49,8 +49,8 @@ test('negated pass', function () {
 
 test('negated fail', function () {
     $user_1 = User::create([
-        'name'     => 'first user',
-        'email'    => '1@test.xx',
+        'name' => 'first user',
+        'email' => '1@test.xx',
         'password' => 'password',
     ]);
 

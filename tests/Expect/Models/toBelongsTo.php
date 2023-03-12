@@ -7,8 +7,8 @@ use Tests\Models\User;
 
 test('pass', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -28,7 +28,7 @@ test('pass with custom relationship', function () {
 
     $comment = Comment::make([
         'header' => 'foo',
-        'body'   => 'bar',
+        'body' => 'bar',
     ]);
 
     $post->posted_comments()->save($comment);
@@ -43,7 +43,7 @@ test('fail without needed custom relationship', function () {
 
     $comment = Comment::make([
         'header' => 'foo',
-        'body'   => 'bar',
+        'body' => 'bar',
     ]);
 
     $post->posted_comments()->save($comment);
@@ -53,8 +53,8 @@ test('fail without needed custom relationship', function () {
 
 test('fail without association', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -67,8 +67,8 @@ test('fail without association', function () {
 
 test('fail when passing wrong model ', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -87,8 +87,8 @@ test('fail when passing wrong model ', function () {
 
 test('fail when passing wrong model class', function () {
     $user = User::create([
-        'name'     => 'test user',
-        'email'    => 'email@test.xx',
+        'name' => 'test user',
+        'email' => 'email@test.xx',
         'password' => 'password',
     ]);
 
@@ -98,7 +98,7 @@ test('fail when passing wrong model class', function () {
 
     $comment = Comment::make([
         'header' => 'foo',
-        'body'   => 'bar',
+        'body' => 'bar',
     ]);
 
     $post->posted_comments()->save($comment);

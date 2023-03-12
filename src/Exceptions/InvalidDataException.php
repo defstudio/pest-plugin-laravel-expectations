@@ -8,10 +8,7 @@ use SebastianBergmann\Exporter\Exporter;
 
 final class InvalidDataException extends \Exception
 {
-    /**
-     * @param mixed $value
-     */
-    public static function cannotCast($value, string $class): InvalidDataException
+    public static function cannotCast(mixed $value, string $class): InvalidDataException
     {
         $exporter = new Exporter();
 

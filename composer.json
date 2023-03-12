@@ -28,15 +28,15 @@
         }
     ],
     "require": {
-        "php": "^7.3 | ^8.0",
-        "illuminate/contracts": "^7.0 | ^8.0 | ^9.0 | ^10.0",
-        "illuminate/database": "^7.0 | ^8.0 | ^9.0 | ^10.0",
-        "illuminate/http": "^7.0 | ^8.0 | ^9.0 | ^10.0",
-        "illuminate/support": "^7.0 | ^8.0 | ^9.0 | ^10.0",
-        "illuminate/testing": "^7.0 | ^8.0 | ^9.0 | ^10.0",
-        "pestphp/pest": "^1.0 | ^2.x-dev",
-        "pestphp/pest-plugin": "^1.0 | ^2.x-dev",
-        "pestphp/pest-plugin-laravel": "^1.2 | ^2.x-dev"
+        "php": "^8.1.0",
+        "illuminate/contracts": "^9.0 | ^10.0",
+        "illuminate/database": "^9.0 | ^10.0",
+        "illuminate/http": "^9.0 | ^10.0",
+        "illuminate/support": "^9.0 | ^10.0",
+        "illuminate/testing": "^9.0 | ^10.0",
+        "pestphp/pest": "^2.x-dev",
+        "pestphp/pest-plugin": "^2.x-dev",
+        "pestphp/pest-plugin-laravel": "^2.x-dev"
     },
     "autoload": {
         "psr-4": {
@@ -52,13 +52,13 @@
         }
     },
     "require-dev": {
-        "orchestra/testbench": "^6.21 | ^7.0 | ^8.0",
-        "pestphp/pest-dev-tools": "^v1.0.0",
+        "orchestra/testbench": "^7.0 | ^8.0",
+        "pestphp/pest-dev-tools": "^v2.4.0",
         "nesbot/carbon": "^2.62.1"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.x-dev"
+            "dev-master": "2.x-dev"
         }
     },
     "minimum-stability": "dev",
@@ -71,11 +71,18 @@
         }
     },
     "scripts": {
-        "lint": "php-cs-fixer fix -v",
-        "test:lint": "php-cs-fixer fix -v --dry-run",
-        "test:types": "phpstan analyse --ansi",
-        "test:unit": "pest --colors=always",
+        "refactor": "rector",
+        "lint": "pint",
+        "test:refactor": "rector --dry-run",
+        "test:lint": "pint --test",
+        "test:types": "phpstan analyse --ansi --memory-limit=-1 --debug",
+        "test:unit": "php vendor/bin/pest --colors=always --exclude-group=integration --compact",
+        "test:inline": "php vendor/bin/pest --colors=always --configuration=phpunit.inline.xml",
+        "test:parallel": "php vendor/bin/pest --colors=always --exclude-group=integration --parallel --processes=10",
+        "test:integration": "php vendor/bin/pest --colors=always --group=integration -v",
+        "update:snapshots": "REBUILD_SNAPSHOTS=true php vendor/bin/pest --colors=always",
         "test": [
+            "@test:refactor",
             "@test:lint",
             "@test:types",
             "@test:unit"

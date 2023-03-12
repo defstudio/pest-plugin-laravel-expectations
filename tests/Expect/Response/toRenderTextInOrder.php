@@ -1,8 +1,7 @@
 <?php
 
-use PHPUnit\Framework\ExpectationFailedException;
-
 use function Pest\Laravel\get;
+use PHPUnit\Framework\ExpectationFailedException;
 
 test('pass', function () {
     expect(get('/page'))
@@ -22,4 +21,4 @@ test('negated pass', function () {
 
 test('negated fail', function () {
     expect(get('/page'))->not->toRenderTextInOrder(['title', 'section', 'content']);
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (...) not to render text in order Array (...)");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to render text in order Array (…)");

@@ -1,14 +1,13 @@
 <?php
 
 use Illuminate\Testing\TestResponse;
-use PHPUnit\Framework\ExpectationFailedException;
-
 use function Pest\Laravel\post;
+use PHPUnit\Framework\ExpectationFailedException;
 
 test('pass', function () {
     $response = post('/validate', ['email' => 'taylor']);
 
-    if (!method_exists(TestResponse::class, 'assertValid')) {
+    if (! method_exists(TestResponse::class, 'assertValid')) {
         expect($response)->toBeRedirect();
 
         return;
@@ -20,7 +19,7 @@ test('pass', function () {
 test('fails', function () {
     $response = post('/validate', ['email' => 'taylor@laravel.com']);
 
-    if (!method_exists(TestResponse::class, 'assertValid')) {
+    if (! method_exists(TestResponse::class, 'assertValid')) {
         throw new ExpectationFailedException('Session is missing expected key [errors]');
     }
 
@@ -30,7 +29,7 @@ test('fails', function () {
 test('pass with negation', function () {
     $response = post('/validate', ['email' => 'taylor@laravel.com']);
 
-    if (!method_exists(TestResponse::class, 'assertValid')) {
+    if (! method_exists(TestResponse::class, 'assertValid')) {
         expect($response)->not->toBeRedirect();
 
         return;
@@ -42,9 +41,9 @@ test('pass with negation', function () {
 test('fails with negation', function () {
     $response = post('/validate');
 
-    if (!method_exists(TestResponse::class, 'assertValid')) {
-        throw new ExpectationFailedException('Expecting Illuminate\Testing\TestResponse Object (...) not to have invalid Array (...)');
+    if (! method_exists(TestResponse::class, 'assertValid')) {
+        throw new ExpectationFailedException('Expecting Illuminate\Testing\TestResponse Object (…) not to have invalid Array (…)');
     }
 
     expect($response)->not->toHaveInvalid(['email']);
-})->throws(ExpectationFailedException::class, 'Expecting Illuminate\Testing\TestResponse Object (...) not to have invalid Array (...)');
+})->throws(ExpectationFailedException::class, 'Expecting Illuminate\Testing\TestResponse Object (…) not to have invalid Array (…)');

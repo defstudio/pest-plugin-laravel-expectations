@@ -1,8 +1,7 @@
 <?php
 
-use PHPUnit\Framework\ExpectationFailedException;
-
 use function Pest\Laravel\get;
+use PHPUnit\Framework\ExpectationFailedException;
 
 test('pass', function () {
     expect(get('/session'))->toHaveSession('foo', 'bar');
@@ -18,4 +17,4 @@ test('pass negated', function () {
 
 test('fail negated', function () {
     expect(get('/session'))->not->toHaveSession('foo', 'bar');
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (...) not to have session 'foo' 'bar'.");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to have session 'foo' 'bar'.");

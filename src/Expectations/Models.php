@@ -13,7 +13,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Pest\Expectation;
-
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertModelMissing;
 use function Pest\Laravel\assertSoftDeleted;
@@ -50,11 +49,11 @@ expect()->extend(
 
         $foreignKey = $guesser->getRelationship()->getForeignKeyName();
 
-        $modelClass   = get_class($model);
-        $relatedClass = get_class($related);
+        $modelClass = $model::class;
+        $relatedClass = $related::class;
 
         // @phpstan-ignore-next-line
-        assertEquals($relatedClass, get_class($guesser->getRelationship()->getModel()), "Failed asserting that [$modelClass#$model->id] belongs to [$relatedClass#$related->id] through its relationship '$relationshipName'");
+        assertEquals($relatedClass, $guesser->getRelationship()->getModel()::class, "Failed asserting that [$modelClass#$model->id] belongs to [$relatedClass#$related->id] through its relationship '$relationshipName'");
 
         assertEquals($model->$foreignKey, $related->id, "Failed asserting that [$modelClass#$model->id] belongs to [$relatedClass#$related->id]");
 
@@ -131,11 +130,11 @@ expect()->extend(
 
         $foreignKey = $guesser->getRelationship()->getForeignKeyName();
 
-        $modelClass   = get_class($model);
-        $relatedClass = get_class($related);
+        $modelClass = $model::class;
+        $relatedClass = $related::class;
 
         // @phpstan-ignore-next-line
-        assertEquals($relatedClass, get_class($guesser->getRelationship()->getModel()), "Failed asserting that [$modelClass#$model->id] has a relationship '$relationshipName' with [$relatedClass#$related->id]");
+        assertEquals($relatedClass, $guesser->getRelationship()->getModel()::class, "Failed asserting that [$modelClass#$model->id] has a relationship '$relationshipName' with [$relatedClass#$related->id]");
 
         assertEquals($related->$foreignKey, $model->id, "Failed asserting that [$modelClass#$model->id] has a relationship with [$relatedClass#$related->id]");
 
