@@ -25,7 +25,7 @@ test('fail', function () {
     expect($user)->toBeDeleted();
 })->throws(ExpectationFailedException::class);
 
-test('negated pas', function () {
+test('negated pass', function () {
     $user = User::create([
         'name' => 'test user',
         'email' => 'email@test.xx',

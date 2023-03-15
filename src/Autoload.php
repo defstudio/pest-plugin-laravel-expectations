@@ -6,9 +6,10 @@ namespace DefStudio\PestLaravelExpectations;
 
 require_once __DIR__.'/Expectations/Authentication.php';
 require_once __DIR__.'/Expectations/Collections.php';
+require_once __DIR__.'/Expectations/Exceptions.php';
 require_once __DIR__.'/Expectations/Database.php';
-require_once __DIR__.'/Expectations/Models.php';
 require_once __DIR__.'/Expectations/Response.php';
 require_once __DIR__.'/Expectations/Storage.php';
-require_once __DIR__.'/Expectations/Time.php';
+require_once __DIR__.'/Expectations/Models.php';
 require_once __DIR__.'/Expectations/Views.php';
+require_once __DIR__.'/Expectations/Time.php';
