@@ -7,7 +7,7 @@ fullscreen: false
 position: 10
 ---
 
-### `toThrowValidationException()` (from v2)
+### `toThrowValidationException()` (available from v2, still with v1? Upgrade!)
 
 Assert that the given closure throws an `Illuminate\Validation\ValidationException`
 
