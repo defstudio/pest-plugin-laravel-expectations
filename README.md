@@ -5,6 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/defstudio/pest-plugin-laravel-expectations/static.yml?branch=master&label=code%20style)](https://github.com/defstudio/pest-plugin-laravel-expectations/actions?query=workflow%3A"Static+Analysis"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/defstudio/pest-plugin-laravel-expectations.svg?style=flat-square)](https://packagist.org/packages/defstudio/pest-plugin-laravel-expectations)
 [![License](https://img.shields.io/packagist/l/defstudio/pest-plugin-laravel-expectations)](https://packagist.org/packages/defstudio/pest-plugin-laravel-expectations)
+<a href="https://twitter.com/FabioIvona?ref_src=twsrc%5Etfw"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/FabioIvona?label=Follow&style=social"></a>
 
 This [Pest](https://pestphp.com) plugin adds Laravel specific expectations to the testing ecosystem
 
