@@ -7,6 +7,14 @@ fullscreen: false
 position: 10
 ---
 
+### `toBe()` (available from v2, still with v1? Upgrade!)
+
+Assert that the given model has the same ID and belong to the same table of another model.
+
+```php
+expect($post)->toBe($anotherPost);
+ ```
+
 ### `toBeDeleted()`
 
 Assert the given model to be deleted.
