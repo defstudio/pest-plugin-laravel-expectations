@@ -141,3 +141,5 @@ expect()->extend(
         return $this;
     }
 );
+
+expect()->intercept('toBe', Model::class, fn (Model $anotherModel) => expect($this->value)->toBeSameModelAs($anotherModel)); //@phpstan-ignore-line
