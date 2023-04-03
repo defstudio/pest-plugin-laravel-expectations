@@ -35,25 +35,45 @@ function getTestableResponse(Expectation $expectation): TestResponse
     return TestResponse::fromBaseResponse($response);
 }
 
-expect()->extend('get', fn (string $uri, array $headers = []): Expectation => expect(get($uri, $headers)));
+expect()->extend('get', function (string $uri, array $headers = []) {
+    return expect(get($uri, $headers));
+});
 
-expect()->extend('getJson', fn (string $uri, array $headers = []): Expectation => expect(getJson($uri, $headers)));
+expect()->extend('getJson', function (string $uri, array $headers = []) {
+    return expect(getJson($uri, $headers));
+});
 
-expect()->extend('post', fn (string $uri, array $data = [], array $headers = []): Expectation => expect(post($uri, $data, $headers)));
+expect()->extend('post', function (string $uri, array $data = [], array $headers = []) {
+    return expect(post($uri, $headers));
+});
 
-expect()->extend('postJson', fn (string $uri, array $data = [], array $headers = []): Expectation => expect(postJson($uri, $data, $headers)));
+expect()->extend('postJson', function (string $uri, array $data = [], array $headers = []) {
+    return expect(postJson($uri, $headers));
+});
 
-expect()->extend('put', fn (string $uri, array $data = [], array $headers = []): Expectation => expect(put($uri, $data, $headers)));
+expect()->extend('put', function (string $uri, array $data = [], array $headers = []) {
+    return expect(put($uri, $headers));
+});
 
-expect()->extend('putJson', fn (string $uri, array $data = [], array $headers = []): Expectation => expect(putJson($uri, $data, $headers)));
+expect()->extend('putJson', function (string $uri, array $data = [], array $headers = []) {
+    return expect(putJson($uri, $headers));
+});
 
-expect()->extend('patch', fn (string $uri, array $data = [], array $headers = []): Expectation => expect(patch($uri, $data, $headers)));
+expect()->extend('patch', function (string $uri, array $data = [], array $headers = []) {
+    return expect(patch($uri, $headers));
+});
 
-expect()->extend('patchJson', fn (string $uri, array $data = [], array $headers = []): Expectation => expect(patchJson($uri, $data, $headers)));
+expect()->extend('patchJson', function (string $uri, array $data = [], array $headers = []) {
+    return expect(patchJson($uri, $headers));
+});
 
-expect()->extend('delete', fn (string $uri, array $data = [], array $headers = []): Expectation => expect(delete($uri, $data, $headers)));
+expect()->extend('delete', function (string $uri, array $data = [], array $headers = []) {
+    return expect(delete($uri, $headers));
+});
 
-expect()->extend('deleteJson', fn (string $uri, array $data = [], array $headers = []): Expectation => expect(deleteJson($uri, $data, $headers)));
+expect()->extend('deleteJson', function (string $uri, array $data = [], array $headers = []) {
+    return expect(deleteJson($uri, $headers));
+});
 
 expect()->extend(
     'toBeRedirect',
