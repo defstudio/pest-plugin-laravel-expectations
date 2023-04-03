@@ -10,8 +10,6 @@ namespace DefStudio\PestLaravelExpectations\Expectations;
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
 use Pest\Expectation;
-use PHPUnit\Framework\AssertionFailedError;
-use PHPUnit\Framework\ExpectationFailedException;
 use function Pest\Laravel\delete;
 use function Pest\Laravel\deleteJson;
 use function Pest\Laravel\get;
@@ -22,6 +20,8 @@ use function Pest\Laravel\post;
 use function Pest\Laravel\postJson;
 use function Pest\Laravel\put;
 use function Pest\Laravel\putJson;
+use PHPUnit\Framework\AssertionFailedError;
+use PHPUnit\Framework\ExpectationFailedException;
 
 function getTestableResponse(Expectation $expectation): TestResponse
 {
@@ -35,43 +35,43 @@ function getTestableResponse(Expectation $expectation): TestResponse
     return TestResponse::fromBaseResponse($response);
 }
 
-expect()->extend('get', function(string $uri, array $headers = []){
+expect()->extend('get', function (string $uri, array $headers = []) {
     return expect(get($uri, $headers));
 });
 
-expect()->extend('getJson', function(string $uri, array $headers = []){
+expect()->extend('getJson', function (string $uri, array $headers = []) {
     return expect(getJson($uri, $headers));
 });
 
-expect()->extend('post', function(string $uri, array $data = [], array $headers = []){
+expect()->extend('post', function (string $uri, array $data = [], array $headers = []) {
     return expect(post($uri, $headers));
 });
 
-expect()->extend('postJson', function(string $uri, array $data = [], array $headers = []){
+expect()->extend('postJson', function (string $uri, array $data = [], array $headers = []) {
     return expect(postJson($uri, $headers));
 });
 
-expect()->extend('put', function(string $uri, array $data = [], array $headers = []){
+expect()->extend('put', function (string $uri, array $data = [], array $headers = []) {
     return expect(put($uri, $headers));
 });
 
-expect()->extend('putJson', function(string $uri, array $data = [], array $headers = []){
+expect()->extend('putJson', function (string $uri, array $data = [], array $headers = []) {
     return expect(putJson($uri, $headers));
 });
 
-expect()->extend('patch', function(string $uri, array $data = [], array $headers = []){
+expect()->extend('patch', function (string $uri, array $data = [], array $headers = []) {
     return expect(patch($uri, $headers));
 });
 
-expect()->extend('patchJson', function(string $uri, array $data = [], array $headers = []){
+expect()->extend('patchJson', function (string $uri, array $data = [], array $headers = []) {
     return expect(patchJson($uri, $headers));
 });
 
-expect()->extend('delete', function(string $uri, array $data = [], array $headers = []){
+expect()->extend('delete', function (string $uri, array $data = [], array $headers = []) {
     return expect(delete($uri, $headers));
 });
 
-expect()->extend('deleteJson', function(string $uri, array $data = [], array $headers = []){
+expect()->extend('deleteJson', function (string $uri, array $data = [], array $headers = []) {
     return expect(deleteJson($uri, $headers));
 });
 
