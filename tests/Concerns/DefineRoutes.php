@@ -76,6 +76,10 @@ trait DefineRoutes
             return redirect()->signedRoute('status', 200);
         });
 
+        $router->get('redirect-ok-route', function () {
+            return redirect()->route('ok');
+        });
+
         $router->get('json', function () {
             return response()->json([
                 'foo' => [
