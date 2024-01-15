@@ -50,6 +50,20 @@ expect()->extend(
 );
 
 expect()->extend(
+    'toBeRedirectToRoute',
+    /**
+     * Assert whether the response is redirecting to given route.
+     */
+    function (string $name, mixed $parameters = []): Expectation {
+        $response = getTestableResponse($this);
+
+        $response->assertRedirectToRoute($name, $parameters);
+
+        return $this;
+    }
+);
+
+expect()->extend(
     'toBeRedirectToSignedRoute',
     /**
      * Assert whether the response is redirecting to a given signed route.
