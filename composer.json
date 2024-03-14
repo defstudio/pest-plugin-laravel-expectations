@@ -53,8 +53,15 @@
     },
     "require-dev": {
         "orchestra/testbench": "^8.0|^9.0",
-        "pestphp/pest-dev-tools": "^v2.4.0",
-        "nesbot/carbon": "^2.62.1"
+        "nesbot/carbon": "^2.62.1",
+        "laravel/pint": "^1.11.0",
+        "phpstan/phpstan": "^1.10.29",
+        "phpstan/phpstan-strict-rules": "^1.5.1",
+        "symfony/var-dumper": "^6.3.3|^v7.0.4",
+        "symplify/phpstan-rules": "^12.1.4.72",
+        "rector/rector": "^0.16.0",
+        "thecodingmachine/phpstan-strict-rules": "^1.0.0",
+        "ergebnis/phpstan-rules": "^2.1.0"
     },
     "extra": {
         "branch-alias": {
