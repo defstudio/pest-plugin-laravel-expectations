@@ -28,4 +28,4 @@ test('pass negated', function () {
 
 test('fail negated', function () {
     expect(get('/status/200'))->not->toHaveStatus(200);
-})->throws(ExpectationFailedException::class, "not to have status 200");
+})->throws(ExpectationFailedException::class, 'not to have status 200');

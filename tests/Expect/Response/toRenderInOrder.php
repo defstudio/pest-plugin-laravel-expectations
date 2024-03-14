@@ -21,4 +21,4 @@ test('negated pass', function () {
 
 test('negated fail', function () {
     expect(get('/page'))->not->toRenderInOrder(['title', 'section', 'content']);
-})->throws(ExpectationFailedException::class, "not to render in order");
+})->throws(ExpectationFailedException::class, 'not to render in order');

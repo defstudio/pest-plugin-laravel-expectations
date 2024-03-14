@@ -30,4 +30,4 @@ test('filename pass negated', function () {
 
 test('negated fail', function () {
     expect(get('/download/test'))->not->toBeDownload();
-})->throws(ExpectationFailedException::class, "not to be download");
+})->throws(ExpectationFailedException::class, 'not to be download');

@@ -38,4 +38,4 @@ test('fails with negation', function () {
     $response = get('/redirect');
 
     expect($response)->not->toBeRedirect();
-})->throws(ExpectationFailedException::class, "not to be redirect");
+})->throws(ExpectationFailedException::class, 'not to be redirect');

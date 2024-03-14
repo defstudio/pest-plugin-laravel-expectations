@@ -26,4 +26,4 @@ test('fails with negation', function () {
     $response = get('/unknown');
 
     expect($response)->not->toBeNotFound();
-})->throws(ExpectationFailedException::class, "not to be not found");
+})->throws(ExpectationFailedException::class, 'not to be not found');

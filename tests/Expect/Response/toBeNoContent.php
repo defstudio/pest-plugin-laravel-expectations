@@ -38,4 +38,4 @@ test('fails with negation', function () {
     $response = get('/status/204');
 
     expect($response)->not->toHaveNoContent();
-})->throws(ExpectationFailedException::class, "not to have no content");
+})->throws(ExpectationFailedException::class, 'not to have no content');

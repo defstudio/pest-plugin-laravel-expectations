@@ -44,4 +44,4 @@ test('fails with negation', function () {
     $response = get('/ok');
 
     expect($response)->not->toBeSuccessful();
-})->throws(ExpectationFailedException::class, "not to be successful");
+})->throws(ExpectationFailedException::class, 'not to be successful');

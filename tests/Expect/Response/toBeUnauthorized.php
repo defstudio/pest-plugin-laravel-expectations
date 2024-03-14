@@ -30,4 +30,4 @@ test('fails with negation', function () {
     $response = get('/staff-only');
 
     expect($response)->not->toBeUnauthorized();
-})->throws(ExpectationFailedException::class, "not to be unauthorized");
+})->throws(ExpectationFailedException::class, 'not to be unauthorized');
