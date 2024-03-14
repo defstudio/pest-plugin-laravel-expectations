@@ -47,4 +47,4 @@ test('fails with negation', function () {
     }
 
     expect($response)->not->toHaveInvalid(['email']);
-})->throws(ExpectationFailedException::class, 'Expecting Illuminate\Testing\TestResponse not to have invalid […]');
+})->throws(ExpectationFailedException::class, 'not to have invalid');

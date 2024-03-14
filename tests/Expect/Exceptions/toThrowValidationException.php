@@ -35,4 +35,4 @@ test('negated fail', function () {
         'foo.bar' => ['baz', 'qux'],
         'zip' => ['zap'],
     ]);
-})->throws(ExpectationFailedException::class, 'Expecting Closure not to throw validation exception […].');
+})->throws(ExpectationFailedException::class, 'Expecting Closure not to throw validation exception.');

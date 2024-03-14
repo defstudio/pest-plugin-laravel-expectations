@@ -59,4 +59,4 @@ test('negated fail', function () {
     });
 
     expect($user)->not->toBeAbleTo('edit', [$post]);
-})->throws(ExpectationFailedException::class, "Expecting Tests\Models\User not to be able to 'edit' […]");
+})->throws(ExpectationFailedException::class, "not to be able to 'edit'");

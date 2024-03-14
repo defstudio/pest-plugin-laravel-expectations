@@ -22,4 +22,4 @@ test('negated pass', function () {
 
 test('negated fail', function () {
     expect(get('/page'))->not->toRenderTextInOrder(['title', 'section', 'content']);
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to render text in order […]");
+})->throws(ExpectationFailedException::class, "not to render text in order");

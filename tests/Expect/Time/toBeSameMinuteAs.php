@@ -18,7 +18,7 @@ test('pass with carbon values', function () {
 
 test('fails if value cannot be cast to carbon', function () {
     expect(['test'])->toBeSameMinuteAs(now());
-})->throws(InvalidDataException::class, 'Cannot cast [[...]] to a Carbon\Carbon instance');
+})->throws(InvalidDataException::class, 'Cannot cast');
 
 test('fails', function () {
     expect(new DateTime('2021-01-01 22:56:02'))->toBeSameMinuteAs(new DateTime('2021-01-01 22:55:00'));

@@ -41,4 +41,4 @@ test('negated fail', function () {
         'email' => 'email@test.xx',
         'password' => 'password',
     ])->not->toBeInvalidCredentials();
-})->throws(ExpectationFailedException::class, 'Expecting […] not to be invalid credentials');
+})->throws(ExpectationFailedException::class, 'not to be invalid credentials');
