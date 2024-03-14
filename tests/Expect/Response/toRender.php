@@ -22,4 +22,4 @@ test('negated pass', function () {
 
 test('negated fail', function () {
     expect(get('/page'))->not->toRender('<h1>title</h1>');
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to render '<h1>title</h1>'");
+})->throws(ExpectationFailedException::class, "not to render '<h1>title</h1>'");

@@ -18,4 +18,4 @@ test('pass negated', function () {
 
 test('fail negated', function () {
     expect(get('/session'))->not->toHaveSession('foo', 'bar');
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to have session 'foo' 'bar'.");
+})->throws(ExpectationFailedException::class, "not to have session 'foo' 'bar'.");

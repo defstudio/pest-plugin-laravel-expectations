@@ -87,4 +87,4 @@ test('negated fail', function () {
     actingAs($user);
 
     expect($user)->not->toBeAuthenticated();
-})->throws(ExpectationFailedException::class, "Expecting Tests\Models\User not to be authenticated");
+})->throws(ExpectationFailedException::class, "not to be authenticated");

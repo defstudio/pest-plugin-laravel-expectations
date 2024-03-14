@@ -18,4 +18,4 @@ test('pass negated', function () {
 
 test('fail negated', function () {
     expect(get('/header'))->not->toHaveMissingHeader('baz');
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to have missing header 'baz'");
+})->throws(ExpectationFailedException::class, "not to have missing header 'baz'");

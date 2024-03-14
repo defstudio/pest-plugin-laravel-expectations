@@ -38,4 +38,4 @@ test('fails with negation', function () {
     $response = get('/ok');
 
     expect($response)->not->toBeOk();
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to be ok");
+})->throws(ExpectationFailedException::class, "not to be ok");

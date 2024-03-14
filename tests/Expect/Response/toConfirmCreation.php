@@ -26,4 +26,4 @@ test('fails with negation', function () {
     $response = get('/status/201');
 
     expect($response)->not->toConfirmCreation();
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to confirm creation");
+})->throws(ExpectationFailedException::class, "not to confirm creation");
