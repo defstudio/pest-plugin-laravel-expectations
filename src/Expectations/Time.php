@@ -6,6 +6,7 @@ declare(strict_types=1);
 
 use DefStudio\PestLaravelExpectations\Helpers\ValueProcessor;
 use Pest\Expectation;
+
 use function PHPUnit\Framework\assertTrue;
 
 expect()->extend(
@@ -39,27 +40,9 @@ expect()->extend(
 );
 
 expect()->extend(
-    'toBeBetween',
-    /**
-     * Assert the date is between the given ones.
-     */
-    function (DateTimeInterface|string $from, DateTimeInterface|string $to, bool $equal = true): Expectation {
-        $value = ValueProcessor::getCarbonDate($this->value);
-        $expected_from = ValueProcessor::getCarbonDate($from);
-        $expected_to = ValueProcessor::getCarbonDate($to);
-
-        assertTrue($value->isBetween($expected_from, $expected_to, $equal), sprintf('Failed to assert that [%s] is between %s and %s', $value, $expected_from, $expected_to));
-
-        return $this;
-    }
-);
-
-expect()->extend(
     'toBeBirthday',
     /**
      * Assert the date a birthday.
-     *
-     * @param  DateTimeInterface|string|null  $date
      */
     function (DateTimeInterface|string|null $date = null): Expectation {
         $value = ValueProcessor::getCarbonDate($this->value);

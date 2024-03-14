@@ -1,8 +1,9 @@
 <?php
 
-use function Pest\Laravel\get;
 use PHPUnit\Framework\ExpectationFailedException;
 use Symfony\Component\HttpFoundation\Response;
+
+use function Pest\Laravel\get;
 
 test('pass', function ($status) {
     expect(get("/status/$status"))->toHaveStatus($status);
@@ -27,4 +28,4 @@ test('pass negated', function () {
 
 test('fail negated', function () {
     expect(get('/status/200'))->not->toHaveStatus(200);
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to have status 200");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to have status 200");

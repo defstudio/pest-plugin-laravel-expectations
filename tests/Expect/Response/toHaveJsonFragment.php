@@ -1,7 +1,8 @@
 <?php
 
-use function Pest\Laravel\get;
 use PHPUnit\Framework\ExpectationFailedException;
+
+use function Pest\Laravel\get;
 
 test('pass', function () {
     expect(get('json'))->toHaveJsonFragment(['bar' => 'baz']);

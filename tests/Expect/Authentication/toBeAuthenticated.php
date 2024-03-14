@@ -1,8 +1,9 @@
 <?php
 
-use function Pest\Laravel\actingAs;
 use PHPUnit\Framework\ExpectationFailedException;
 use Tests\Models\User;
+
+use function Pest\Laravel\actingAs;
 
 test('pass', function () {
     $user = User::make([
@@ -86,4 +87,4 @@ test('negated fail', function () {
     actingAs($user);
 
     expect($user)->not->toBeAuthenticated();
-})->throws(ExpectationFailedException::class, "Expecting Tests\Models\User Object (…) not to be authenticated");
+})->throws(ExpectationFailedException::class, "Expecting Tests\Models\User not to be authenticated");

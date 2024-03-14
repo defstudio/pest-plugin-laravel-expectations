@@ -1,7 +1,8 @@
 <?php
 
-use function Pest\Laravel\get;
 use PHPUnit\Framework\ExpectationFailedException;
+
+use function Pest\Laravel\get;
 
 test('pass', function () {
     expect(get('/header'))->toHaveHeader('foo', 'bar');
@@ -19,4 +20,4 @@ test('pass negated', function () {
 
 test('fail negated', function () {
     expect(get('/header'))->not->toHaveHeader('foo', 'bar');
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to have header 'foo' 'bar'.");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to have header 'foo' 'bar'.");

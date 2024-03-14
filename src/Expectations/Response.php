@@ -30,7 +30,7 @@ expect()->extend(
     /**
      * Assert that the response is a redirection.
      */
-    function (string $uri = null): Expectation {
+    function (?string $uri = null): Expectation {
         $response = getTestableResponse($this);
 
         $response->assertRedirect();
@@ -54,7 +54,7 @@ expect()->extend(
     /**
      * Assert whether the response is redirecting to a given signed route.
      */
-    function (string $name = null, mixed $parameters = []): Expectation {
+    function (?string $name = null, mixed $parameters = []): Expectation {
         $response = getTestableResponse($this);
 
         $response->assertRedirectToSignedRoute($name, $parameters);
@@ -180,7 +180,7 @@ expect()->extend(
     /**
      * Assert that the response offers a file download.
      */
-    function (string $filename = null): Expectation {
+    function (?string $filename = null): Expectation {
         $response = getTestableResponse($this);
 
         try {
@@ -255,8 +255,6 @@ expect()->extend(
     'toContainText',
     /**
      * Assert that the response contains the fiven string or array of strings in its text.
-     *
-     * @param  string|array  $text
      */
     fn (string|array $text, bool $escape = false): Expectation => $this->toRenderText($text, $escape)
 );
@@ -265,8 +263,6 @@ expect()->extend(
     'toContainTextInOrder',
     /**
      * Assert that the response contains the given ordered sequence of strings in its text.
-     *
-     * @param  string|array  $text
      */
     fn (string|array $text, bool $escape = false): Expectation => $this->toRenderTextInOrder($text, $escape)
 );
@@ -318,7 +314,7 @@ expect()->extend(
     /**
      * Assert that the response has a given JSON structure.
      */
-    function (array $structure = null, array $responseData = null): Expectation {
+    function (?array $structure = null, ?array $responseData = null): Expectation {
         $response = getTestableResponse($this);
 
         $response->assertJsonStructure($structure, $responseData);
@@ -346,7 +342,7 @@ expect()->extend(
     /**
      * Assert that the response has the given JSON validation errors.
      */
-    function (string|array $errors = null, string $responseKey = 'errors'): Expectation {
+    function (string|array|null $errors = null, string $responseKey = 'errors'): Expectation {
         $response = getTestableResponse($this);
 
         $response->assertJsonValidationErrors($errors ?? [], $responseKey);
@@ -359,8 +355,6 @@ expect()->extend(
     'toHaveValid',
     /**
      * Assert that the response doesn't have the given validation error keys.
-     *
-     * @param  string|array|null  $keys
      */
     function (string|array|null $keys = null, string $errorBag = 'default', string $responseKey = 'errors'): Expectation {
         $response = getTestableResponse($this);
@@ -375,8 +369,6 @@ expect()->extend(
     'toHaveInvalid',
     /**
      * Assert that the response has the given validation error keys.
-     *
-     * @param  string|array|null  $keys
      */
     function (string|array|null $keys = null, string $errorBag = 'default', string $responseKey = 'errors'): Expectation {
         $response = getTestableResponse($this);
@@ -391,8 +383,6 @@ expect()->extend(
     'toHaveHeader',
     /**
      * Assert that the response contains the given header and equals the optional value.
-     *
-     * @param  mixed  $value
      */
     function (string $headerName, mixed $value = null): Expectation {
         $response = getTestableResponse($this);
@@ -422,7 +412,6 @@ expect()->extend(
     /**
      * Assert that the session has a given value.
      *
-     * @param  mixed  $value
      * @return $this
      */
     function (string|array $key, mixed $value = null): Expectation {

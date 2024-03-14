@@ -1,7 +1,8 @@
 <?php
 
-use function Pest\Laravel\get;
 use PHPUnit\Framework\ExpectationFailedException;
+
+use function Pest\Laravel\get;
 
 test('pass', function () {
     expect(get('/download/test'))->toBeDownload();
@@ -29,4 +30,4 @@ test('filename pass negated', function () {
 
 test('negated fail', function () {
     expect(get('/download/test'))->not->toBeDownload();
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to be download");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to be download");

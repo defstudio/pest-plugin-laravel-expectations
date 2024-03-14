@@ -1,7 +1,8 @@
 <?php
 
-use function Pest\Laravel\get;
 use PHPUnit\Framework\ExpectationFailedException;
+
+use function Pest\Laravel\get;
 
 test('pass', function () {
     $response = get('/status/201');
@@ -25,4 +26,4 @@ test('fails with negation', function () {
     $response = get('/status/201');
 
     expect($response)->not->toConfirmCreation();
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to confirm creation");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to confirm creation");

@@ -1,7 +1,8 @@
 <?php
 
-use function Pest\Laravel\get;
 use PHPUnit\Framework\ExpectationFailedException;
+
+use function Pest\Laravel\get;
 
 test('pass', function () {
     expect(get('/header'))->toHaveMissingHeader('baz');
@@ -17,4 +18,4 @@ test('pass negated', function () {
 
 test('fail negated', function () {
     expect(get('/header'))->not->toHaveMissingHeader('baz');
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to have missing header 'baz'");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to have missing header 'baz'");

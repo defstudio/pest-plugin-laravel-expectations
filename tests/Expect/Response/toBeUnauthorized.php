@@ -1,7 +1,8 @@
 <?php
 
-use function Pest\Laravel\get;
 use PHPUnit\Framework\ExpectationFailedException;
+
+use function Pest\Laravel\get;
 
 test('pass', function () {
     $response1 = get('/staff-only');
@@ -29,4 +30,4 @@ test('fails with negation', function () {
     $response = get('/staff-only');
 
     expect($response)->not->toBeUnauthorized();
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to be unauthorized");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to be unauthorized");

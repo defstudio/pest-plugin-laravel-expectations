@@ -6,19 +6,20 @@ use Illuminate\Contracts\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Auth;
 use Pest\Expectation;
+use SebastianBergmann\Exporter\Exporter;
+
 use function Pest\Laravel\assertAuthenticated;
 use function Pest\Laravel\assertCredentials;
 use function Pest\Laravel\assertInvalidCredentials;
 use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertTrue;
-use SebastianBergmann\Exporter\Exporter;
 
 expect()->extend(
     'toBeAuthenticated',
     /**
      * Assert that the given User is authenticated.
      */
-    function (string $guard = null): Expectation {
+    function (?string $guard = null): Expectation {
         assertAuthenticated($guard);
 
         /** @var Authenticatable $authenticated */
@@ -36,7 +37,7 @@ expect()->extend(
     /**
      * Assert that the given credentials are valid.
      */
-    function (string $guard = null): Expectation {
+    function (?string $guard = null): Expectation {
         assertCredentials($this->value, $guard);
 
         return $this;
@@ -48,7 +49,7 @@ expect()->extend(
     /**
      * Assert that the given credentials are invalid.
      */
-    function (string $guard = null): Expectation {
+    function (?string $guard = null): Expectation {
         assertInvalidCredentials($this->value, $guard);
 
         return $this;

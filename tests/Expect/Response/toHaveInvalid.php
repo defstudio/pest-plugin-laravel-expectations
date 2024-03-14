@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Testing\TestResponse;
-use function Pest\Laravel\post;
 use PHPUnit\Framework\ExpectationFailedException;
+
+use function Pest\Laravel\post;
 
 test('pass', function () {
     $response = post('/validate', ['email' => 'taylor']);
@@ -46,4 +47,4 @@ test('fails with negation', function () {
     }
 
     expect($response)->not->toHaveInvalid(['email']);
-})->throws(ExpectationFailedException::class, 'Expecting Illuminate\Testing\TestResponse Object (…) not to have invalid Array (…)');
+})->throws(ExpectationFailedException::class, 'Expecting Illuminate\Testing\TestResponse not to have invalid […]');

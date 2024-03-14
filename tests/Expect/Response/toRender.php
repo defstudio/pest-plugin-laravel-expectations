@@ -1,7 +1,8 @@
 <?php
 
-use function Pest\Laravel\get;
 use PHPUnit\Framework\ExpectationFailedException;
+
+use function Pest\Laravel\get;
 
 test('pass', function () {
     expect(get('/page'))->toRender('<h1>title</h1>');
@@ -21,4 +22,4 @@ test('negated pass', function () {
 
 test('negated fail', function () {
     expect(get('/page'))->not->toRender('<h1>title</h1>');
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to render '<h1>title</h1>'");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to render '<h1>title</h1>'");

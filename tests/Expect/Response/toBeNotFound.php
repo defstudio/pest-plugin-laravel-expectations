@@ -1,7 +1,8 @@
 <?php
 
-use function Pest\Laravel\get;
 use PHPUnit\Framework\ExpectationFailedException;
+
+use function Pest\Laravel\get;
 
 test('pass', function () {
     $response = get('/unknown');
@@ -25,4 +26,4 @@ test('fails with negation', function () {
     $response = get('/unknown');
 
     expect($response)->not->toBeNotFound();
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to be not found");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to be not found");

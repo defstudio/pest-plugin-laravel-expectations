@@ -7,7 +7,7 @@ use Tests\TestCase;
 uses(TestCase::class)->in('Expect');
 
 /**
- * @param callable(Response $response) $setup
+ * @param  callable(Response $response)  $setup
  */
 function build_response(callable $setup): TestResponse
 {

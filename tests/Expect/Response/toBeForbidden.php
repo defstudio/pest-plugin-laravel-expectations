@@ -33,4 +33,4 @@ test('fails with negation', function () {
     });
 
     expect($response)->not->toBeForbidden();
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to be forbidden");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to be forbidden");

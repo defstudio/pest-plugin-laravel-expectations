@@ -12,7 +12,7 @@ expect()->extend(
      *
      * @phpstan-ignore-next-line
      */
-    fn (array $errors = null): Expectation => expect($this->value)->toThrow(function (ValidationException $exception) use ($errors): void {
+    fn (?array $errors = null): Expectation => expect($this->value)->toThrow(function (ValidationException $exception) use ($errors): void {
         if ($errors !== null) {
             expect($exception->errors())->toBe($errors);
         }

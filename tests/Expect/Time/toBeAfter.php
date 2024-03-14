@@ -18,7 +18,7 @@ test('pass with carbon values', function () {
 
 test('fails if value cannot be cast to carbon', function () {
     expect(['test'])->toBeAfter(now());
-})->throws(InvalidDataException::class, 'Cannot cast [Array (...)] to a Carbon\Carbon instance');
+})->throws(InvalidDataException::class, 'Cannot cast [[...]] to a Carbon\Carbon instance');
 
 test('fails', function () {
     expect(new DateTime('2021-01-01'))->toBeAfter(new DateTime('2021-01-01 22:55:00'));

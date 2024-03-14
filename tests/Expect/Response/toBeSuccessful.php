@@ -1,8 +1,9 @@
 <?php
 
-use function Pest\Laravel\get;
 use PHPUnit\Framework\ExpectationFailedException;
 use Symfony\Component\HttpFoundation\Response;
+
+use function Pest\Laravel\get;
 
 test('pass', function () {
     $response = get('/ok');
@@ -43,4 +44,4 @@ test('fails with negation', function () {
     $response = get('/ok');
 
     expect($response)->not->toBeSuccessful();
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to be successful");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to be successful");

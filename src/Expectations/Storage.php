@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Storage;
 use Pest\Expectation;
+
 use function PHPUnit\Framework\assertFalse;
 use function PHPUnit\Framework\assertTrue;
 
@@ -12,7 +13,7 @@ expect()->extend(
     /**
      * Assert that the given file exist in storage.
      */
-    function (string $disk = null): Expectation {
+    function (?string $disk = null): Expectation {
         $storageName = $disk ?? 'default';
 
         assertTrue(
@@ -31,7 +32,7 @@ expect()->extend(
      *
      * @param  mixed  $value
      */
-    function (string $disk = null): Expectation {
+    function (?string $disk = null): Expectation {
         $storageName = $disk ?? 'default';
 
         assertFalse(

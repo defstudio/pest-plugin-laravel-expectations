@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Testing\TestResponse;
-use function Pest\Laravel\get;
 use PHPUnit\Framework\ExpectationFailedException;
+
+use function Pest\Laravel\get;
 
 test('pass', function () {
     $response = get('/redirect-signed');
@@ -62,8 +63,8 @@ test('fails with negation', function () {
     $response = get('/redirect-signed');
 
     if (! method_exists(TestResponse::class, 'assertRedirectToSignedRoute')) {
-        throw new ExpectationFailedException("Expecting Illuminate\Testing\TestResponse Object (…) not to be redirect");
+        throw new ExpectationFailedException("Expecting Illuminate\Testing\TestResponse not to be redirect");
     }
 
     expect($response)->not->toBeRedirectToSignedRoute('status', 200);
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to be redirect");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to be redirect");

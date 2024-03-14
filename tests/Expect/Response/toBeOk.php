@@ -1,7 +1,8 @@
 <?php
 
-use function Pest\Laravel\get;
 use PHPUnit\Framework\ExpectationFailedException;
+
+use function Pest\Laravel\get;
 
 test('pass', function () {
     $response = get('/ok');
@@ -37,4 +38,4 @@ test('fails with negation', function () {
     $response = get('/ok');
 
     expect($response)->not->toBeOk();
-})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse Object (…) not to be ok");
+})->throws(ExpectationFailedException::class, "Expecting Illuminate\Testing\TestResponse not to be ok");
