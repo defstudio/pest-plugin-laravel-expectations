@@ -32,7 +32,7 @@ The expectations added by this plugin are automatically loaded into Pest's expec
 
 A full documentation with a detailed list of **available expectations** can be found at:
 
-[https://defstudio.github.io/pest-plugin-laravel-expectations](https://defstudio.github.io/pest-plugin-laravel-expectations/)
+[https://docs.defstudio.it/pest-plugin-laravel-expectations](https://docs.defstudio.it/pest-plugin-laravel-expectations/)
 
 ## Autocompletion
 
@@ -40,7 +40,7 @@ For PhpStorm users, a nice Plugin has been developed by [Oliver Nybroe](https://
 
 ## Changelog
 
-All notable changes to this project in our [changelog](https://defstudio.github.io/pest-plugin-laravel-expectations/changelog). For a full understanding of what changed and the PR that where merged, see also the [releases page](https://defstudio.github.io/pest-plugin-laravel-expectations/releases)
+All notable changes to this project in our [changelog](https://defstudio.github.io/pest-plugin-laravel-expectations/changelog). For a full understanding of what changed and the PR that where merged, see also the [releases page](https://docs.defstudio.it/pest-plugin-laravel-expectations/community/releases)
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
@@ -50,7 +50,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - [Fabio Ivona](https://github.com/fabio-ivona)
 - [All Contributors](../../contributors)
 
-Please see the [contributing guide](https://defstudio.github.io/pest-plugin-laravel-expectations/developers/contribute) for details on how to contribute to this plugin.
+Please see the [contributing guide](https://docs.defstudio.it/pest-plugin-laravel-expectations/community/contributing) for details on how to contribute to this plugin.
 
 ## Security Vulnerabilities
 
