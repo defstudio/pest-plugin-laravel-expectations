@@ -22,7 +22,7 @@ it('can check model exists', function(){
 You can install the package via composer:
 
 ```bash
-composer require --dev defstudio/pest-plugin-laravel-expectations
+composer require --dev defstudio/pest-plugin-laravel-11.expectations
 ```
 
 The expectations added by this plugin are automatically loaded into Pest's expectation system. They can be used along other expectations.
