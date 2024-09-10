@@ -58,7 +58,7 @@
         "phpstan/phpstan": "^1.10.29",
         "phpstan/phpstan-strict-rules": "^1.5.1",
         "symfony/var-dumper": "^6.3.3|^v7.0.4",
-        "symplify/phpstan-rules": "^12.1.4.72",
+        "symplify/phpstan-rules": "^13.0.1",
         "rector/rector": "^1.0.3",
         "thecodingmachine/phpstan-strict-rules": "^1.0.0",
         "ergebnis/phpstan-rules": "^2.1.0"
