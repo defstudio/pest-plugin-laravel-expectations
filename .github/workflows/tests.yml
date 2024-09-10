@@ -30,6 +30,8 @@ jobs:
             php: 8.1
           - pest: 3.*
             php: 8.1
+          - pest: 3.*
+            laravel: 10.*
 
     name: Pst${{matrix.pest}} Php${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
