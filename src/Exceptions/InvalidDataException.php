@@ -10,7 +10,7 @@ final class InvalidDataException extends \Exception
 {
     public static function cannotCast(mixed $value, string $class): InvalidDataException
     {
-        $exporter = new Exporter();
+        $exporter = new Exporter;
 
         return new self(sprintf('Cannot cast [%s] to a %s instance', $exporter->shortenedExport($value), $class));
     }
