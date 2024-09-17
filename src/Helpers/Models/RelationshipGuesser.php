@@ -33,7 +33,7 @@ final class RelationshipGuesser
 
     public static function from(Model $model): self
     {
-        $guesser = new self();
+        $guesser = new self;
         $guesser->model = $model;
 
         return $guesser;

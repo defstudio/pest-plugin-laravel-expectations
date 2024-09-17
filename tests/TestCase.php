@@ -41,7 +41,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
         $localStorageAbsolutePath = __DIR__.'/storage/local';
         $secondaryStorageAbsolutePath = __DIR__.'/storage/secondary';
 
-        $filesystem = new Filesystem();
+        $filesystem = new Filesystem;
         $filesystem->ensureDirectoryExists($localStorageAbsolutePath);
         $filesystem->cleanDirectory($localStorageAbsolutePath);
         $filesystem->ensureDirectoryExists($secondaryStorageAbsolutePath);

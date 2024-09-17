@@ -65,7 +65,7 @@ expect()->extend(
         /** @var Authorizable $user */
         $user = $this->value;
 
-        $exporter = new Exporter();
+        $exporter = new Exporter;
 
         $arguments_string = $exporter->shortenedExport($arguments);
         assertTrue($user->can($ability, $arguments), sprintf('Failed asserting that the given user is authorized to "%s" with [%s]', $ability, $arguments_string));

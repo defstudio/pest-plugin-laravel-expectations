@@ -11,5 +11,5 @@ uses(TestCase::class)->in('Expect');
  */
 function build_response(callable $setup): TestResponse
 {
-    return TestResponse::fromBaseResponse(tap(new Response(), $setup));
+    return TestResponse::fromBaseResponse(tap(new Response, $setup));
 }
