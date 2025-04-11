@@ -4,10 +4,19 @@
 
 declare(strict_types=1);
 
+use Carbon\CarbonInterface;
 use DefStudio\PestLaravelExpectations\Helpers\ValueProcessor;
 use Pest\Expectation;
 
 use function PHPUnit\Framework\assertTrue;
+
+expect()->intercept(
+    'toBe',
+    CarbonInterface::class,
+    function (CarbonInterface $expected) {
+        expect($this->value->timestamp)->toBe($expected->timestamp);
+    }
+);
 
 expect()->extend(
     'toBeAfter',
