@@ -4,17 +4,31 @@
 
 declare(strict_types=1);
 
-use Carbon\CarbonInterface;
+use Carbon\Carbon;
 use DefStudio\PestLaravelExpectations\Helpers\ValueProcessor;
 use Pest\Expectation;
 
 use function PHPUnit\Framework\assertTrue;
 
-expect()->intercept(
+expect()->pipe(
     'toBe',
-    CarbonInterface::class,
-    function (CarbonInterface $expected) {
-        expect($this->value->timestamp)->toBe($expected->timestamp);
+    function (Closure $next, mixed $date) {
+        try {
+            $value = Carbon::make($this->value);
+            $expected = Carbon::make($date);
+        } catch (Exception) { // @phpstan-ignore-line
+            return $next();
+        }
+
+        if ($value === null) {
+            return $next();
+        }
+
+        if ($expected === null) {
+            return $next();
+        }
+
+        return expect($value->timestamp)->toBe($expected->timestamp, sprintf('Failed to assert that date [%s] is equal to [%s]', $value->toString(), $expected->toString()));
     }
 );
 

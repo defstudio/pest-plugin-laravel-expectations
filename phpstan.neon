@@ -9,10 +9,11 @@ parameters:
         - src
 
     checkMissingIterableValueType: true
-    checkGenericClassInNonGenericObjectType: false
+
     reportUnmatchedIgnoredErrors: false
 
     ignoreErrors:
+        - identifier: missingType.generics
         - "#Undefined variable: \\$this#"
         - "#Call to static method user\\(\\) on an unknown class Auth#"
         - "#Variable method call on Illuminate\\\\Database\\\\Eloquent\\\\Model#"

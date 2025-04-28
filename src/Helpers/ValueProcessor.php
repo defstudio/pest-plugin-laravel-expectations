@@ -20,7 +20,7 @@ final class ValueProcessor
     {
         $carbon = Carbon::make($value);
 
-        if (! $carbon instanceof \Carbon\Carbon) {
+        if (! $carbon instanceof Carbon) {
             throw InvalidDataException::cannotCast($value, Carbon::class);
         }
 
