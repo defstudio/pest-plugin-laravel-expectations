@@ -57,7 +57,7 @@ jobs:
 
     - name: Install PHP dependencies
       run: |
-        composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "pestphp/pest:${{matrix.pest}}" --no-interaction --no-update
+        composer require --dev "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "pestphp/pest:${{matrix.pest}}" --no-interaction --no-update
         composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-progress --ansi
 
     - name: Execute Tests
