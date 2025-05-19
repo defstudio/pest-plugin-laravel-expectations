@@ -5,6 +5,7 @@ use Illuminate\Testing\TestResponse;
 use Tests\TestCase;
 
 uses(TestCase::class)->in('Expect');
+uses(TestCase::class)->in('Regression');
 
 /**
  * @param  callable(Response $response)  $setup

@@ -16,15 +16,23 @@ expect()->pipe(
         try {
             $value = Carbon::make($this->value);
             $expected = Carbon::make($date);
+
+            if (! $value instanceof Carbon) {
+                return $next();
+            }
+
+            if (is_string($this->value) && str($this->value)->startsWith('@') && $value->format('Y-m-d H:i:s') === '1970-01-01 00:00:00') {
+                return $next();
+            }
+
+            if (! $expected instanceof Carbon) {
+                return $next();
+            }
+
+            if (is_string($date) && str($date)->startsWith('@') && $value->format('Y-m-d H:i:s') === '1970-01-01 00:00:00') {
+                return $next();
+            }
         } catch (Exception) { // @phpstan-ignore-line
-            return $next();
-        }
-
-        if ($value === null) {
-            return $next();
-        }
-
-        if ($expected === null) {
             return $next();
         }
 
