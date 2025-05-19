@@ -3,6 +3,7 @@
   <testsuites>
     <testsuite name="default">
       <directory suffix=".php">./tests/Expect</directory>
+      <directory suffix=".php">./tests/Regression</directory>
     </testsuite>
   </testsuites>
   <source>
