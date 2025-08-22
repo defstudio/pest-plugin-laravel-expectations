@@ -36,6 +36,8 @@ jobs:
             php: 8.1
           - pest: 4.*
             php: 8.1
+          - pest: 4.*
+            php: 8.2
           - pest: 3.*
             laravel: 10.*
           - pest: 2.*
