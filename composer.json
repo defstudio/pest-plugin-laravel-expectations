@@ -57,7 +57,7 @@
         "laravel/pint": "^1.11.0",
         "phpstan/phpstan": "^1.10.29",
         "phpstan/phpstan-strict-rules": "^1.5.1",
-        "symfony/var-dumper": "^6.3.3|^v7.0.4",
+        "symfony/var-dumper": "^8.1.5",
         "symplify/phpstan-rules": "^13.0.1",
         "rector/rector": "^1.0.3",
         "thecodingmachine/phpstan-strict-rules": "^1.0.0",
